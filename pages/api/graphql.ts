@@ -17,57 +17,39 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
    res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PUT, PATCH, DELETE, OPTIONS, HEAD');
    const { db } = await connectToDatabase();
    const typeDefs = gql`
-      type Post {
-         _id: String
-         author: String
-         content: String
-      }
-      type Result {
-         succeeded: Boolean!
-         error_message: String
-      }
+      "Query"
       type Query {
-         posts(page: Int): [Post]!
-         post(id: String!): Post
+         "Returns an array of projects retrieved from the GitHub API"
+         projects: [Project]!
       }
-      type Mutation {
-         post(author: String!, content: String!): Result!
+      type Project {
+         "Name of the project's GitHub repository"
+         name: String!
+         "Project description"
+         description: String
+         "Link to project's GitHub repository"
+         github_link: String!
+         "The most used programming language in the project"
+         mainly_used_language: String!
+         "Date when the project was initialised on GitHub"
+         started_at: String!
       }
    `;
    const resolvers = {
       Query: {
-         posts: async (_, arg) => {
-            const page = arg.page ?? 0;
-            return db
-               .collection('posts')
-               .find()
-               .limit(10)
-               .skip(page * 10)
-               .toArray();
-         },
-         post: async (_, arg) => {
-            let findID;
-            try {
-               findID = new ObjectId(arg.id);
-            } catch (e) {
-               return null;
-            }
-            return db.collection('posts').findOne({ _id: findID });
-         },
-      },
-      Mutation: {
-         post: (_par, arg) => {
-            try {
-               db.collection('posts').insertOne({ author: arg.author, content: arg.content });
+         projects: async (_parent, arg, _context) => {
+            const res = await fetch('https://api.github.com/users/Konseyy/repos');
+            if (!res) return [];
+            const data = await res.json();
+            return data.map((d) => {
                return {
-                  succeeded: true,
+                  name: d.name,
+                  github_link: d.html_url,
+                  description: d.description,
+                  mainly_used_language: d.language,
+                  started_at: d.created_at,
                };
-            } catch (e) {
-               return {
-                  succeeded: false,
-                  error_message: e,
-               };
-            }
+            });
          },
       },
    };
