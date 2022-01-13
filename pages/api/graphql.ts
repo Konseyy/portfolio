@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { gql, ApolloServer } from 'apollo-server-micro';
 import { connectToDatabase } from '../../lib/mongodb';
-import { ObjectId } from 'mongodb';
 export const config = {
    api: {
       bodyParser: false,
@@ -53,7 +52,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
          },
       },
    };
-   const server = new ApolloServer({
+   const server:ApolloServer = new ApolloServer({
       typeDefs,
       resolvers,
    });

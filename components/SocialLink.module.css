@@ -1,0 +1,11 @@
+.imageContainer{
+	border-radius: 50%;
+	box-sizing: border-box;
+	display:inline-block;
+	height:200px;
+	width: 200px;
+}
+.image{
+	border-radius: 50%;
+	display:inline-block;
+}
