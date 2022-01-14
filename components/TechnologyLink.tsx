@@ -1,12 +1,12 @@
 import React, { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
-import styles from './SocialLink.module.css';
+import styles from './TechnologyLink.module.css';
 interface Props {
    image: StaticImageData;
    title: string;
    url: string;
 }
-const SocialLink: FC<Props> = ({ image, title, url }) => {
+const TechnologyLink: FC<Props> = ({ image, title, url }) => {
    const [isHovered, setIsHovered] = useState(false);
    const [showLabel, setShowLabel] = useState(false);
    const openInNewTab = (url: string) => {
@@ -45,4 +45,4 @@ const SocialLink: FC<Props> = ({ image, title, url }) => {
    );
 };
 
-export default SocialLink;
+export default TechnologyLink;

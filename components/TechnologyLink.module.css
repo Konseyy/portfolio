@@ -22,14 +22,13 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   height: 70%;
-   width: 70%;
-	filter:grayscale(1);
-	filter: invert(0);
+   height: 85%;
+   width: 85%;
+	filter: brightness(0);
 	transition: filter .2s;
 }
 .hover .image{
-	filter: invert(1);
+	filter: brightness(1);
 }
 .label{
 	margin-top: 5px;
@@ -40,6 +39,3 @@
 .label.show{
 	opacity: 1;
 }
-/* .imageContainer img{
-	filter: grayscale(100%) sepia(100%) hue-rotate(90deg);
-} */

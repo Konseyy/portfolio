@@ -2,13 +2,18 @@ import Head from 'next/head'
 import clientPromise from '../lib/mongodb'
 import { useEffect } from 'react';
 import github from "../public/static/img/github.png"
+import linkedin from "../public/static/img/linkedin.png"
 import react from "../public/static/img/react.png"
 import shiftlog from "../public/static/img/shiftlog.png"
 import SocialLink from '../components/SocialLink';
+import TechnologyLink from '../components/TechnologyLink';
 export default function Home({ isConnected }) {
 	return (
     <div className="container" style={{display:"Flex",alignItems:"center",justifyContent:"center", height:"100%"}}>
-      <SocialLink image={github} title='GitHub' backgroundColor='black' foregroundColor='white' url='https://github.com/Konseyy'/>
+      <SocialLink image={github} title='GitHub' url='https://github.com/Konseyy'/>
+      <SocialLink image={linkedin} title='LinkedIn' url='https://www.linkedin.com/in/valdis-g-bukalders-a0b9a2168/'/>
+      <TechnologyLink image={react} title='React.js' url='https://reactjs.org/'/>
+      <TechnologyLink image={react} title='React Native' url='https://reactnative.dev/'/>
     </div>
   )
 }
