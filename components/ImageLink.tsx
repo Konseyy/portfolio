@@ -22,6 +22,7 @@ const ImageLink: FC<ImageLinkProps> = ({
 	};
 	useEffect(() => {
 		if (isHovered) {
+			//delay before label appears
 			setTimeout(() => {
 				setIsHovered((old) => {
 					if (old) {
