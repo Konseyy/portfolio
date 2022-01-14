@@ -1,0 +1,56 @@
+.imageContainer {
+	display: inline-block;
+	border-radius: 50%;
+	overflow: hidden;
+	background-color: white;
+	height: 80%;
+	width: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: height 0.2s, width 0.2s, background-color 0.45s;
+}
+.imageContainer.hover {
+	background-color: black;
+	height: 100%;
+	width: 100%;
+}
+.imageContainer:hover {
+	cursor: pointer;
+}
+.image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 85%;
+	width: 85%;
+	transition: filter 0.2s, width 0.2s, height 0.2s;
+}
+.hover .image {
+	height: 65%;
+	width: 65%;
+}
+.imageBlackAndWhite {
+	filter: brightness(0) invert(0);
+}
+.hover .imageBlackAndWhite {
+	filter: brightness(0) invert(1);
+}
+.imageColored {
+	filter: brightness(0);
+}
+.hover .imageColored {
+	filter: brightness(100%);
+}
+.label {
+	margin-top: 5px;
+	font-size: 26px;
+	opacity: 0;
+	transition: opacity 0.4s;
+	text-align: center;
+	/* align-items: center; */
+	position: absolute;
+}
+.label.show {
+	opacity: 1;
+}
