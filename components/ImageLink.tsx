@@ -36,13 +36,11 @@ const ImageLink: FC<ImageLinkProps> = ({
 	}, [isHovered]);
 	return (
 		<div
+			className={styles.root}
 			style={{
-				display: 'flex',
-				flexDirection: 'column',
-				alignItems: 'center',
-				padding: 5,
 				height: size,
 				width: size,
+				paddingBottom: size * 0.5,
 			}}
 		>
 			<div
@@ -59,14 +57,11 @@ const ImageLink: FC<ImageLinkProps> = ({
 					<Image src={image} />
 				</div>
 			</div>
-			<div
-				style={{
-					display: 'flex',
-					justifyContent: 'center',
-					position: 'relative',
-				}}
-			>
-				<div className={`${styles.label} ${showLabel ? styles.show : ''}`}>
+			<div className={styles.labelContainer}>
+				<div
+					className={`${styles.label} ${showLabel ? styles.show : ''}`}
+					style={{ fontSize: size * 0.35 }}
+				>
 					{title}
 				</div>
 			</div>

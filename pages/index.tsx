@@ -6,7 +6,11 @@ import linkedin from '../public/static/img/linkedin.png';
 import react from '../public/static/img/react.png';
 import typescript from '../public/static/img/typescript.png';
 import nextjs from '../public/static/img/nextjs.svg';
+import mongodb from '../public/static/img/mongodb.png';
+import graphql from '../public/static/img/graphql.png';
+import git from '../public/static/img/git.png';
 import ImageLink from '../components/ImageLink';
+import Project from '../components/Project';
 export default function Home({ isConnected }) {
 	return (
 		<div
@@ -18,29 +22,61 @@ export default function Home({ isConnected }) {
 				height: '100%',
 			}}
 		>
-			<ImageLink
-				image={github}
-				title="GitHub"
-				url="https://github.com/Konseyy"
+			<div className="socials">
+				<ImageLink
+					image={github}
+					title="GitHub"
+					url="https://github.com/Konseyy"
+				/>
+				<ImageLink
+					image={linkedin}
+					title="LinkedIn"
+					url="https://www.linkedin.com/in/valdis-g-bukalders-a0b9a2168/"
+				/>
+			</div>
+
+			<Project
+				title="This Website"
+				description="A portfolio website to display my resume and projects"
+				hoverColor="#f0f0f0"
+				technologies={[
+					{
+						image: nextjs,
+						title: 'Next.js',
+						url: 'https://nextjs.org/',
+					},
+					{
+						image: react,
+						title: 'React.js',
+						url: 'https://reactjs.org/',
+						colored: true,
+					},
+					{
+						image: mongodb,
+						title: 'MongoDB',
+						url: 'https://www.mongodb.com/',
+						// colored:true
+					},
+					{
+						image: graphql,
+						title: 'GraphQL',
+						url: 'https://graphql.org/',
+						colored: true,
+					},
+					{
+						image: typescript,
+						title: 'TypeScript',
+						url: 'https://www.typescriptlang.org/',
+					},
+					{
+						image: git,
+						title: 'Git',
+						url: 'https://git-scm.com/',
+						colored: true,
+					},
+				]}
+				repo_link="https://github.com/Konseyy/next-portfolio"
 			/>
-			<ImageLink
-				image={linkedin}
-				title="LinkedIn"
-				url="https://www.linkedin.com/in/valdis-g-bukalders-a0b9a2168/"
-			/>
-			<ImageLink image={react} title="React.js" url="https://reactjs.org/" />
-			<ImageLink
-				image={react}
-				title="React Native"
-				url="https://reactnative.dev/"
-				colored={true}
-			/>
-			<ImageLink
-				image={typescript}
-				title="TypeScript"
-				url="https://www.typescriptlang.org/"
-			/>
-			<ImageLink image={nextjs} title="Next.js" url="https://nextjs.org/" />
 		</div>
 	);
 }
