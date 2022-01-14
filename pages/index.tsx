@@ -7,7 +7,7 @@ import shiftlog from "../public/static/img/shiftlog.png"
 import SocialLink from '../components/SocialLink';
 export default function Home({ isConnected }) {
 	return (
-    <div className="container">
+    <div className="container" style={{display:"Flex",alignItems:"center",justifyContent:"center", height:"100%"}}>
       <SocialLink image={github} title='GitHub' backgroundColor='black' foregroundColor='white' url='https://github.com/Konseyy'/>
     </div>
   )

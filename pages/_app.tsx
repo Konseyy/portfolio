@@ -2,7 +2,7 @@
 import '../public/style/reset.css';
 import '../public/style/main.css';
 function MyApp({ Component, pageProps }) {
-   return <Component {...pageProps} />;
+   return <Component {...pageProps}/>;
 }
 
 // Only uncomment this method if you have blocking data requirements for
