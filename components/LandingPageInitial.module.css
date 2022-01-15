@@ -16,7 +16,6 @@
 	align-items: center;
 	justify-content: center;
 	position: relative;
-	background-image: linear-gradient(#dbdbdb, #ebebeb 25%, white 90%);
 }
 .landingPageIntro {
 	margin-right: 40%;
