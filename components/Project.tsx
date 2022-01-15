@@ -49,7 +49,7 @@ const Project: FC<ProjectProps> = ({
 			<div className={styles.contentContainer}>
 				<p className={styles.description}>{description}</p>
 				<div className={styles.technologiesSection}>
-					<h1 className={styles.technologiesHeader}>Made using ⤵︎</h1>
+					<h1 className={styles.technologiesHeader}>Technologies used ⤵︎</h1>
 					<div className={styles.technologiesContainer} key="container">
 						{technologies.map((technology) => {
 							return (
