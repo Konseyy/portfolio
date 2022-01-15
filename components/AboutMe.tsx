@@ -23,12 +23,11 @@ const AboutMe: FC<Props> = ({ id, title, description, socials }) => {
 						key="descriptionContainer"
 					>
 						{description.map((el, x) => {
-							el = {
+							return {
 								...el,
 								props: { ...el.props, className: styles.description },
 								key: `paragraph${x}`,
 							};
-							return el;
 						})}
 					</div>
 					<div className={styles.socialsContainer} key="socialsContainer">
