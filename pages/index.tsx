@@ -12,21 +12,22 @@ import NavBar from '../components/NavBar';
 export default function Home({ isConnected }) {
 	return (
 		<div className={styles.root}>
-			<NavBar navItems={[
-				{
-					displayTitle:"Home",
-					elemId:"home"
-				},
-				{
-					displayTitle:"About me",
-					elemId:"aboutMe"
-				},
-				{
-					displayTitle:"My projects",
-					elemId:"projectList"
-				},
-				
-			]}/>
+			<NavBar
+				navItems={[
+					{
+						displayTitle: 'Home',
+						elemId: 'home',
+					},
+					{
+						displayTitle: 'About me',
+						elemId: 'aboutMe',
+					},
+					{
+						displayTitle: 'My projects',
+						elemId: 'projectList',
+					},
+				]}
+			/>
 			<LandingPageInitial id="home" scrollToId="aboutMe" />
 			<AboutMe
 				id="aboutMe"

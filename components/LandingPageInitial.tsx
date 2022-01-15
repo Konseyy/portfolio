@@ -3,9 +3,9 @@ import styles from './LandingPageInitial.module.css';
 import SectionButton from './SectionButton';
 interface Props {
 	scrollToId: string;
-	id:string;
+	id: string;
 }
-const LandingPageInitial: FC<Props> = ({ scrollToId,id }) => {
+const LandingPageInitial: FC<Props> = ({ scrollToId, id }) => {
 	return (
 		<div id={id} className={styles.landingPage}>
 			<div className={styles.landingPageIntro}>

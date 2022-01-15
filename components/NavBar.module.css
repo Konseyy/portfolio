@@ -1,10 +1,10 @@
-.root{
-	position:fixed;
-	width:100%;
-	background-color: rgba(0,0,0,.85);
+.root {
+	position: fixed;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.85);
 	z-index: 3;
 }
-.list{
+.list {
 	padding: 20px 0;
 	padding-bottom: 30px;
 	display: flex;
@@ -12,16 +12,16 @@
 	align-content: center;
 	z-index: 3;
 }
-.list li{
-	padding:5px;
+.list li {
+	padding: 5px;
 	margin-left: 30px;
 	font-size: 2rem;
 	color: white;
 	text-decoration: underline;
 	text-decoration-color: rgba(255, 255, 255, 0);
-	transition: .5s;
+	transition: 0.5s;
 }
-.list li:hover{
+.list li:hover {
 	cursor: pointer;
 	text-decoration-color: rgb(255, 255, 255);
 }
