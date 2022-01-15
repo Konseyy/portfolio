@@ -16,6 +16,10 @@ export default function Home({ isConnected }) {
 					href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap"
 					rel="stylesheet"
 				/>
+				<link rel="shortcut icon" href="/favicon.ico" />
+				<link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
+				<link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
+				<link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico" />
 				<title>Valdis - Developer</title>
 			</Head>
 			<NavBar
