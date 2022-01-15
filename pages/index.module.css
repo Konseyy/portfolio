@@ -4,7 +4,7 @@
 	0% {
 		opacity: 1;
 	}
-	65% {
+	70% {
 		opacity: 0;
 	}
 	100% {
@@ -59,7 +59,7 @@
 	position: absolute;
 	bottom: 50px;
 	background-color: transparent;
-	transition: background-color 0.65s, color 0.65s;
+	transition: background-color 0.65s, color 0.8s;
 }
 .scrollToAboutMe::before {
 	border-radius: 20px;
@@ -92,7 +92,7 @@
 	width: 1.7rem;
 	margin-right: 5px;
 	filter: brightness(0) invert(0);
-	transition: filter 0.65s;
+	transition: filter 0.8s;
 }
 .scrollToAboutMe:hover .dropdownContainer {
 	filter: brightness(0) invert(1);
