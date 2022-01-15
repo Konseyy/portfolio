@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
+import { openInNewTab } from '../functions/openInNewTab';
 import styles from './ImageLink.module.css';
 export interface ImageLinkProps {
 	image: StaticImageData;
@@ -17,9 +18,7 @@ const ImageLink: FC<ImageLinkProps> = ({
 }) => {
 	const [isHovered, setIsHovered] = useState(false);
 	const [showLabel, setShowLabel] = useState(false);
-	const openInNewTab = (url: string) => {
-		window.open(url, '_blank').focus();
-	};
+	
 	useEffect(() => {
 		if (isHovered) {
 			//delay before label appears
