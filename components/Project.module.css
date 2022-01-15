@@ -145,6 +145,7 @@
 	.root {
 		grid-template-columns: auto;
 		width: 92vw;
+		margin-bottom: 20px;
 	}
 	.contentContainer {
 		grid-column: span 1;
@@ -187,6 +188,7 @@
 		line-height: 2.3rem;
 	}
 	.technologiesHeader {
-		font-size: 1.7rem;
+		font-size: 1.9rem;
+		margin-bottom: 10px;
 	}
 }
