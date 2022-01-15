@@ -3,7 +3,6 @@ import { ImageLinkProps } from './ImageLink';
 import Image from 'next/image';
 import { openInNewTab } from '../functions/openInNewTab';
 import ImageLink from './ImageLink';
-import link from '../public/static/img/link.png';
 import code from '../public/static/img/code.png';
 import demo from '../public/static/img/demo.png';
 import styles from './Project.module.css';
