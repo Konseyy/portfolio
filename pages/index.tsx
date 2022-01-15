@@ -54,7 +54,6 @@ export default function Home({ isConnected }) {
 							image: mongodb,
 							title: 'MongoDB',
 							url: 'https://www.mongodb.com/',
-							// colored:true
 						},
 						{
 							image: graphql,
