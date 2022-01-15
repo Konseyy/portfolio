@@ -16,6 +16,7 @@ export default function Home({ isConnected }) {
 					href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap"
 					rel="stylesheet"
 				/>
+				<title>Valdis - Developer</title>
 			</Head>
 			<NavBar
 				navItems={[
