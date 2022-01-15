@@ -1,21 +1,41 @@
 import React, { FC } from 'react';
 import ImageLink, { ImageLinkProps } from '../components/ImageLink';
+import Image from 'next/image';
+import me from '../public/static/img/me.jpg';
 import styles from './AboutMe.module.css';
 interface Props {
 	id: string;
 	title: string;
-	description: string;
+	description: string[];
 	socials: ImageLinkProps[];
 }
 const AboutMe: FC<Props> = ({ id, title, description, socials }) => {
 	return (
-		<div id={id} className={styles.aboutMe}>
-			<div className={styles.title}>My name is valdis</div>
-			<div className={styles.description}>description</div>
-			<div className={styles.socialsContainer} key="socialsContainer">
-				{socials.map((social) => {
-					return <ImageLink {...social} key={social.title} />;
-				})}
+		<div id={id} className={styles.root}>
+			<div className={styles.aboutMe}>
+				<div className={styles.personalPhotoContainer}>
+					<Image src={me} />
+				</div>
+				<div className={styles.infoContainer}>
+					<h1 className={styles.title}>{title}</h1>
+					<div
+						className={styles.descriptionContainer}
+						key="descriptionContainer"
+					>
+						{description.map((p) => {
+							return (
+								<p className={styles.description} key={p}>
+									{p}
+								</p>
+							);
+						})}
+					</div>
+					<div className={styles.socialsContainer} key="socialsContainer">
+						{socials.map((social) => {
+							return <ImageLink {...social} key={social.title} size={90} />;
+						})}
+					</div>
+				</div>
 			</div>
 		</div>
 	);

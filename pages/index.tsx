@@ -15,7 +15,11 @@ export default function Home({ isConnected }) {
 			<AboutMe
 				id="aboutMe"
 				title="My name is Valdis"
-				description="Im a student and a software developer"
+				description={[
+					"I'm currently studying for my Bachelor's degree in Computer Science at the University of Latvia and also working as a Software Developer for Dhanvantari Solutions",
+					'Always striving to learn new concepts as well as better my knowledge with already familiar technologies',
+					'In my free time I also like to workout in the gym as well as listen to and play music',
+				]}
 				socials={socials}
 			/>
 			<ProjectsList projects={projects} />
