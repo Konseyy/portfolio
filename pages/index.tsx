@@ -48,7 +48,7 @@ export default function Home({ isConnected }) {
 						<a target="_blank" href="https://www.df.lu.lv/">
 							University of Latvia
 						</a>{' '}
-						and also working as a Software Developer for Dhanvantari Solutions
+						and also working as a Software Developer for Dhanvantari Solutions.
 					</p>,
 					<p>
 						Most of my experience is as a frontend developer using technologies
@@ -68,14 +68,15 @@ export default function Home({ isConnected }) {
 						<a target="_blank" href="https://www.drupal.org/">
 							Drupal
 						</a>
+						.
 					</p>,
 					<p>
 						Constantly striving to learn new concepts as well as better my
-						knowledge with already familiar technologies
+						knowledge with already familiar technologies.
 					</p>,
 					<p>
 						In my free time I like to workout in the gym as well as listen to
-						and play music
+						and play music.
 					</p>,
 				]}
 				socials={socials}
