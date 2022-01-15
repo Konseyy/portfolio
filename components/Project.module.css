@@ -145,6 +145,7 @@
 	.root {
 		grid-template-columns: auto;
 		width: 92vw;
+		margin-bottom: 20px;
 	}
 	.contentContainer {
 		grid-column: span 1;
