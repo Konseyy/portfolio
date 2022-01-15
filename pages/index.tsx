@@ -5,7 +5,6 @@ import styles from './index.module.css';
 import LandingPageInitial from '../components/LandingPageInitial';
 import socials from '../data/Socials';
 import projects from '../data/Projects';
-import Image from 'next/image';
 import ProjectsList from '../components/ProjectsList';
 import AboutMe from '../components/AboutMe';
 import NavBar from '../components/NavBar';
