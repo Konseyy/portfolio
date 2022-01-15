@@ -38,6 +38,7 @@ export default function Home({ isConnected }) {
 					title="This Website"
 					description="A portfolio website to display my resume and projects"
 					hoverColor="#f0f0f0"
+					repo_link="https://github.com/Konseyy/portfolio"
 					technologies={[
 						{
 							image: nextjs,
@@ -73,7 +74,6 @@ export default function Home({ isConnected }) {
 							colored: true,
 						},
 					]}
-					repo_link="https://github.com/Konseyy/next-portfolio"
 				/>
 			</div>
 		</div>
