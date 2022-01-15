@@ -24,17 +24,17 @@ const projects = [
 				url: 'https://reactjs.org/',
 				colored: true,
 			},
-			{
-				image: mongodb,
-				title: 'MongoDB',
-				url: 'https://www.mongodb.com/',
-			},
-			{
-				image: graphql,
-				title: 'GraphQL',
-				url: 'https://graphql.org/',
-				colored: true,
-			},
+			// {
+			// 	image: mongodb,
+			// 	title: 'MongoDB',
+			// 	url: 'https://www.mongodb.com/',
+			// },
+			// {
+			// 	image: graphql,
+			// 	title: 'GraphQL',
+			// 	url: 'https://graphql.org/',
+			// 	colored: true,
+			// },
 			{
 				image: typescript,
 				title: 'TypeScript',
