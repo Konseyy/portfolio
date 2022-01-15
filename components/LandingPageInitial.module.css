@@ -2,10 +2,10 @@
 	0% {
 		opacity: 1;
 	}
-	70% {
+	50% {
 		opacity: 0;
 	}
-	100% {
+	80% {
 		opacity: 1;
 	}
 }
@@ -31,19 +31,19 @@
 #firstP {
 	animation-name: fade;
 	animation-delay: 0s;
-	animation-duration: 8.3s;
+	animation-duration: 6.3s;
 	animation-iteration-count: infinite;
 }
 #secondP {
 	animation-name: fade;
-	animation-delay: .5s;
-	animation-duration: 8.3s;
+	animation-delay: 0.5s;
+	animation-duration: 6.3s;
 	animation-iteration-count: infinite;
 }
 #thirdP {
 	animation-name: fade;
 	animation-delay: 1s;
-	animation-duration: 8.3s;
+	animation-duration: 6.3s;
 	animation-iteration-count: infinite;
 }
 .scrollToAboutMe {
@@ -56,7 +56,7 @@
 	align-items: center;
 	justify-content: center;
 	position: absolute;
-	bottom: calc(max(50px,10%));
+	bottom: calc(max(50px, 10%));
 	background-color: transparent;
 	transition: background-color 0.5s, color 0.8s;
 }
