@@ -29,7 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
          "Link to project's GitHub repository"
          github_link: String!
          "The most used programming language in the project"
-         mainly_used_language: String!
+         mainly_used_language: String
          "Date when the project was initialised on GitHub"
          started_at: String!
       }
@@ -41,6 +41,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             if (!res) return [];
             const data = await res.json();
             return data.map((d) => {
+					console.log(d);
                return {
                   name: d.name,
                   github_link: d.html_url,
