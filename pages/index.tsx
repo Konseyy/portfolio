@@ -12,6 +12,12 @@ import NavBar from '../components/NavBar';
 export default function Home({ isConnected }) {
 	return (
 		<div className={styles.root}>
+			<Head>
+				<link
+					href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap"
+					rel="stylesheet"
+				/>
+			</Head>
 			<NavBar
 				navItems={[
 					{
