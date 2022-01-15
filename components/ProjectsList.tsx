@@ -6,10 +6,15 @@ interface Props {
 }
 const ProjectsList: FC<Props> = ({ projects }) => {
 	return (
-		<div className={styles.projectsContainer} key="projectContainer">
-			{projects.map((project) => {
-				return <Project {...project} key={project.title} />;
-			})}
+		<div className={styles.root}>
+			<div className={styles.titleContainer}>
+				<h1 className={styles.title}>Featured Projects</h1>
+			</div>
+			<div className={styles.projectsContainer} key="projectContainer">
+				{projects.map((project) => {
+					return <Project {...project} key={project.title} />;
+				})}
+			</div>
 		</div>
 	);
 };

@@ -1,3 +1,22 @@
+.root{
+	display: flex;
+	flex-direction: column;
+	margin: 0 150px;
+	margin-bottom: 100px;
+	min-height: 100vh;
+	/* align-content: center; */
+	justify-content: center;
+	align-items: center;
+}
+.title{
+	font-size: 5rem;
+	font-weight: bold;
+	margin-bottom: 65px;
+}
 .projectsContainer{
-	
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 35px;
+	row-gap: 15px;
+	/* max-width: 2000px; */
 }
