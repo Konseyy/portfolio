@@ -54,7 +54,7 @@ const projects = [
 			'A mobile app meant for tracking work shifts. Has the ability to create and import backups as well as generate .csv files. Repository includes automatic uploading to the Google Play Store',
 		hoverColor: '#f0f0f0',
 		repo_link: 'https://github.com/Konseyy/ShiftLog',
-		live_link:"https://play.google.com/store/apps/details?id=com.shiftlog",
+		live_link: 'https://play.google.com/store/apps/details?id=com.shiftlog',
 		technologies: [
 			{
 				image: react,
