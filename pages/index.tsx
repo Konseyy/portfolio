@@ -24,14 +24,19 @@ export default function Home({ isConnected }) {
 					<span id={styles.secondP}>.</span>
 					<span id={styles.thirdP}>.</span>
 				</div>
-				<div className={styles.scrollToAboutMe} onClick={()=>document.getElementById("aboutMe").scrollIntoView()}>
+				<div
+					className={styles.scrollToAboutMe}
+					onClick={() => document.getElementById('aboutMe').scrollIntoView()}
+				>
 					<p>About Me</p>
 					<div className={styles.dropdownContainer}>
-					<Image src={dropdown}/>
+						<Image src={dropdown} />
 					</div>
 				</div>
 			</div>
-			<div id="aboutMe" className={styles.aboutMe}>Yes</div>
+			<div id="aboutMe" className={styles.aboutMe}>
+				Yes
+			</div>
 			<div className="socials">
 				<ImageLink
 					image={github}
