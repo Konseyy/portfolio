@@ -57,7 +57,7 @@
 	align-items: center;
 	justify-content: center;
 	position: absolute;
-	bottom: 50px;
+	bottom: calc(max(50px,10%));
 	background-color: transparent;
 	transition: background-color 0.5s, color 0.8s;
 }
