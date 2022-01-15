@@ -91,10 +91,10 @@
 	width: 1.7rem;
 	margin-right: 5px;
 	filter: brightness(0) invert(0);
-	transform: rotate(-90deg);
+	transform: rotate(-90deg) translateX(0);
 	transition: 0.8s;
 }
 .scrollToAboutMe:hover .dropdownContainer {
 	filter: brightness(0) invert(1);
-	transform: rotate(0deg);
+	transform: rotate(0deg) translateX(-5px);
 }
