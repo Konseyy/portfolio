@@ -46,3 +46,12 @@
 	animation-duration: 6.3s;
 	animation-iteration-count: infinite;
 }
+@media only screen and (max-width: 1000px) {
+	.landingPageIntro {
+		margin-right: 0;
+		font-size: 10rem;
+	}
+	.landingPageIntro span {
+		letter-spacing: -0.5rem;
+	}
+}

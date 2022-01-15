@@ -14,7 +14,9 @@ const NavBar: FC<Props> = ({ navItems }) => {
 			<ul className={styles.list} key="navBarContainer">
 				{navItems.map((n) => {
 					return (
-						<li onClick={() => scrollIdIntoView(n.elemId)}>{n.displayTitle}</li>
+						<li onClick={() => scrollIdIntoView(n.elemId)} key={n.displayTitle}>
+							{n.displayTitle}
+						</li>
 					);
 				})}
 			</ul>

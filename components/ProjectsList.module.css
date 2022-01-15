@@ -1,4 +1,4 @@
-.root{
+.root {
 	display: flex;
 	flex-direction: column;
 	margin: 0 150px;
@@ -8,15 +8,40 @@
 	justify-content: center;
 	align-items: center;
 }
-.title{
+.title {
 	font-size: 5rem;
 	font-weight: bold;
 	margin-bottom: 65px;
 }
-.projectsContainer{
+.projectsContainer {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	column-gap: 35px;
 	row-gap: 15px;
 	/* max-width: 2000px; */
+}
+@media only screen and (max-width: 1700px) {
+	.root {
+		margin-bottom: 25px;
+	}
+	.projectsContainer {
+		grid-template-columns: auto auto;
+	}
+}
+@media only screen and (max-width: 1150px) {
+	.projectsContainer {
+		grid-template-columns: auto;
+	}
+	.title {
+		padding-top: 50px;
+		white-space: nowrap;
+		font-size: 2.3rem;
+		margin-bottom: 30px;
+	}
+}
+@media only screen and (min-width: 2540px) {
+	.title {
+		font-size: 7rem;
+		margin-bottom: 60px;
+	}
 }
