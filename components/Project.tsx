@@ -70,15 +70,21 @@ const Project: FC<ProjectProps> = ({
 
 			<div className={styles.contentContainer}>
 				<p className={styles.description}>
-					{descriptionOverflow
-						? showMore
-							? description
-							: `${description.substring(0, MAX_DESCRIPTION_DISPLAY)}...`
-						: description}
-					{descriptionOverflow && !showMore && (
-						<span onClick={() => setShowMore(true)} className={styles.readMore}>
-							show more
-						</span>
+					{descriptionOverflow && !showMore ? (
+						<>
+							{!showMore &&
+								`${description.substring(0, MAX_DESCRIPTION_DISPLAY)}... `}
+							{!showMore && (
+								<span
+									onClick={() => setShowMore(true)}
+									className={styles.readMore}
+								>
+									show more
+								</span>
+							)}
+						</>
+					) : (
+						description
 					)}
 				</p>
 				<div className={styles.technologiesSection}>
