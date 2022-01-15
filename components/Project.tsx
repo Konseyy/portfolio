@@ -1,6 +1,9 @@
 import React, { FC, useState } from 'react';
 import { ImageLinkProps } from './ImageLink';
+import Image from 'next/image';
+import { openInNewTab } from '../functions/openInNewTab';
 import ImageLink from './ImageLink';
+import link from '../public/static/img/link.png';
 import styles from './Project.module.css';
 interface ProjectProps {
 	technologies: ImageLinkProps[];
@@ -29,7 +32,20 @@ const Project: FC<ProjectProps> = ({
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 		>
-			<h1 className={styles.title}>{title}</h1>
+			<div className={styles.titleContainer}>
+				<h1 className={styles.title}>{title}</h1>
+			</div>
+			<div className={styles.repoLinkContainer}>
+				<div
+					className={styles.repoLink}
+					onClick={() => openInNewTab(repo_link)}
+				>
+					<div className={styles.linkImageContainer}>
+						<Image src={link} />
+					</div>
+					<p>Repo link</p>
+				</div>
+			</div>
 			<div className={styles.contentContainer}>
 				<p className={styles.description}>{description}</p>
 				<div className={styles.technologiesSection}>

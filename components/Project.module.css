@@ -1,11 +1,12 @@
 .root {
-	display: grid;
-	grid-template-columns: 500px;
+	display: inline-grid;
+	grid-template-columns: 300px repeat(auto-fit, 200px);
 	padding: 10px;
 	margin: 10px;
 	border-radius: 30px;
 	/* border: 1px solid black; */
-	max-width: 500px;
+	box-sizing: border-box;
+	max-width: 550px;
 	transition: background-color 0.45s;
 	position: relative;
 }
@@ -33,17 +34,24 @@
 .root.hover::after {
 	opacity: 1;
 }
+.titleContainer{
+	display: flex;
+	align-items: center;
+	margin: 20px 5px;
+	margin-left: 10px;
+}
 .title {
 	font-size: 35px;
 	font-weight: bold;
-	margin: 5px;
-	margin-bottom: 15px;
+
 }
 .contentContainer {
 	margin: 0 20px;
+	grid-column: span 2;
 }
 .description {
 	font-size: 20px;
+	line-height: 24px;
 	margin-bottom: 20px;
 }
 .technologiesSection {
@@ -61,4 +69,40 @@
 	flex-wrap: wrap;
 	flex-direction: row;
 	align-items: center;
+}
+.repoLinkContainer {
+	margin: 0 10px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.repoLink {
+	display: inline-flex;
+	box-sizing: border-box;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	padding: 10px 13px;
+	border-radius: 20px;
+	background-color: transparent;
+	font-size: 1.1rem;
+	transition: background-color 450ms, color 600ms;
+}
+.repoLink:hover {
+	background-color: black;
+	color: white;
+}
+.linkImageContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 20px;
+	width: 20px;
+	margin-right: 8px;
+	filter: invert(0);
+	transition: filter 600ms;
+}
+.repoLink:hover .linkImageContainer {
+	filter: invert(1);
 }
