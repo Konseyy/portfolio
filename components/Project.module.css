@@ -56,7 +56,7 @@
 	grid-column: span 2;
 }
 .description {
-	font-size: 20px;
+	font-size: 1.4rem;
 	line-height: 24px;
 	margin-bottom: 25px;
 }
@@ -66,7 +66,7 @@
 	gap: 5px;
 }
 .technologiesHeader {
-	font-size: 18px;
+	font-size: 1.1rem;
 	font-weight: bold;
 	margin-bottom: 5px;
 }
@@ -140,4 +140,53 @@
 .readMore:hover {
 	cursor: pointer;
 	text-decoration-color: rgba(0, 0, 0, 1);
+}
+@media only screen and (max-width: 1000px) {
+	.root {
+		grid-template-columns: auto;
+		width: 92vw;
+	}
+	.contentContainer {
+		grid-column: span 1;
+	}
+	.liveLinkContainer,
+	.repoLinkContainer {
+		align-items: flex-start;
+		justify-content: flex-start;
+	}
+	.liveLink,
+	.repoLink {
+		width: auto;
+		font-weight: bold;
+		font-size: 1.4rem;
+		padding: 5px 5px;
+	}
+}
+@media only screen and (min-width: 2540px) {
+	.root {
+		max-width: 700px;
+		grid-template-columns: 400px repeat(auto-fit, 300px);
+	}
+	.liveLink,
+	.repoLink {
+		font-size: 2rem;
+		width: 80%;
+	}
+	.repoLink:hover,
+	.liveLink:hover {
+		width: 90%;
+	}
+	.title {
+		font-size: 3.5rem;
+	}
+	.titleContainer {
+		margin-bottom: 40px;
+	}
+	.description {
+		font-size: 1.9rem;
+		line-height: 2.3rem;
+	}
+	.technologiesHeader {
+		font-size: 1.7rem;
+	}
 }
