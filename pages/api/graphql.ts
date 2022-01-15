@@ -41,7 +41,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             if (!res) return [];
             const data = await res.json();
             return data.map((d) => {
-					console.log(d);
                return {
                   name: d.name,
                   github_link: d.html_url,
