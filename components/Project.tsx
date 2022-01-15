@@ -24,6 +24,9 @@ const Project: FC<ProjectProps> = ({
 	hoverColor,
 }) => {
 	const [isHovered, setIsHovered] = useState(false);
+	const [showMore, setShowMore] = useState(false);
+	const MAX_DESCRIPTION_DISPLAY = 95;
+	const descriptionOverflow = description.length - 10 > MAX_DESCRIPTION_DISPLAY;
 	return (
 		<div
 			className={`${styles.root} ${isHovered ? styles.hover : ''}`}
@@ -66,7 +69,18 @@ const Project: FC<ProjectProps> = ({
 			</div>
 
 			<div className={styles.contentContainer}>
-				<p className={styles.description}>{description}</p>
+				<p className={styles.description}>
+					{descriptionOverflow
+						? showMore
+							? description
+							: `${description.substring(0, MAX_DESCRIPTION_DISPLAY)}...`
+						: description}
+					{descriptionOverflow && !showMore && (
+						<span onClick={() => setShowMore(true)} className={styles.readMore}>
+							show more
+						</span>
+					)}
+				</p>
 				<div className={styles.technologiesSection}>
 					<h1 className={styles.technologiesHeader}>Technologies used ⤵︎</h1>
 					<div className={styles.technologiesContainer} key="container">

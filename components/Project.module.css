@@ -130,3 +130,14 @@
 .liveLink:hover .linkImageContainer {
 	filter: brightness(0) invert(1);
 }
+.readMore {
+	font-weight: bold;
+	text-decoration: underline;
+	text-decoration-color: rgba(0, 0, 0, 0);
+	text-decoration-thickness: 1.5px;
+	transition: 0.4s;
+}
+.readMore:hover {
+	cursor: pointer;
+	text-decoration-color: rgba(0, 0, 0, 1);
+}
