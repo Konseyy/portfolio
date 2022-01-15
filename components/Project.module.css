@@ -43,6 +43,13 @@
 .title {
 	font-size: 2.6rem;
 	font-weight: bold;
+	text-decoration: underline;
+	text-decoration-color: rgba(0, 0, 0, 0);
+	transition: 0.5s;
+}
+.title:hover {
+	cursor: pointer;
+	text-decoration-color: rgba(0, 0, 0, 1);
 }
 .contentContainer {
 	margin: 0 20px;

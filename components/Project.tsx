@@ -35,7 +35,7 @@ const Project: FC<ProjectProps> = ({
 			onMouseLeave={() => setIsHovered(false)}
 		>
 			<div className={styles.titleContainer}>
-				<h1 className={styles.title}>{title}</h1>
+				<h1 className={styles.title} onClick={()=>openInNewTab(repo_link)}>{title}</h1>
 			</div>
 			<div className={styles.linkContainer}>
 				{live_link && (
