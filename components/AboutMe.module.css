@@ -3,7 +3,9 @@
 	margin-top: 100px;
 	padding-top: 75px;
 	margin-bottom: 50px;
-	/* height: calc(max(100vh, 500px)); */
+	height: calc(max(100vh, 500px));
+	display: flex;
+	align-items: center;
 }
 .aboutMe {
 	display: flex;
@@ -45,6 +47,14 @@
 	max-width: 65rem;
 	line-height: 2.45rem;
 	margin-bottom: 20px;
+}
+.description a{
+	color:black;
+	text-decoration: underline;
+	transition: 350ms;
+}
+.description a:hover{
+	color:#0038a1;
 }
 .socialsContainer {
 	margin-top: auto;

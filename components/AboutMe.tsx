@@ -6,7 +6,7 @@ import styles from './AboutMe.module.css';
 interface Props {
 	id: string;
 	title: string;
-	description: string[];
+	description: JSX.Element[];
 	socials: ImageLinkProps[];
 }
 const AboutMe: FC<Props> = ({ id, title, description, socials }) => {
@@ -22,12 +22,13 @@ const AboutMe: FC<Props> = ({ id, title, description, socials }) => {
 						className={styles.descriptionContainer}
 						key="descriptionContainer"
 					>
-						{description.map((p) => {
-							return (
-								<p className={styles.description} key={p}>
-									{p}
-								</p>
-							);
+						{description.map((el, x) => {
+							el = {
+								...el,
+								props: { ...el.props, className: styles.description },
+								key: `paragraph${x}`,
+							};
+							return el;
 						})}
 					</div>
 					<div className={styles.socialsContainer} key="socialsContainer">
