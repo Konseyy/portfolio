@@ -1,0 +1,58 @@
+.root {
+	position: absolute;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	bottom: calc(min(20%, 50px));
+	margin-top: 15px;
+}
+.button {
+	padding: 20px;
+	font-size: 4rem;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	background-color: transparent;
+	transition: background-color 0.5s, color 0.8s;
+}
+.button::before {
+	border-radius: 20px;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	content: '';
+	opacity: 0;
+	box-shadow: -1px 3px 10px 4px rgba(0, 0, 0, 0.5);
+	transition: opacity 500ms;
+}
+
+.button:hover {
+	cursor: pointer;
+	background-color: black;
+	color: white;
+}
+.button:hover::before {
+	opacity: 1;
+}
+.button p {
+	margin-right: 20px;
+}
+.dropdownContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	height: 1.7rem;
+	width: 1.7rem;
+	margin-right: 5px;
+	filter: brightness(0) invert(0);
+	transform: rotate(-90deg) translateX(0);
+	transition: 0.8s;
+}
+.button:hover .dropdownContainer {
+	filter: brightness(0) invert(1);
+	transform: rotate(0deg) translateX(-5px);
+}

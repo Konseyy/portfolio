@@ -3,10 +3,11 @@ import Project, { ProjectProps } from './Project';
 import styles from './ProjectsList.module.css';
 interface Props {
 	projects: ProjectProps[];
+	id: string;
 }
-const ProjectsList: FC<Props> = ({ projects }) => {
+const ProjectsList: FC<Props> = ({ projects, id }) => {
 	return (
-		<div className={styles.root}>
+		<div id={id} className={styles.root}>
 			<div className={styles.titleContainer}>
 				<h1 className={styles.title}>Featured Projects</h1>
 			</div>

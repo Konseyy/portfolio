@@ -8,10 +8,26 @@ import projects from '../data/Projects';
 import Image from 'next/image';
 import ProjectsList from '../components/ProjectsList';
 import AboutMe from '../components/AboutMe';
+import NavBar from '../components/NavBar';
 export default function Home({ isConnected }) {
 	return (
 		<div className={styles.root}>
-			<LandingPageInitial scrollToId="aboutMe" />
+			<NavBar navItems={[
+				{
+					displayTitle:"Home",
+					elemId:"home"
+				},
+				{
+					displayTitle:"About me",
+					elemId:"aboutMe"
+				},
+				{
+					displayTitle:"My projects",
+					elemId:"projectList"
+				},
+				
+			]}/>
+			<LandingPageInitial id="home" scrollToId="aboutMe" />
 			<AboutMe
 				id="aboutMe"
 				title="My name is Valdis"
@@ -44,17 +60,18 @@ export default function Home({ isConnected }) {
 						</a>
 					</p>,
 					<p>
-						Constantly striving to learn new concepts as well as better my knowledge
-						with already familiar technologies
+						Constantly striving to learn new concepts as well as better my
+						knowledge with already familiar technologies
 					</p>,
 					<p>
-						In my free time I like to workout in the gym as well as listen
-						to and play music
+						In my free time I like to workout in the gym as well as listen to
+						and play music
 					</p>,
 				]}
 				socials={socials}
+				scrollToId="projectList"
 			/>
-			<ProjectsList projects={projects} />
+			<ProjectsList id="projectList" projects={projects} />
 		</div>
 	);
 }

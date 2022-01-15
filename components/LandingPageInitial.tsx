@@ -1,28 +1,20 @@
 import React, { FC } from 'react';
-import Image from 'next/image';
-import dropdown from '../public/static/img/dropdown.png';
 import styles from './LandingPageInitial.module.css';
+import SectionButton from './SectionButton';
 interface Props {
 	scrollToId: string;
+	id:string;
 }
-const LandingPageInitial: FC<Props> = ({ scrollToId }) => {
+const LandingPageInitial: FC<Props> = ({ scrollToId,id }) => {
 	return (
-		<div className={styles.landingPage}>
+		<div id={id} className={styles.landingPage}>
 			<div className={styles.landingPageIntro}>
 				<p>Hi</p>
 				<span id={styles.firstP}>.</span>
 				<span id={styles.secondP}>.</span>
 				<span id={styles.thirdP}>.</span>
 			</div>
-			<div
-				className={styles.scrollToAboutMe}
-				onClick={() => document.getElementById(scrollToId).scrollIntoView()}
-			>
-				<p>About Me</p>
-				<div className={styles.dropdownContainer}>
-					<Image src={dropdown} />
-				</div>
-			</div>
+			<SectionButton title="About Me" scrollToId={scrollToId} />
 		</div>
 	);
 };

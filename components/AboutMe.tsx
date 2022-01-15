@@ -3,13 +3,21 @@ import ImageLink, { ImageLinkProps } from '../components/ImageLink';
 import Image from 'next/image';
 import me from '../public/static/img/me.jpg';
 import styles from './AboutMe.module.css';
+import SectionButton from './SectionButton';
 interface Props {
 	id: string;
 	title: string;
 	description: JSX.Element[];
 	socials: ImageLinkProps[];
+	scrollToId: string;
 }
-const AboutMe: FC<Props> = ({ id, title, description, socials }) => {
+const AboutMe: FC<Props> = ({
+	id,
+	title,
+	description,
+	socials,
+	scrollToId,
+}) => {
 	return (
 		<div id={id} className={styles.root}>
 			<div className={styles.aboutMe}>
@@ -37,6 +45,7 @@ const AboutMe: FC<Props> = ({ id, title, description, socials }) => {
 					</div>
 				</div>
 			</div>
+			<SectionButton title="My Projects" scrollToId={scrollToId} />
 		</div>
 	);
 };
