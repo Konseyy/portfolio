@@ -5,7 +5,7 @@ import { openInNewTab } from '../functions/openInNewTab';
 import ImageLink from './ImageLink';
 import link from '../public/static/img/link.png';
 import styles from './Project.module.css';
-interface ProjectProps {
+export interface ProjectProps {
 	technologies: ImageLinkProps[];
 	title: string;
 	description: string;

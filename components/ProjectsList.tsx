@@ -1,56 +1,15 @@
-import React from 'react';
-import react from '../public/static/img/react.png';
-import typescript from '../public/static/img/typescript.png';
-import nextjs from '../public/static/img/nextjs.svg';
-import mongodb from '../public/static/img/mongodb.png';
-import graphql from '../public/static/img/graphql.png';
-import git from '../public/static/img/git.png';
-import Project from './Project';
+import React, { FC } from 'react';
+import Project, { ProjectProps } from './Project';
 import styles from './ProjectsList.module.css';
-const ProjectsList = () => {
+interface Props {
+	projects: ProjectProps[];
+}
+const ProjectsList: FC<Props> = ({ projects }) => {
 	return (
-		<div className={styles.projectsContainer}>
-			<Project
-				title="This Website"
-				description="A portfolio website to display my resume and projects"
-				hoverColor="#f0f0f0"
-				repo_link="https://github.com/Konseyy/portfolio"
-				technologies={[
-					{
-						image: nextjs,
-						title: 'Next.js',
-						url: 'https://nextjs.org/',
-					},
-					{
-						image: react,
-						title: 'React.js',
-						url: 'https://reactjs.org/',
-						colored: true,
-					},
-					{
-						image: mongodb,
-						title: 'MongoDB',
-						url: 'https://www.mongodb.com/',
-					},
-					{
-						image: graphql,
-						title: 'GraphQL',
-						url: 'https://graphql.org/',
-						colored: true,
-					},
-					{
-						image: typescript,
-						title: 'TypeScript',
-						url: 'https://www.typescriptlang.org/',
-					},
-					{
-						image: git,
-						title: 'Git',
-						url: 'https://git-scm.com/',
-						colored: true,
-					},
-				]}
-			/>
+		<div className={styles.projectsContainer} key="projectContainer">
+			{projects.map((project) => {
+				return <Project {...project} key={project.title} />;
+			})}
 		</div>
 	);
 };

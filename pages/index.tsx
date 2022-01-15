@@ -3,6 +3,8 @@ import clientPromise from '../lib/mongodb';
 import { useEffect } from 'react';
 import styles from './index.module.css';
 import LandingPageInitial from '../components/LandingPageInitial';
+import socials from '../data/Socials';
+import projects from '../data/Projects';
 import Image from 'next/image';
 import ProjectsList from '../components/ProjectsList';
 import AboutMe from '../components/AboutMe';
@@ -10,8 +12,13 @@ export default function Home({ isConnected }) {
 	return (
 		<div className={styles.root}>
 			<LandingPageInitial scrollToId="aboutMe" />
-			<AboutMe id="aboutMe" />
-			<ProjectsList />
+			<AboutMe
+				id="aboutMe"
+				title="My name is Valdis"
+				description="Im a student and a software developer"
+				socials={socials}
+			/>
+			<ProjectsList projects={projects} />
 		</div>
 	);
 }
