@@ -1,5 +1,5 @@
 .root {
-	margin: 0 50px;
+	margin-left: 100px;
 	height: calc(max(100vh, 500px));
 	display: flex;
 	align-items: center;

@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { openInNewTab } from '../functions/openInNewTab';
 import ImageLink from './ImageLink';
 import link from '../public/static/img/link.png';
+import code from '../public/static/img/code.png';
+import demo from '../public/static/img/demo.png';
 import styles from './Project.module.css';
 export interface ProjectProps {
 	technologies: ImageLinkProps[];
@@ -35,17 +37,33 @@ const Project: FC<ProjectProps> = ({
 			<div className={styles.titleContainer}>
 				<h1 className={styles.title}>{title}</h1>
 			</div>
-			<div className={styles.repoLinkContainer}>
-				<div
-					className={styles.repoLink}
-					onClick={() => openInNewTab(repo_link)}
-				>
-					<div className={styles.linkImageContainer}>
-						<Image src={link} />
+			<div className={styles.linkContainer}>
+				{live_link && (
+					<div className={styles.liveLinkContainer}>
+						<div
+							className={styles.liveLink}
+							onClick={() => openInNewTab(live_link)}
+						>
+							<div className={styles.linkImageContainer}>
+								<Image src={demo} />
+							</div>
+							<p>Demo</p>
+						</div>
 					</div>
-					<p>Repository</p>
+				)}
+				<div className={styles.repoLinkContainer}>
+					<div
+						className={styles.repoLink}
+						onClick={() => openInNewTab(repo_link)}
+					>
+						<div className={styles.linkImageContainer}>
+							<Image src={code} />
+						</div>
+						<p>Repository</p>
+					</div>
 				</div>
 			</div>
+
 			<div className={styles.contentContainer}>
 				<p className={styles.description}>{description}</p>
 				<div className={styles.technologiesSection}>
@@ -53,7 +71,12 @@ const Project: FC<ProjectProps> = ({
 					<div className={styles.technologiesContainer} key="container">
 						{technologies.map((technology) => {
 							return (
-								<ImageLink key={technology.title} {...technology} size={60} labelBackground={true}/>
+								<ImageLink
+									key={technology.title}
+									{...technology}
+									size={60}
+									labelBackground={true}
+								/>
 							);
 						})}
 					</div>

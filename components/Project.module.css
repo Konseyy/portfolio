@@ -41,7 +41,7 @@
 	margin-left: 10px;
 }
 .title {
-	font-size: 35px;
+	font-size: 2.6rem;
 	font-weight: bold;
 }
 .contentContainer {
@@ -69,40 +69,57 @@
 	flex-direction: row;
 	align-items: center;
 }
-.repoLinkContainer {
+.linkContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.repoLinkContainer,
+.liveLinkContainer {
 	margin: 0 10px;
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
+	margin-bottom: 5px;
 }
-.repoLink {
+.repoLink,
+.liveLink {
+	width: 85%;
 	display: inline-flex;
 	box-sizing: border-box;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	padding: 7px 6px;
+	padding: 10px 12px;
 	border-radius: 20px;
 	background-color: transparent;
 	font-size: 1.2rem;
-	transition: background-color 450ms, color 600ms, padding 400ms;
+	transition: background-color 450ms, color 600ms, width 450ms;
 }
-.repoLink:hover {
+.repoLink:hover,
+.liveLink:hover {
 	background-color: black;
 	color: white;
-	padding: 13px 15px;
+	width: 100%;
+}
+.repoLink .linkImageContainer {
+	height: 1.4rem;
+	width: 1.4rem;
+}
+.liveLink .linkImageContainer {
+	height: 1.3rem;
+	width: 1.3rem;
 }
 .linkImageContainer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 1.3rem;
-	width: 1.3rem;
 	margin-right: 8px;
-	filter: invert(0);
-	transition: filter 600ms;
+	filter: brightness(0) invert(0);
+	transition: 600ms;
 }
-.repoLink:hover .linkImageContainer {
-	filter: invert(1);
+.repoLink:hover .linkImageContainer,
+.liveLink:hover .linkImageContainer {
+	filter: brightness(0) invert(1);
 }
