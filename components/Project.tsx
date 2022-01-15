@@ -43,7 +43,7 @@ const Project: FC<ProjectProps> = ({
 					<div className={styles.linkImageContainer}>
 						<Image src={link} />
 					</div>
-					<p>Repo link</p>
+					<p>Repository</p>
 				</div>
 			</div>
 			<div className={styles.contentContainer}>
@@ -53,7 +53,7 @@ const Project: FC<ProjectProps> = ({
 					<div className={styles.technologiesContainer} key="container">
 						{technologies.map((technology) => {
 							return (
-								<ImageLink key={technology.title} {...technology} size={60} />
+								<ImageLink key={technology.title} {...technology} size={60} labelBackground={true}/>
 							);
 						})}
 					</div>

@@ -8,6 +8,7 @@ export interface ImageLinkProps {
 	url: string;
 	colored?: boolean;
 	size?: number;
+	labelBackground?: boolean;
 }
 const ImageLink: FC<ImageLinkProps> = ({
 	image,
@@ -15,10 +16,11 @@ const ImageLink: FC<ImageLinkProps> = ({
 	url,
 	colored = false,
 	size = 75,
+	labelBackground = false,
 }) => {
 	const [isHovered, setIsHovered] = useState(false);
 	const [showLabel, setShowLabel] = useState(false);
-	
+
 	useEffect(() => {
 		if (isHovered) {
 			//delay before label appears
@@ -40,7 +42,7 @@ const ImageLink: FC<ImageLinkProps> = ({
 			style={{
 				height: size,
 				width: size,
-				paddingBottom: size * 0.5,
+				// paddingBottom: size * 0.7,
 			}}
 		>
 			<div
@@ -58,12 +60,14 @@ const ImageLink: FC<ImageLinkProps> = ({
 				</div>
 			</div>
 			<div className={styles.labelContainer}>
-				<div
-					className={`${styles.label} ${showLabel ? styles.show : ''}`}
+				<label
+					className={`${styles.label} ${showLabel ? styles.show : ''} ${
+						labelBackground ? styles.black : ''
+					}`}
 					style={{ fontSize: size * 0.35 }}
 				>
 					{title}
-				</div>
+				</label>
 			</div>
 		</div>
 	);
