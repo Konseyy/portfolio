@@ -4,8 +4,10 @@ html {
 }
 body {
 	height: 100%;
-	font-family: 'Roboto Slab', serif;
 	background-image: linear-gradient(#dbdbdb, #ebebeb 45%, white 90%);
+}
+body * {
+	font-family: 'Roboto Slab', serif;
 }
 a {
 	text-decoration: none;
