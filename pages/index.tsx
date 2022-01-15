@@ -31,10 +31,10 @@ export default function Home({ isConnected }) {
 						displayTitle: 'My projects',
 						elemId: 'projectList',
 					},
-					{
-						displayTitle:"Contact",
-						elemId:""
-					}
+					// {
+					// 	displayTitle:"Contact",
+					// 	elemId:""
+					// }
 				]}
 			/>
 			<LandingPageInitial id="home" scrollToId="aboutMe" />
