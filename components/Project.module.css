@@ -3,8 +3,8 @@
 	grid-template-columns: 300px repeat(auto-fit, 200px);
 	padding: 10px;
 	margin: 10px;
+	margin-bottom: 50px;
 	border-radius: 30px;
-	/* border: 1px solid black; */
 	box-sizing: border-box;
 	max-width: 550px;
 	transition: background-color 0.45s;
