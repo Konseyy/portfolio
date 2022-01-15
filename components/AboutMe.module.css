@@ -1,6 +1,7 @@
 .root {
+	margin: 100px 0;
 	margin-left: 100px;
-	height: calc(max(100vh, 500px));
+	height: calc(max(100vh, 750px));
 	display: flex;
 	align-items: center;
 }
