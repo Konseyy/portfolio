@@ -1,11 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap");
-html{
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap');
+html {
 	scroll-behavior: smooth;
 }
 body {
-  height: 100%;
-  font-family: 'Roboto Slab', serif; 
-  background-image: linear-gradient(#dbdbdb, #ebebeb 35%, white 90%);
+	height: 100%;
+	font-family: 'Roboto Slab', serif;
+	background-image: linear-gradient(#dbdbdb, #ebebeb 45%, white 90%);
 }
 a {
-  text-decoration: none; }
+	text-decoration: none;
+}
