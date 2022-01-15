@@ -6,7 +6,6 @@
 }
 .list {
 	padding: 20px 0;
-	padding-bottom: 30px;
 	display: flex;
 	flex-direction: row;
 	align-content: center;
