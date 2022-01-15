@@ -34,7 +34,7 @@
 .root.hover::after {
 	opacity: 1;
 }
-.titleContainer{
+.titleContainer {
 	display: flex;
 	align-items: center;
 	margin: 20px 5px;
@@ -43,7 +43,6 @@
 .title {
 	font-size: 35px;
 	font-weight: bold;
-
 }
 .contentContainer {
 	margin: 0 20px;
@@ -73,7 +72,7 @@
 .repoLinkContainer {
 	margin: 0 10px;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: center;
 	align-items: center;
 }
 .repoLink {
@@ -83,22 +82,23 @@
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	padding: 10px 13px;
+	padding: 7px 10px;
 	border-radius: 20px;
 	background-color: transparent;
-	font-size: 1.1rem;
-	transition: background-color 450ms, color 600ms;
+	font-size: 1.2rem;
+	transition: background-color 450ms, color 600ms, padding 400ms;
 }
 .repoLink:hover {
 	background-color: black;
 	color: white;
+	padding: 15px 18px;
 }
 .linkImageContainer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 20px;
-	width: 20px;
+	height: 1.3rem;
+	width: 1.3rem;
 	margin-right: 8px;
 	filter: invert(0);
 	transition: filter 600ms;
