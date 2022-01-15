@@ -9,31 +9,15 @@ import nextjs from '../public/static/img/nextjs.svg';
 import mongodb from '../public/static/img/mongodb.png';
 import graphql from '../public/static/img/graphql.png';
 import git from '../public/static/img/git.png';
-import dropdown from '../public/static/img/dropdown.png';
 import ImageLink from '../components/ImageLink';
 import Project from '../components/Project';
 import styles from './index.module.css';
+import LandingPageInitial from '../components/LandingPageInitial';
 import Image from 'next/image';
 export default function Home({ isConnected }) {
 	return (
 		<div className={styles.root}>
-			<div className={styles.landingPage}>
-				<div className={styles.landingPageIntro}>
-					<p>Hi</p>
-					<span id={styles.firstP}>.</span>
-					<span id={styles.secondP}>.</span>
-					<span id={styles.thirdP}>.</span>
-				</div>
-				<div
-					className={styles.scrollToAboutMe}
-					onClick={() => document.getElementById('aboutMe').scrollIntoView()}
-				>
-					<p>About Me</p>
-					<div className={styles.dropdownContainer}>
-						<Image src={dropdown} />
-					</div>
-				</div>
-			</div>
+			<LandingPageInitial scrollToId="aboutMe" />
 			<div id="aboutMe" className={styles.aboutMe}>
 				Yes
 			</div>
