@@ -44,7 +44,11 @@ const resolvers = {
 const server: ApolloServer = new ApolloServer({
 	typeDefs,
 	resolvers,
-	plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
+	plugins: [
+		ApolloServerPluginLandingPageGraphQLPlayground({
+			endpoint: '/api/graphql',
+		}),
+	],
 	introspection: true,
 });
 const startServer = server.start();
