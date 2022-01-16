@@ -89,5 +89,38 @@ const projects: ProjectProps[] = [
 			},
 		],
 	},
+	{
+		title: 'GraphQL endpoint',
+		description:
+			'A graphql endpoint that fetches data from the GitHub api. Integration with MongoDB and mutations coming later',
+		hoverColor: '#f0f0f0',
+		repo_link:
+			'https://github.com/Konseyy/portfolio/blob/main/pages/api/graphql.ts',
+		live_link: 'https://www.valdis.me/api/graphql',
+		demoNewTab: false,
+		technologies: [
+			// {
+			// 	image: mongodb,
+			// 	title: 'MongoDB',
+			// 	url: 'https://www.mongodb.com/',
+			// },
+			{
+				image: graphql,
+				title: 'GraphQL',
+				url: 'https://graphql.org/',
+				colored: true,
+			},
+			{
+				image: nextjs,
+				title: 'Next.js',
+				url: 'https://nextjs.org/',
+			},
+			{
+				image: typescript,
+				title: 'TypeScript',
+				url: 'https://www.typescriptlang.org/',
+			},
+		],
+	},
 ];
 export default projects;

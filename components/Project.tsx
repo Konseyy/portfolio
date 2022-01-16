@@ -42,7 +42,12 @@ const Project: FC<ProjectProps> = ({
 			<div className={styles.titleContainer}>
 				<h1
 					className={styles.title}
-					onClick={() => openInBrowser(repo_link, repoNewTab)}
+					onClick={() =>
+						openInBrowser(
+							live_link ?? repo_link,
+							live_link ? demoNewTab : repoNewTab
+						)
+					}
 				>
 					{title}
 				</h1>
