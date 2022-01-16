@@ -9,6 +9,7 @@ export const config = {
 	},
 };
 export default cors(async (req: NextApiRequest, res: NextApiResponse) => {
+	res.setHeader('Access-Control-Allow-Origin', '*');
 	res.setHeader('Access-Control-Allow-Credentials', 'true');
 	res.setHeader(
 		'Access-Control-Allow-Headers',
@@ -17,10 +18,6 @@ export default cors(async (req: NextApiRequest, res: NextApiResponse) => {
 	res.setHeader(
 		'Access-Control-Allow-Methods',
 		'POST, GET, PUT, PATCH, DELETE, OPTIONS, HEAD'
-	);
-	res.setHeader(
-		'Access-Control-Allow-Origin',
-		'*'
 	);
 	const { db } = await connectToDatabase();
 	const typeDefs = gql`
