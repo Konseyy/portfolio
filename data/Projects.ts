@@ -96,7 +96,7 @@ const projects: ProjectProps[] = [
 		hoverColor: '#f0f0f0',
 		repo_link:
 			'https://github.com/Konseyy/portfolio/blob/main/pages/api/graphql.ts',
-		live_link: 'https://www.valdis.me/api/graphql',
+		live_link: '/api/graphql',
 		demoNewTab: false,
 		technologies: [
 			// {
