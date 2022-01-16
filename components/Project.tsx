@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { ImageLinkProps } from './ImageLink';
 import Image from 'next/image';
-import { openInNewTab } from '../functions/openInNewTab';
+import { openInBrowser } from '../functions/openInBrowser';
 import ImageLink from './ImageLink';
 import code from '../public/static/img/code.png';
 import demo from '../public/static/img/demo.png';
@@ -13,6 +13,8 @@ export interface ProjectProps {
 	repo_link: string;
 	live_link?: string;
 	hoverColor?: string;
+	repoNewTab?: boolean;
+	demoNewTab?: boolean;
 }
 const Project: FC<ProjectProps> = ({
 	technologies,
@@ -21,6 +23,8 @@ const Project: FC<ProjectProps> = ({
 	repo_link,
 	live_link,
 	hoverColor,
+	repoNewTab = true,
+	demoNewTab = true,
 }) => {
 	const [isHovered, setIsHovered] = useState(false);
 	const [showMore, setShowMore] = useState(false);
@@ -36,7 +40,10 @@ const Project: FC<ProjectProps> = ({
 			onMouseLeave={() => setIsHovered(false)}
 		>
 			<div className={styles.titleContainer}>
-				<h1 className={styles.title} onClick={() => openInNewTab(repo_link)}>
+				<h1
+					className={styles.title}
+					onClick={() => openInBrowser(repo_link, repoNewTab)}
+				>
 					{title}
 				</h1>
 			</div>
@@ -45,7 +52,7 @@ const Project: FC<ProjectProps> = ({
 					<div className={styles.liveLinkContainer}>
 						<div
 							className={styles.liveLink}
-							onClick={() => openInNewTab(live_link)}
+							onClick={() => openInBrowser(live_link, demoNewTab)}
 						>
 							<div className={styles.linkImageContainer}>
 								<Image src={demo} />
@@ -57,7 +64,7 @@ const Project: FC<ProjectProps> = ({
 				<div className={styles.repoLinkContainer}>
 					<div
 						className={styles.repoLink}
-						onClick={() => openInNewTab(repo_link)}
+						onClick={() => openInBrowser(repo_link, repoNewTab)}
 					>
 						<div className={styles.linkImageContainer}>
 							<Image src={code} />

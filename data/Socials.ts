@@ -1,6 +1,7 @@
+import { ImageLinkProps } from '../components/ImageLink';
 import github from '../public/static/img/github.png';
 import linkedin from '../public/static/img/linkedin.png';
-const socials = [
+const socials: ImageLinkProps[] = [
 	{
 		image: github,
 		title: 'GitHub',

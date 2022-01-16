@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
-import { openInNewTab } from '../functions/openInNewTab';
+import { openInBrowser } from '../functions/openInBrowser';
 import styles from './ImageLink.module.css';
 export interface ImageLinkProps {
 	image: StaticImageData;
@@ -49,7 +49,7 @@ const ImageLink: FC<ImageLinkProps> = ({
 				className={`${styles.imageContainer} ${isHovered ? styles.hover : ''}`}
 				onMouseEnter={() => setIsHovered(true)}
 				onMouseLeave={() => setIsHovered(false)}
-				onClick={() => openInNewTab(url)}
+				onClick={() => openInBrowser(url)}
 			>
 				<div
 					className={`${
