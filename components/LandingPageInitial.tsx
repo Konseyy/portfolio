@@ -6,28 +6,17 @@ interface Props {
 	id: string;
 }
 const LandingPageInitial: FC<Props> = ({ scrollToId, id }) => {
-	const [isMobile, setIsMobile] = useState<boolean | null>(null);
-	useEffect(() => {
-		if (window.innerWidth < 500) setIsMobile(true);
-		else setIsMobile(false);
-		const listen = window.addEventListener('resize', (e) => {
-			if (window.innerWidth < 500) setIsMobile(true);
-			else setIsMobile(false);
-		});
-		return listen;
-	}, []);
 	return (
 		<div id={id} className={styles.landingPage}>
-			{isMobile !== null && (
-				<div className={styles.landingPageIntro}>
-					<p>{isMobile ? 'Hi' : 'Hello'}</p>
-					<p className={styles.notBold}>,</p>
-					{/* <span id={styles.firstP}>.</span>
+			<div className={styles.landingPageIntro}>
+				<p className={styles.hideMobile}>Hello</p>
+				<p className={styles.showMobile}>Hi</p>
+				<p className={styles.notBold}>,</p>
+				{/* <span id={styles.firstP}>.</span>
 				<span id={styles.secondP}>.</span>
 				<span id={styles.thirdP}>.</span> */}
-					<span id={styles.spacer}></span>
-				</div>
-			)}
+				<span id={styles.spacer}></span>
+			</div>
 			<SectionButton title="About Me" scrollToId={scrollToId} />
 		</div>
 	);
