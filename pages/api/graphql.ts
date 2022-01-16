@@ -20,7 +20,7 @@ export default async function handler(
 		'Access-Control-Allow-Methods',
 		'POST, GET, PUT, PATCH, DELETE, OPTIONS, HEAD'
 	);
-	res.setHeader('Access-Control-Allow-Origin', 'https://www.valdis.me');
+	res.setHeader('Access-Control-Allow-Origin', 'https://www.valdis.me https://valdis.me');
 	const { db } = await connectToDatabase();
 	const typeDefs = gql`
 		"Query"
