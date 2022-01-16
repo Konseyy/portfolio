@@ -20,10 +20,7 @@ export default async function handler(
 		'Access-Control-Allow-Methods',
 		'POST, GET, PUT, PATCH, DELETE, OPTIONS, HEAD'
 	);
-	res.setHeader(
-		'Access-Control-Allow-Origin',
-		'https://www.valdis.me'
-	);
+	res.setHeader('Access-Control-Allow-Origin', 'https://www.valdis.me');
 	const { db } = await connectToDatabase();
 	const typeDefs = gql`
 		"Query"
@@ -66,6 +63,7 @@ export default async function handler(
 		typeDefs,
 		resolvers,
 		plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
+		introspection: true,
 	});
 	const startServer = server.start();
 	if (req.method === 'OPTIONS') {
