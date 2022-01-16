@@ -20,7 +20,7 @@ export default cors(async (req: NextApiRequest, res: NextApiResponse) => {
 	);
 	res.setHeader(
 		'Access-Control-Allow-Origin',
-		'https://www.valdis.me https://valdis.me'
+		'*'
 	);
 	const { db } = await connectToDatabase();
 	const typeDefs = gql`
