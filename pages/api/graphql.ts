@@ -69,7 +69,6 @@ const handler = cors(async (req: NextApiRequest, res: NextApiResponse) => {
 	// );
 	await startServer;
 
-	console.log('request method', req.method);
 	if (req.method === 'OPTIONS') {
 		res.end();
 		return false;
