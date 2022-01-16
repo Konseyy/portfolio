@@ -47,7 +47,7 @@ const server: ApolloServer = new ApolloServer({
 	plugins: [
 		ApolloServerPluginLandingPageGraphQLPlayground({
 			endpoint:
-				process.env.NODE_ENV === 'production'
+				process.env.VERCEL_ENV === 'production'
 					? `https://www.valdis.me/api/graphql`
 					: '/api/graphql',
 		}),
