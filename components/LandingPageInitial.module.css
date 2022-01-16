@@ -84,7 +84,7 @@
 	display: none;
 }
 .hideMobile {
-	display: auto;
+	display: inline-block;
 }
 @media only screen and (max-width: 2600px) {
 	.landingPageIntro {
@@ -134,7 +134,7 @@
 }
 @media only screen and (max-width: 500px) {
 	.showMobile {
-		display: auto;
+		display: inline-block;
 	}
 	.hideMobile {
 		display: none;
