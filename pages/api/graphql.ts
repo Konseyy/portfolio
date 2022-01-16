@@ -2,15 +2,13 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { gql, ApolloServer } from 'apollo-server-micro';
 import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core';
 import { connectToDatabase } from '../../lib/mongodb';
+const cors = require('micro-cors')();
 export const config = {
 	api: {
 		bodyParser: false,
 	},
 };
-export default async function handler(
-	req: NextApiRequest,
-	res: NextApiResponse
-) {
+export default cors(async (req: NextApiRequest, res: NextApiResponse) => {
 	res.setHeader('Access-Control-Allow-Credentials', 'true');
 	res.setHeader(
 		'Access-Control-Allow-Headers',
@@ -20,7 +18,10 @@ export default async function handler(
 		'Access-Control-Allow-Methods',
 		'POST, GET, PUT, PATCH, DELETE, OPTIONS, HEAD'
 	);
-	res.setHeader('Access-Control-Allow-Origin', 'https://www.valdis.me https://valdis.me');
+	res.setHeader(
+		'Access-Control-Allow-Origin',
+		'https://www.valdis.me https://valdis.me'
+	);
 	const { db } = await connectToDatabase();
 	const typeDefs = gql`
 		"Query"
@@ -68,10 +69,10 @@ export default async function handler(
 	const startServer = server.start();
 	if (req.method === 'OPTIONS') {
 		res.end();
-		return false;
+		return;
 	}
 	await startServer;
 	await server.createHandler({
 		path: '/api/graphql',
 	})(req, res);
-}
+});
