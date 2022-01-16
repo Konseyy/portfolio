@@ -92,7 +92,7 @@ const projects: ProjectProps[] = [
 	{
 		title: 'GraphQL endpoint',
 		description:
-			'A graphql endpoint that fetches data from the GitHub api. Integration with MongoDB and mutations coming later',
+			'A GraphQL endpoint that fetches data about all my public repositories from the GitHub api. Integration with MongoDB and different mutations coming later',
 		hoverColor: '#f0f0f0',
 		repo_link:
 			'https://github.com/Konseyy/portfolio/blob/main/pages/api/graphql.ts',
