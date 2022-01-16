@@ -64,12 +64,13 @@ export default cors(async (req: NextApiRequest, res: NextApiResponse) => {
 		introspection: true,
 	});
 	const startServer = server.start();
+	console.log('request method', req.method);
 	if (req.method === 'OPTIONS') {
 		res.end();
 		return;
 	}
 	await startServer;
-	await server.createHandler({
+	return await server.createHandler({
 		path: '/api/graphql',
 	})(req, res);
 });
