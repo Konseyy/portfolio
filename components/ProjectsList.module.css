@@ -22,13 +22,17 @@
 }
 @media only screen and (max-width: 1700px) {
 	.root {
-		margin-bottom: 25px;
+		margin-bottom: 20px;
 	}
 	.projectsContainer {
 		grid-template-columns: auto auto;
+		row-gap: 20px;
 	}
 }
 @media only screen and (max-width: 1150px) {
+	.root {
+		margin-bottom: 15px;
+	}
 	.projectsContainer {
 		grid-template-columns: auto;
 		row-gap: 10px;
