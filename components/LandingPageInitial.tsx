@@ -8,6 +8,7 @@ interface Props {
 const LandingPageInitial: FC<Props> = ({ scrollToId, id }) => {
 	const [isMobile, setIsMobile] = useState(false);
 	useEffect(() => {
+		if (window.innerWidth < 500) setIsMobile(true);
 		const listen = window.addEventListener('resize', (e) => {
 			if (window.innerWidth < 500) setIsMobile(true);
 			else setIsMobile(false);
