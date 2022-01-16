@@ -46,7 +46,10 @@ const server: ApolloServer = new ApolloServer({
 	resolvers,
 	plugins: [
 		ApolloServerPluginLandingPageGraphQLPlayground({
-			endpoint: '/api/graphql',
+			endpoint:
+				process.env.NODE_ENV === 'production'
+					? 'www.valdis.me/api/graphql'
+					: '/api/graphql',
 		}),
 	],
 	introspection: true,
