@@ -145,7 +145,7 @@
 	.root {
 		grid-template-columns: auto;
 		width: 92vw;
-		margin-bottom: 20px;
+		margin-bottom: 15px;
 	}
 	.contentContainer {
 		grid-column: span 1;
@@ -161,6 +161,16 @@
 		font-weight: bold;
 		font-size: 1.4rem;
 		padding: 5px 5px;
+	}
+}
+@media only screen and (max-width: 1700px) {
+	.root {
+		margin-bottom: 30px;
+	}
+}
+@media only screen and (max-width: 1150px) {
+	.root {
+		margin-bottom: 20px;
 	}
 }
 @media only screen and (min-width: 2540px) {
