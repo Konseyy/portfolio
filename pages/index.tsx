@@ -16,6 +16,25 @@ export default function Home({ isConnected }) {
 					href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap"
 					rel="stylesheet"
 				/>
+				<link
+					rel="apple-touch-icon"
+					sizes="180x180"
+					href="/apple-touch-icon.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="32x32"
+					href="/favicon-32x32.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="16x16"
+					href="/favicon-16x16.png"
+				/>
+				<link rel="manifest" href="/site.webmanifest" />
+				<title>Valdis - Developer</title>
 			</Head>
 			<NavBar
 				navItems={[
@@ -48,7 +67,7 @@ export default function Home({ isConnected }) {
 						<a target="_blank" href="https://www.df.lu.lv/">
 							University of Latvia
 						</a>{' '}
-						and also working as a Software Developer for Dhanvantari Solutions
+						and also working as a Software Developer for Dhanvantari Solutions.
 					</p>,
 					<p>
 						Most of my experience is as a frontend developer using technologies
@@ -68,14 +87,15 @@ export default function Home({ isConnected }) {
 						<a target="_blank" href="https://www.drupal.org/">
 							Drupal
 						</a>
+						.
 					</p>,
 					<p>
 						Constantly striving to learn new concepts as well as better my
-						knowledge with already familiar technologies
+						knowledge with already familiar technologies.
 					</p>,
 					<p>
 						In my free time I like to workout in the gym as well as listen to
-						and play music
+						and play music.
 					</p>,
 				]}
 				socials={socials}

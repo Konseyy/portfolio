@@ -5,7 +5,8 @@ import mongodb from '../public/static/img/mongodb.png';
 import graphql from '../public/static/img/graphql.png';
 import actions from '../public/static/img/actions.png';
 import git from '../public/static/img/git.png';
-const projects = [
+import { ProjectProps } from '../components/Project';
+const projects: ProjectProps[] = [
 	{
 		title: 'This Website',
 		description:
@@ -40,12 +41,6 @@ const projects = [
 				title: 'TypeScript',
 				url: 'https://www.typescriptlang.org/',
 			},
-			{
-				image: git,
-				title: 'Git',
-				url: 'https://git-scm.com/',
-				colored: true,
-			},
 		],
 	},
 	{
@@ -59,7 +54,7 @@ const projects = [
 			{
 				image: react,
 				title: 'React Native',
-				url: 'https://nextjs.org/',
+				url: 'https://reactnative.dev/',
 			},
 			{
 				image: actions,
@@ -71,11 +66,26 @@ const projects = [
 				title: 'TypeScript',
 				url: 'https://www.typescriptlang.org/',
 			},
+		],
+	},
+	{
+		title: 'Minesweeper',
+		description: 'A Minesweeper clone made with React.js and TypeScript',
+		hoverColor: '#f0f0f0',
+		repo_link: 'https://github.com/Konseyy/react_minesweeper',
+		live_link: 'https://www.minesweeper.valdis.me/',
+		demoNewTab: false,
+		technologies: [
 			{
-				image: git,
-				title: 'Git',
-				url: 'https://git-scm.com/',
+				image: react,
+				title: 'React.js',
+				url: 'https://reactjs.org/',
 				colored: true,
+			},
+			{
+				image: typescript,
+				title: 'TypeScript',
+				url: 'https://www.typescriptlang.org/',
 			},
 		],
 	},
