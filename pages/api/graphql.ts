@@ -2,7 +2,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { gql, ApolloServer } from 'apollo-server-micro';
 import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core';
 import { connectToDatabase } from '../../lib/mongodb';
-const cors = require('micro-cors')();
+import corsImport from 'micro-cors';
+const cors = corsImport();
 const typeDefs = gql`
 	"Query"
 	type Query {
