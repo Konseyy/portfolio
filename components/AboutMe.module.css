@@ -63,7 +63,7 @@
 	flex-direction: row;
 	gap: 15px;
 }
-@media only screen and (max-width: 1650px) {
+@media only screen and (max-width: 1700px) {
 	.root {
 		margin-left: 20px;
 		margin-right: 20px;
