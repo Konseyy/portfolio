@@ -1,61 +1,12 @@
-import Head from 'next/head';
 import clientPromise from '../lib/mongodb';
-import { useEffect } from 'react';
-import styles from './index.module.css';
 import LandingPageInitial from '../components/LandingPageInitial';
 import socials from '../data/Socials';
 import projects from '../data/Projects';
 import ProjectsList from '../components/ProjectsList';
 import AboutMe from '../components/AboutMe';
-import NavBar from '../components/NavBar';
 export default function Home({ isConnected }) {
 	return (
-		<div className={styles.root}>
-			<Head>
-				<link
-					href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap"
-					rel="stylesheet"
-				/>
-				<link
-					rel="apple-touch-icon"
-					sizes="180x180"
-					href="/apple-touch-icon.png"
-				/>
-				<link
-					rel="icon"
-					type="image/png"
-					sizes="32x32"
-					href="/favicon-32x32.png"
-				/>
-				<link
-					rel="icon"
-					type="image/png"
-					sizes="16x16"
-					href="/favicon-16x16.png"
-				/>
-				<link rel="manifest" href="/site.webmanifest" />
-				<title>Valdis - Developer</title>
-			</Head>
-			<NavBar
-				navItems={[
-					{
-						displayTitle: 'Home',
-						elemId: 'home',
-					},
-					{
-						displayTitle: 'About me',
-						elemId: 'aboutMe',
-					},
-					{
-						displayTitle: 'My projects',
-						elemId: 'projectList',
-					},
-					// {
-					// 	displayTitle:"Contact",
-					// 	elemId:""
-					// }
-				]}
-			/>
+		<div>
 			<LandingPageInitial id="home" scrollToId="aboutMe" />
 			<AboutMe
 				id="aboutMe"

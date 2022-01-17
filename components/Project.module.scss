@@ -9,6 +9,7 @@
 	max-width: 34.375rem;
 	transition: background-color 0.45s;
 	position: relative;
+	z-index: 1;
 }
 .root::before,
 .root::after {

@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
-import styles from './LandingPageInitial.module.css';
+import styles from './LandingPageInitial.module.scss';
 import SectionButton from './SectionButton';
 interface Props {
 	scrollToId: string;

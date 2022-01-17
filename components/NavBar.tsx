@@ -1,21 +1,71 @@
 import React, { FC } from 'react';
 import scrollIdIntoView from '../functions/scrollIdIntoView';
-import styles from './NavBar.module.css';
+import { openInBrowser } from '../functions/openInBrowser';
+import dropdown from '../public/static/img/dropdown.png';
+import styles from './NavBar.module.scss';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+type NonEmptyArray<T> = [T, ...T[]];
 type NavItem = {
 	displayTitle: string;
-	elemId: string;
+	pagePath: string;
+	sections: NonEmptyArray<NavSection>;
+};
+type NavSection = {
+	sectionTitle: string;
+	sectionId: string;
 };
 interface Props {
-	navItems: NavItem[];
+	navItems: NonEmptyArray<NavItem>;
 }
 const NavBar: FC<Props> = ({ navItems }) => {
+	const router = useRouter();
 	return (
 		<nav className={styles.root}>
 			<ul className={styles.list} key="navBarContainer">
-				{navItems.map((n) => {
+				{navItems.map((navItem) => {
 					return (
-						<li onClick={() => scrollIdIntoView(n.elemId)} key={n.displayTitle}>
-							{n.displayTitle}
+						<li
+							key={`navItem${navItem.displayTitle}`}
+							className={`${styles.navItem} ${
+								router.pathname === navItem.pagePath ? styles.active : ''
+							}`}
+						>
+							<div className={styles.sectionHeader}>
+								<h1>{navItem.displayTitle}</h1>
+								<div className={styles.dropdownContainer}>
+									<Image src={dropdown} />
+								</div>
+							</div>
+							<div className={styles.sectionListContainer}>
+								<ul
+									className={styles.sectionList}
+									key={`navsection${navItem.displayTitle}`}
+								>
+									{navItem.sections.map((section) => {
+										return (
+											<li
+												key={`navItem${section.sectionTitle}`}
+												className={styles.sectionListItem}
+												onClick={() => {
+													if (router.pathname !== navItem.pagePath) {
+														router.push({
+															pathname: navItem.pagePath,
+															query: {
+																scroll: section.sectionId,
+															},
+														});
+													} else {
+														scrollIdIntoView(section.sectionId);
+													}
+												}}
+											>
+												{section.sectionTitle}
+											</li>
+										);
+									})}
+								</ul>
+							</div>
 						</li>
 					);
 				})}

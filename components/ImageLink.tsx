@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { openInBrowser } from '../functions/openInBrowser';
-import styles from './ImageLink.module.css';
+import styles from './ImageLink.module.scss';
 export interface ImageLinkProps {
 	image: StaticImageData;
 	title: string;

@@ -1,4 +1,6 @@
 const scrollIdIntoView = (id: string) => {
-	document.getElementById(id).scrollIntoView();
+	const elem = document.getElementById(id);
+	if (!elem) return;
+	elem.scrollIntoView();
 };
 export default scrollIdIntoView;

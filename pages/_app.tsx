@@ -1,8 +1,13 @@
 // import App from 'next/app'
 import '../public/style/reset.css';
-import '../public/style/main.css';
+import '../public/style/main.scss';
+import Layout from '../components/Layout';
 function MyApp({ Component, pageProps }) {
-   return <Component {...pageProps}/>;
+	return (
+		<Layout>
+			<Component {...pageProps} />
+		</Layout>
+	);
 }
 
 // Only uncomment this method if you have blocking data requirements for

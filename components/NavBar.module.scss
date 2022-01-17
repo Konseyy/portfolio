@@ -1,0 +1,128 @@
+.root {
+	position: fixed;
+	width: 100%;
+	background-color: black;
+	z-index: 3;
+	backdrop-filter: blur(10px);
+}
+.list {
+	padding: 15px 0;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	z-index: 3;
+}
+.dropdownContainer {
+	margin-left: 0.65rem;
+	width: 0.8rem;
+	aspect-ratio: 1;
+	position: relative;
+	filter: brightness(0) invert(1);
+	transform: rotate(0);
+	transition: transform 0.35s, 0.5s;
+}
+.navItem {
+	padding: 5px;
+	margin-left: 30px;
+	text-transform: capitalize;
+	font-weight: bold;
+	color: white;
+	transition: 0.5s;
+}
+.navItem.active {
+	color: black;
+	.sectionHeader {
+		background-color: white;
+	}
+	.dropdownContainer {
+		filter: brightness(0) invert(0);
+	}
+	.sectionList {
+		background-color: white;
+	}
+}
+.sectionList {
+	// max-height: 0;
+	opacity: 0;
+	font-size: 0;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	border-radius: 0 0 10px 10px;
+	padding-bottom: 0px;
+	transition: font-size 0.25s, padding 0.25s;
+}
+.sectionListItem {
+	margin-bottom: 0;
+	text-decoration: underline;
+	text-decoration-color: rgba(0, 0, 0, 0);
+	transition: 0.35s;
+}
+.navItem:hover {
+	cursor: pointer;
+	.dropdownContainer {
+		transform: rotate(-180deg);
+	}
+	.sectionHeader {
+		border-radius: 10px 10px 0 0;
+	}
+	.sectionList {
+		opacity: 1;
+		padding-bottom: 12px;
+		font-size: 1.6rem;
+	}
+	.sectionListItem {
+		padding-bottom: 10px;
+	}
+	.sectionListItem:hover {
+		text-decoration-color: white;
+	}
+}
+.navItem.active:hover {
+	.sectionListItem:hover {
+		text-decoration-color: black;
+	}
+}
+.sectionHeader {
+	background-color: black;
+	padding: 10px 20px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	h1 {
+		font-size: 2.6rem;
+	}
+	transition: border-radius 0, 0.5s;
+}
+
+.sectionListContainer {
+	position: relative;
+}
+.sectionList {
+	background-color: black;
+	position: absolute;
+	top: 0;
+	padding-top: 5px;
+}
+// @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+// 	.root {
+// 		background-color: rgba(255, 255, 255, 0.5);
+// 		-webkit-backdrop-filter: blur(6px);
+// 		backdrop-filter: blur(4px);
+// 		background-color: rgba(0, 0, 0, 0.55);
+// 	}
+// }
+@media only screen and (max-width: 1000px) {
+	.list li {
+		font-size: 10vw;
+		margin-left: 15px;
+	}
+	.root {
+		width: 100vw;
+		display: none;
+	}
+}

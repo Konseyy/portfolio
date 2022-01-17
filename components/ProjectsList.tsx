@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import Project, { ProjectProps } from './Project';
-import styles from './ProjectsList.module.css';
+import styles from './ProjectsList.module.scss';
 interface Props {
 	projects: ProjectProps[];
 	id: string;
