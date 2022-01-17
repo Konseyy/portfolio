@@ -1,0 +1,19 @@
+# This is a basic workflow to help you get started with Actions
+
+name: AutoPullRequest
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ dev ]
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  create_pull_request:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Create the pull request
+      run: |
+        curl -H 'Accept: application/vnd.github.v3+json' 'https://github.com/repos/Konseyy/portfolio/pulls?head=dev&base=main&title=Automatic%20pull%20request&body=Automatically%20generated%20pull%20request&draft=true&maintainer_can_modify=true'
