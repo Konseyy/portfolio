@@ -15,5 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Create the pull request
+      env:
+          api_key: ${{ secrets.API_TOKEN }}
       run: |
-        curl -X POST -H 'Accept: application/vnd.github.v3+json' -d '{"head":"dev","base":"main","title":"Automatic pull request","body": "Automatically generated pull request", "draft":"true","maintainer_can_modify:"true"}' 'https://api.github.com/repos/Konseyy/portfolio/pulls'
+        curl -X POST -H 'Accept: application/vnd.github.v3+json Authorization: $api_key' -d '{"head":"dev","base":"main","title":"Automatic pull request","body": "Automatically generated pull request", "draft":"true","maintainer_can_modify:"true"}' 'https://api.github.com/repos/Konseyy/portfolio/pulls'
