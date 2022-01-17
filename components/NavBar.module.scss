@@ -23,6 +23,7 @@
 .sectionHeader {
 	background-color: black;
 	padding: 10px 20px;
+	width: 100%;
 	border-radius: 10px;
 	display: flex;
 	flex-direction: row;
@@ -31,7 +32,7 @@
 	h1 {
 		font-size: 2.6rem;
 	}
-	transition: border-radius 0, 0.5s;
+	transition: color 0.5s;
 }
 .dropdownContainer {
 	margin-left: 0.65rem;
@@ -40,41 +41,43 @@
 	position: relative;
 	filter: brightness(0) invert(1);
 	transform: rotate(0);
-	transition: transform 0.35s, 0.5s;
+	transition: transform 0.35s;
 }
 .sectionListContainer {
 	position: relative;
 }
 .sectionList {
-	// max-height: 0;
+	border-top: 2px solid black;
 	opacity: 0;
-	font-size: 0;
-	overflow: hidden;
+	font-size: 1.6rem;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	align-items: center;
 	border-radius: 0 0 10px 10px;
-	padding-bottom: 0px;
-	transition: font-size 0.25s, padding 0.25s;
 	background-color: black;
 	position: absolute;
-	top: 0;
-	padding-top: 5px;
+	// top: 0;
+	transform-origin: top;
+	transform: scaleY(0);
+	transition: font-size 0.25s, padding 0.25s, transform 0.25s;
+}
+.sectionList {
+	padding-top: 0.7rem;
+}
+.sectionList {
+	padding-bottom: 0.5rem;
 }
 .sectionListItem {
+	width: 100%;
+	text-align: center;
 	margin-bottom: 0;
 	text-decoration: underline;
 	text-decoration-color: rgba(0, 0, 0, 0);
 	transition: 0.35s;
 }
 .navItem.active {
-	color: black;
 	.sectionHeader {
-		background-color: white;
-	}
-	.dropdownContainer {
-		filter: brightness(0) invert(0);
+		border: 2px solid white;
 	}
 	.sectionList {
 		background-color: white;
@@ -84,25 +87,24 @@
 	cursor: pointer;
 	.dropdownContainer {
 		transform: rotate(-180deg);
+		filter: brightness(0) invert(0);
 	}
 	.sectionHeader {
 		border-radius: 10px 10px 0 0;
+		color: black;
+		background-color: white;
 	}
 	.sectionList {
+		color: black;
 		opacity: 1;
-		padding-bottom: 12px;
-		font-size: 1.6rem;
+		background-color: white;
+		transform: scaleY(1);
 	}
 	.sectionListItem {
 		padding-bottom: 10px;
 	}
 	.sectionListItem:hover {
-		text-decoration-color: white;
-	}
-}
-.navItem.active:hover {
-	.sectionListItem:hover {
-		text-decoration-color: black;
+		text-decoration-color: rgba(0, 0, 0, 1);
 	}
 }
 @media only screen and (max-width: 1000px) {

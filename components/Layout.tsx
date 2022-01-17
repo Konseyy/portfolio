@@ -66,7 +66,7 @@ const Layout: FC = ({ children }) => {
 								sectionId: 'aboutMe',
 							},
 							{
-								sectionTitle: 'my projects',
+								sectionTitle: 'projects',
 								sectionId: 'projectList',
 							},
 						],
