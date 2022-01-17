@@ -76,7 +76,7 @@ const Layout: FC = ({ children }) => {
 						pagePath: '/contact',
 						sections: [
 							{
-								sectionTitle: 'Email me',
+								sectionTitle: 'email me',
 								sectionId: 'contact',
 								onClick: () => {
 									router.push('mailto:vgbukalders@gmail.com');
