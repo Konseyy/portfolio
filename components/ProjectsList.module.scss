@@ -1,8 +1,15 @@
 .root {
+	background-image: linear-gradient(
+		#e0e0e0,
+		#e4e4e4 30%,
+		#e4e4e4 60%,
+		#c8c8c8 100%
+	);
 	display: flex;
 	flex-direction: column;
-	margin: 0 150px;
-	margin-bottom: 100px;
+	padding: 0 150px;
+	padding-top: 150px;
+	padding-bottom: 100px;
 	min-height: 100vh;
 	/* align-content: center; */
 	justify-content: center;
@@ -22,7 +29,7 @@
 }
 @media only screen and (max-width: 1700px) {
 	.root {
-		margin-bottom: 20px;
+		padding-bottom: 20px;
 	}
 	.projectsContainer {
 		grid-template-columns: auto auto;
@@ -31,7 +38,7 @@
 }
 @media only screen and (max-width: 1150px) {
 	.root {
-		margin-bottom: 15px;
+		padding-bottom: 15px;
 	}
 	.projectsContainer {
 		grid-template-columns: auto;
@@ -42,6 +49,14 @@
 		white-space: nowrap;
 		font-size: 2.3rem;
 		margin-bottom: 30px;
+	}
+}
+@media only screen and (max-width: 1000px) {
+	.root {
+		padding-top: 0;
+	}
+	.title {
+		padding-top: 35px;
 	}
 }
 @media only screen and (min-width: 2540px) {

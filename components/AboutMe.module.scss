@@ -1,7 +1,11 @@
 .root {
-	margin: 100px 100px;
-	margin-bottom: 0;
-	padding-bottom: 150px;
+	background-image: linear-gradient(
+		#e0e0e0,
+		#e4e4e4 40%,
+		#e4e4e4 60%,
+		#e0e0e0 100%
+	);
+	padding: 150px 100px;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -65,8 +69,8 @@
 }
 @media only screen and (max-width: 1700px) {
 	.root {
-		margin-left: 20px;
-		margin-right: 20px;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 	.aboutMe {
 		flex-direction: column;

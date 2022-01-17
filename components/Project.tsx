@@ -5,7 +5,7 @@ import { openInBrowser } from '../functions/openInBrowser';
 import ImageLink from './ImageLink';
 import code from '../public/static/img/code.png';
 import demo from '../public/static/img/demo.png';
-import styles from './Project.module.css';
+import styles from './Project.module.scss';
 export interface ProjectProps {
 	technologies: ImageLinkProps[];
 	title: string;
@@ -74,7 +74,7 @@ const Project: FC<ProjectProps> = ({
 						<div className={styles.linkImageContainer}>
 							<Image src={code} />
 						</div>
-						<p>Repository</p>
+						<p>Source</p>
 					</div>
 				</div>
 			</div>

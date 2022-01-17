@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import dropdown from '../public/static/img/dropdown.png';
 import Image from 'next/image';
-import styles from './SectionButton.module.css';
+import styles from './SectionButton.module.scss';
 import scrollIdIntoView from '../functions/scrollIdIntoView';
 interface Props {
 	scrollToId: string;
