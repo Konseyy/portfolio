@@ -12,9 +12,6 @@ const LandingPageInitial: FC<Props> = ({ scrollToId, id }) => {
 				<p className={styles.hideMobile}>Hello</p>
 				<p className={styles.showMobile}>Hi</p>
 				<p className={styles.notBold}>,</p>
-				{/* <span id={styles.firstP}>.</span>
-				<span id={styles.secondP}>.</span>
-				<span id={styles.thirdP}>.</span> */}
 				<span id={styles.spacer}></span>
 			</div>
 			<SectionButton title="About Me" scrollToId={scrollToId} />
