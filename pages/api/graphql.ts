@@ -8,7 +8,11 @@ const typeDefs = gql`
 	"Query"
 	type Query {
 		"Returns an array of projects retrieved from the GitHub API"
-		projects: [Project]!
+		projects(page: Int, items_per_page: Int): ProjectsResult!
+	}
+	type Pager {
+		current_page: Int!
+		items_per_page: Int!
 	}
 	type Project {
 		"Name of the project's GitHub repository"
@@ -22,22 +26,40 @@ const typeDefs = gql`
 		"Date when the project was initialised on GitHub"
 		started_at: String!
 	}
+	type ProjectsResult {
+		pager: Pager!
+		data: [Project]!
+	}
 `;
 const resolvers = {
 	Query: {
 		projects: async (_parent, arg, _context) => {
-			const res = await fetch('https://api.github.com/users/Konseyy/repos');
+			const page = arg.page ?? 1;
+			const per_page = arg.items_per_page
+				? arg.items_per_page >= 100
+					? 100
+					: arg.items_per_page
+				: 10;
+			const res = await fetch(
+				`https://api.github.com/users/Konseyy/repos?page=${page}&per_page=${per_page}`
+			);
 			if (!res) return [];
 			const data = await res.json();
-			return data.map((d) => {
-				return {
-					name: d.name,
-					github_link: d.html_url,
-					description: d.description,
-					mainly_used_language: d.language,
-					started_at: d.created_at,
-				};
-			});
+			return {
+				data: data.map((d) => {
+					return {
+						name: d.name,
+						github_link: d.html_url,
+						description: d.description,
+						mainly_used_language: d.language,
+						started_at: d.created_at,
+					};
+				}),
+				pager: {
+					current_page: page,
+					items_per_page: per_page,
+				},
+			};
 		},
 	},
 };
