@@ -27,6 +27,23 @@ const NavBar: FC<Props> = ({ navItems }) => {
 				{navItems.map((navItem) => {
 					return (
 						<li
+							onClick={() => {
+								const section = navItem.sections[0];
+								if (section.onClick) {
+									section.onClick();
+									return;
+								}
+								if (router.pathname !== navItem.pagePath) {
+									router.push({
+										pathname: navItem.pagePath,
+										query: {
+											scroll: section.sectionId,
+										},
+									});
+								} else {
+									scrollIdIntoView(section.sectionId);
+								}
+							}}
 							key={`navItem${navItem.displayTitle}`}
 							className={`${styles.navItem} ${
 								router.pathname === navItem.pagePath ? styles.active : ''
