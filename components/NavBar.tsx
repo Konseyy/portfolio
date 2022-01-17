@@ -14,6 +14,7 @@ type NavItem = {
 type NavSection = {
 	sectionTitle: string;
 	sectionId: string;
+	onClick?: () => void;
 };
 interface Props {
 	navItems: NonEmptyArray<NavItem>;
@@ -48,6 +49,10 @@ const NavBar: FC<Props> = ({ navItems }) => {
 												key={`navItem${section.sectionTitle}`}
 												className={styles.sectionListItem}
 												onClick={() => {
+													if (section.onClick) {
+														section.onClick();
+														return;
+													}
 													if (router.pathname !== navItem.pagePath) {
 														router.push({
 															pathname: navItem.pagePath,
