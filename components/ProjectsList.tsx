@@ -7,7 +7,7 @@ interface Props {
 }
 const ProjectsList: FC<Props> = ({ projects, id }) => {
 	return (
-		<div id={id} className={styles.root}>
+		<section id={id} className={styles.root}>
 			<div className={styles.titleContainer}>
 				<h1 className={styles.title}>Featured Projects</h1>
 			</div>
@@ -16,7 +16,7 @@ const ProjectsList: FC<Props> = ({ projects, id }) => {
 					return <Project {...project} key={project.title} />;
 				})}
 			</div>
-		</div>
+		</section>
 	);
 };
 

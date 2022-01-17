@@ -7,7 +7,7 @@ interface Props {
 }
 const LandingPageInitial: FC<Props> = ({ scrollToId, id }) => {
 	return (
-		<div id={id} className={styles.landingPage}>
+		<section id={id} className={styles.landingPage}>
 			<div className={styles.landingPageIntro}>
 				<p className={styles.hideMobile}>Hello</p>
 				<p className={styles.showMobile}>Hi</p>
@@ -15,7 +15,7 @@ const LandingPageInitial: FC<Props> = ({ scrollToId, id }) => {
 				<span id={styles.spacer}></span>
 			</div>
 			<SectionButton title="About Me" scrollToId={scrollToId} />
-		</div>
+		</section>
 	);
 };
 
