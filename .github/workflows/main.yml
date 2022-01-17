@@ -24,6 +24,6 @@ jobs:
         --data '{
         "head" : "dev",
         "base" :"main",
-        "title": "Automated pull request for commit _${{ github.sha }}_",
+        "title": "Automatically generated pull request",
         "body": "This pull request was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
         }' \
