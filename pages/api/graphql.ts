@@ -37,7 +37,9 @@ const handler = cors(async (req: NextApiRequest, res: NextApiResponse) => {
 			started_at: String!
 		}
 		type ProjectsResult {
+			"The retrieved projects"
 			data: [Project]!
+			"Information about the retrieved page and retrieved amount of items"
 			pager: Pager!
 		}
 	`;
