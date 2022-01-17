@@ -37,7 +37,9 @@ const ImageLink: FC<ImageLinkProps> = ({
 		}
 	}, [isHovered]);
 	return (
-		<div
+		<a
+			href={url}
+			onClick={e=>e.preventDefault()}
 			className={styles.root}
 			style={{
 				height: size,
@@ -69,7 +71,7 @@ const ImageLink: FC<ImageLinkProps> = ({
 					{title}
 				</label>
 			</div>
-		</div>
+		</a>
 	);
 };
 
