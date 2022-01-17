@@ -8,10 +8,17 @@ const typeDefs = gql`
 	"Query"
 	type Query {
 		"Returns an array of projects retrieved from the GitHub API"
-		projects(page: Int, items_per_page: Int): ProjectsResult!
+		projects(
+			"Page of the results you want to retrieve"
+			page: Int
+			"Number of projects you want to retrieve per page"
+			items_per_page: Int
+		): ProjectsResult!
 	}
 	type Pager {
+		"Page of results retrieved"
 		current_page: Int!
+		"Number of projects retrieved in the page"
 		items_per_page: Int!
 	}
 	type Project {
@@ -27,8 +34,8 @@ const typeDefs = gql`
 		started_at: String!
 	}
 	type ProjectsResult {
-		pager: Pager!
 		data: [Project]!
+		pager: Pager!
 	}
 `;
 const resolvers = {
