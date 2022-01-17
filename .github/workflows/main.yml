@@ -1,0 +1,30 @@
+# This is a basic workflow to help you get started with Actions
+
+name: AutoPullRequest
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ dev ]
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  create_pull_request:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Create the pull request
+      env:
+          api_key: ${{ secrets.API_TOKEN }}
+      run: |
+        curl --request POST \
+        --url https://api.github.com/repos/konseyy/portfolio/pulls \
+        --header 'authorization: token ${{ secrets.GITHUB_TOKEN }}' \
+        --header 'content-type: application/json' \
+        --data '{
+        "head" : "dev",
+        "base" :"main",
+        "title": "Automated pull request",
+        "body": "This pull request was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_.",
+        "draft" :"true"
+        }' \
