@@ -19,7 +19,7 @@ const AboutMe: FC<Props> = ({
 	scrollToId,
 }) => {
 	return (
-		<div id={id} className={styles.root}>
+		<section id={id} className={styles.root}>
 			<div className={styles.aboutMe}>
 				<div className={styles.personalPhotoContainer}>
 					<Image src={me} />
@@ -46,7 +46,7 @@ const AboutMe: FC<Props> = ({
 				</div>
 			</div>
 			<SectionButton title="My Projects" scrollToId={scrollToId} />
-		</div>
+		</section>
 	);
 };
 

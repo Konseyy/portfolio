@@ -12,7 +12,6 @@ export interface ProjectProps {
 	description: string;
 	repo_link: string;
 	live_link?: string;
-	hoverColor?: string;
 	repoNewTab?: boolean;
 	demoNewTab?: boolean;
 }
@@ -22,7 +21,6 @@ const Project: FC<ProjectProps> = ({
 	description,
 	repo_link,
 	live_link,
-	hoverColor,
 	repoNewTab = true,
 	demoNewTab = true,
 }) => {
@@ -33,13 +31,14 @@ const Project: FC<ProjectProps> = ({
 	return (
 		<div
 			className={`${styles.root} ${isHovered ? styles.hover : ''}`}
-			style={{
-				backgroundColor: isHovered && hoverColor ? hoverColor : 'transparent',
-			}}
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 		>
-			<div className={styles.titleContainer}>
+			<a
+				className={styles.titleContainer}
+				href={live_link ?? repo_link}
+				onClick={(e) => e.preventDefault()}
+			>
 				<h1
 					className={styles.title}
 					onClick={() =>
@@ -51,10 +50,14 @@ const Project: FC<ProjectProps> = ({
 				>
 					{title}
 				</h1>
-			</div>
+			</a>
 			<div className={styles.linkContainer}>
 				{live_link && (
-					<div className={styles.liveLinkContainer}>
+					<a
+						className={styles.liveLinkContainer}
+						href={live_link}
+						onClick={(e) => e.preventDefault()}
+					>
 						<div
 							className={styles.liveLink}
 							onClick={() => openInBrowser(live_link, demoNewTab)}
@@ -64,9 +67,13 @@ const Project: FC<ProjectProps> = ({
 							</div>
 							<p>Demo</p>
 						</div>
-					</div>
+					</a>
 				)}
-				<div className={styles.repoLinkContainer}>
+				<a
+					className={styles.repoLinkContainer}
+					href={repo_link}
+					onClick={(e) => e.preventDefault()}
+				>
 					<div
 						className={styles.repoLink}
 						onClick={() => openInBrowser(repo_link, repoNewTab)}
@@ -76,7 +83,7 @@ const Project: FC<ProjectProps> = ({
 						</div>
 						<p>Source</p>
 					</div>
-				</div>
+				</a>
 			</div>
 
 			<div className={styles.contentContainer}>

@@ -10,6 +10,11 @@
 	transition: background-color 0.45s;
 	position: relative;
 	z-index: 1;
+	background-color: transparent;
+	transition: background-color 0.5s;
+}
+.root:hover {
+	background-color: #dbdbdb;
 }
 .root::before,
 .root::after {
@@ -42,6 +47,7 @@
 	margin-left: 0.625rem;
 }
 .title {
+	color: black;
 	font-size: 2.6rem;
 	font-weight: bold;
 	text-decoration: underline;
@@ -103,6 +109,7 @@
 	border-radius: 1.25rem;
 	background-color: transparent;
 	font-size: 1.2rem;
+	color: black;
 	transition: background-color 450ms, color 600ms, width 450ms;
 }
 .repoLink:hover,

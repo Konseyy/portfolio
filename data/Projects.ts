@@ -11,7 +11,6 @@ const projects: ProjectProps[] = [
 		title: 'This Website',
 		description:
 			'My portfolio website meant for displaying information about me as well as showcasing some of my projects',
-		hoverColor: '#f0f0f0',
 		repo_link: 'https://github.com/Konseyy/portfolio',
 		technologies: [
 			{
@@ -47,7 +46,6 @@ const projects: ProjectProps[] = [
 		title: 'Shift Log',
 		description:
 			'A mobile app meant for tracking work shifts. Has the ability to create and import backups as well as generate .csv files. Repository includes automatic uploading to the Google Play Store',
-		hoverColor: '#f0f0f0',
 		repo_link: 'https://github.com/Konseyy/ShiftLog',
 		live_link: 'https://play.google.com/store/apps/details?id=com.shiftlog',
 		technologies: [
@@ -71,7 +69,6 @@ const projects: ProjectProps[] = [
 	{
 		title: 'Minesweeper',
 		description: 'A Minesweeper clone made with React.js and TypeScript',
-		hoverColor: '#f0f0f0',
 		repo_link: 'https://github.com/Konseyy/react_minesweeper',
 		live_link: 'https://www.minesweeper.valdis.me/',
 		demoNewTab: false,
@@ -93,7 +90,6 @@ const projects: ProjectProps[] = [
 		title: 'GraphQL Endpoint',
 		description:
 			'A GraphQL endpoint that fetches data about all my public repositories from the GitHub api. Integration with MongoDB and different mutations coming later',
-		hoverColor: '#f0f0f0',
 		repo_link:
 			'https://github.com/Konseyy/portfolio/blob/main/pages/api/graphql.ts',
 		live_link: '/api/graphql',
