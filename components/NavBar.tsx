@@ -13,7 +13,7 @@ type NavItem = {
 };
 type NavSection = {
 	sectionTitle: string;
-	sectionId: string;
+	sectionId?: string;
 	onClick?: () => void;
 };
 interface Props {
@@ -56,12 +56,15 @@ const NavBar: FC<Props> = ({ navItems }) => {
 													if (router.pathname !== navItem.pagePath) {
 														router.push({
 															pathname: navItem.pagePath,
-															query: {
-																scroll: section.sectionId,
-															},
+															query: section.sectionId
+																? {
+																		scroll: section.sectionId,
+																  }
+																: {},
 														});
 													} else {
-														scrollIdIntoView(section.sectionId);
+														section.sectionId &&
+															scrollIdIntoView(section.sectionId);
 													}
 												}}
 											>

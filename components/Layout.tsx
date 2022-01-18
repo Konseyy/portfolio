@@ -90,11 +90,9 @@ const Layout: FC = ({ children }) => {
 						sections: [
 							{
 								sectionTitle: 'Global',
-								sectionId: '',
 							},
 							{
 								sectionTitle: 'Private',
-								sectionId: '',
 							},
 						],
 					},
