@@ -54,20 +54,28 @@ const chat = () => {
 					onClick={() => {
 						if (!connected) {
 							if (!socket) {
-								if (!username) {
-									console.error('enter username');
-									return;
+								try {
+									if (!username) {
+										console.error('enter username');
+										return;
+									}
+									setSocket(
+										io({
+											reconnectionDelayMax: 10000,
+											auth: { username: username },
+										})
+									);
+								} catch (e) {
+									console.error('error connecting', e);
 								}
-								setSocket(
-									io({
-										reconnectionDelayMax: 10000,
-										auth: { username: username },
-									})
-								);
 							} else {
-								socket.connect();
+								try {
+									socket.connect();
+									setConnected(true);
+								} catch (e) {
+									console.error('error reconnecting', e);
+								}
 							}
-							setConnected(true);
 						} else {
 							socket.disconnect();
 							setSocket(null);
