@@ -84,9 +84,23 @@ const Layout: FC = ({ children }) => {
 							},
 						],
 					},
+					{
+						displayTitle: 'Chat',
+						pagePath: '/chat',
+						sections: [
+							{
+								sectionTitle: 'Global',
+								sectionId: '',
+							},
+							{
+								sectionTitle: 'Private',
+								sectionId: '',
+							},
+						],
+					},
 				]}
 			/>
-			{children}
+			<div style={{ paddingTop: 105 }}>{children}</div>
 		</>
 	);
 };
