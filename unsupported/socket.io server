@@ -12,7 +12,9 @@ const ioHandler = (req: NextApiRequest, res) => {
 			console.log(`${username} has connected`);
 			socket.emit('welcome', `welcome ${username}`);
 			socket.on('chat-send', (s, cb) => {
-				console.log(`received chat from user: "${username}" with content: "${s}"`);
+				console.log(
+					`received chat from user: "${username}" with content: "${s}"`
+				);
 				io.emit('chat-receive', {
 					message: s,
 					sender: socket.handshake.auth.username,
