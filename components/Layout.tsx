@@ -71,19 +71,19 @@ const Layout: FC = ({ children }) => {
 							},
 						],
 					},
-					{
-						displayTitle: 'contact me',
-						pagePath: '/contact',
-						sections: [
-							{
-								sectionTitle: 'Email me',
-								sectionId: 'contact',
-								onClick: () => {
-									router.push('mailto:vgbukalders@gmail.com');
-								},
-							},
-						],
-					},
+					// {
+					// 	displayTitle: 'contact me',
+					// 	pagePath: '/contact',
+					// 	sections: [
+					// 		{
+					// 			sectionTitle: 'Email me',
+					// 			sectionId: 'contact',
+					// 			onClick: () => {
+					// 				router.push('mailto:vgbukalders@gmail.com');
+					// 			},
+					// 		},
+					// 	],
+					// },
 				]}
 			/>
 			<div style={{ paddingTop: 105 }}>{children}</div>
