@@ -22,7 +22,6 @@ const projects: ProjectProps[] = [
 				image: react,
 				title: 'React.js',
 				url: 'https://reactjs.org/',
-				colored: true,
 			},
 			// {
 			// 	image: mongodb,
@@ -77,7 +76,6 @@ const projects: ProjectProps[] = [
 				image: react,
 				title: 'React.js',
 				url: 'https://reactjs.org/',
-				colored: true,
 			},
 			{
 				image: typescript,
@@ -104,7 +102,6 @@ const projects: ProjectProps[] = [
 				image: graphql,
 				title: 'GraphQL',
 				url: 'https://graphql.org/',
-				colored: true,
 			},
 			{
 				image: nextjs,

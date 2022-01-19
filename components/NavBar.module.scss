@@ -1,12 +1,13 @@
 .root {
 	position: fixed;
 	width: 100%;
-	background-color: black;
+	background-color: rgba(0, 0, 0, 0.7);
 	z-index: 3;
 	backdrop-filter: blur(10px);
+	top: 0;
 }
 .list {
-	padding: 15px 0;
+	padding: 10px 0;
 	display: flex;
 	flex-direction: row;
 	align-content: center;
@@ -21,7 +22,7 @@
 	transition: 0.5s;
 }
 .sectionHeader {
-	background-color: black;
+	background-color: rgba(0, 0, 0, 0.45);
 	padding: 10px 20px;
 	width: 100%;
 	border-radius: 10px;
@@ -56,7 +57,6 @@
 	border-radius: 0 0 10px 10px;
 	background-color: black;
 	position: absolute;
-	// top: 0;
 	transform-origin: top;
 	transform: scaleY(0);
 	transition: font-size 0.25s, padding 0.25s, transform 0.25s;
@@ -76,35 +76,35 @@
 	transition: 0.35s;
 }
 .navItem.active {
-	.sectionHeader {
-		border: 2px solid white;
-	}
 	.sectionList {
 		background-color: white;
 	}
 }
-.navItem:hover {
-	cursor: pointer;
-	.dropdownContainer {
-		transform: rotate(-180deg);
-		filter: brightness(0) invert(0);
-	}
-	.sectionHeader {
+.navItem {
+	&:hover .sectionHeader {
 		border-radius: 10px 10px 0 0;
 		color: black;
 		background-color: white;
+		cursor: pointer;
+		.dropdownContainer {
+			transform: rotate(-180deg);
+			filter: brightness(0) invert(0);
+		}
 	}
-	.sectionList {
+	&:hover .sectionList {
+		&:hover {
+			cursor: pointer;
+		}
 		color: black;
 		opacity: 1;
 		background-color: white;
 		transform: scaleY(1);
-	}
-	.sectionListItem {
-		padding-bottom: 10px;
-	}
-	.sectionListItem:hover {
-		text-decoration-color: rgba(0, 0, 0, 1);
+		.sectionListItem {
+			padding-bottom: 10px;
+			&:hover {
+				text-decoration-color: rgba(0, 0, 0, 1);
+			}
+		}
 	}
 }
 @media only screen and (max-width: 1000px) {

@@ -24,16 +24,11 @@ const Project: FC<ProjectProps> = ({
 	repoNewTab = true,
 	demoNewTab = true,
 }) => {
-	const [isHovered, setIsHovered] = useState(false);
 	const [showMore, setShowMore] = useState(false);
 	const MAX_DESCRIPTION_DISPLAY = 95;
 	const descriptionOverflow = description.length - 10 > MAX_DESCRIPTION_DISPLAY;
 	return (
-		<div
-			className={`${styles.root} ${isHovered ? styles.hover : ''}`}
-			onMouseEnter={() => setIsHovered(true)}
-			onMouseLeave={() => setIsHovered(false)}
-		>
+		<div className={styles.root}>
 			<a
 				className={styles.titleContainer}
 				href={live_link ?? repo_link}

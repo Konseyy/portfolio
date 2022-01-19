@@ -3,6 +3,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	cursor: default;
 }
 .imageContainer {
 	display: inline-block;
@@ -17,11 +18,9 @@
 	transition: height 0.2s, width 0.2s, background-color 0.45s;
 }
 .imageContainer.hover {
-	background-color: black;
+	background-color: white;
 	height: 100%;
 	width: 100%;
-}
-.imageContainer:hover {
 	cursor: pointer;
 }
 .image {
@@ -37,16 +36,16 @@
 	width: 65%;
 }
 .imageBlackAndWhite {
-	filter: brightness(0) invert(0);
-}
-.hover .imageBlackAndWhite {
 	filter: brightness(0) invert(1);
 }
+.hover .imageBlackAndWhite {
+	filter: brightness(0) invert(0);
+}
 .imageColored {
-	filter: brightness(0);
+	filter: brightness(0) invert(1);
 }
 .hover .imageColored {
-	filter: brightness(100%);
+	filter: brightness(100%) invert(0);
 }
 .labelContainer {
 	display: flex;
@@ -61,13 +60,13 @@
 	visibility: hidden;
 	white-space: nowrap;
 	position: absolute;
-	color: black;
+	color: white;
 }
 .label.black {
-	background-color: black;
+	background-color: white;
 	padding: 10px 15px;
 	border-radius: 10px;
-	color: white;
+	color: black;
 }
 .label.show {
 	opacity: 1;
