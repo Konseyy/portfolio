@@ -13,7 +13,7 @@
 	}
 }
 .landingPage {
-	height: calc(max(100vh, 600px));
+	height: calc(max(100vh - 100px, 600px));
 	display: flex;
 	flex-direction: column;
 	background-image: linear-gradient(#cccccc, #ebebeb 35%, #e0e0e0 90%);
