@@ -90,14 +90,14 @@
 }
 .repoLinkContainer,
 .liveLinkContainer {
-	&:hover {
-		cursor: default;
-	}
 	margin: 0 0.625rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 0.3125rem;
+	&:hover {
+		cursor: default;
+	}
 }
 .repoLink,
 .liveLink {
@@ -172,10 +172,9 @@
 		font-weight: bold;
 		font-size: 1.4rem;
 		padding: 7px 25px 7px 20px;
-	}
-	.liveLink:hover,
-	.repoLink:hover {
-		width: auto;
+		&:hover {
+			width: auto;
+		}
 	}
 	.linkContainer {
 		margin-bottom: 15px;
@@ -205,10 +204,9 @@
 	.repoLink {
 		font-size: 2rem;
 		width: 80%;
-	}
-	.repoLink:hover,
-	.liveLink:hover {
-		width: 90%;
+		&:hover {
+			width: 90%;
+		}
 	}
 	.title {
 		font-size: 3.5rem;
