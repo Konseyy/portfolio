@@ -4,7 +4,7 @@
 	background-color: black;
 	z-index: 3;
 	backdrop-filter: blur(10px);
-	top:0;
+	top: 0;
 }
 .list {
 	padding: 15px 0;
@@ -57,7 +57,6 @@
 	border-radius: 0 0 10px 10px;
 	background-color: black;
 	position: absolute;
-	// top: 0;
 	transform-origin: top;
 	transform: scaleY(0);
 	transition: font-size 0.25s, padding 0.25s, transform 0.25s;
@@ -84,28 +83,31 @@
 		background-color: white;
 	}
 }
-.navItem:hover {
-	cursor: pointer;
-	.dropdownContainer {
-		transform: rotate(-180deg);
-		filter: brightness(0) invert(0);
-	}
-	.sectionHeader {
+.navItem {
+	&:hover .sectionHeader {
 		border-radius: 10px 10px 0 0;
 		color: black;
 		background-color: white;
+		cursor: pointer;
+		.dropdownContainer {
+			transform: rotate(-180deg);
+			filter: brightness(0) invert(0);
+		}
 	}
-	.sectionList {
+	&:hover .sectionList {
+		&:hover {
+			cursor: pointer;
+		}
 		color: black;
 		opacity: 1;
 		background-color: white;
 		transform: scaleY(1);
-	}
-	.sectionListItem {
-		padding-bottom: 10px;
-	}
-	.sectionListItem:hover {
-		text-decoration-color: rgba(0, 0, 0, 1);
+		.sectionListItem {
+			padding-bottom: 10px;
+			&:hover {
+				text-decoration-color: rgba(0, 0, 0, 1);
+			}
+		}
 	}
 }
 @media only screen and (max-width: 1000px) {
