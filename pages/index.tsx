@@ -10,7 +10,7 @@ export default function Home({ isConnected }) {
 			<LandingPageInitial id="home" scrollToId="aboutMe" />
 			<AboutMe
 				id="aboutMe"
-				title="My name is Valdis"
+				title={<h1>My name is Valdis</h1>}
 				description={[
 					<p className="test">
 						I'm currently studying for my Bachelor's degree in Computer Science

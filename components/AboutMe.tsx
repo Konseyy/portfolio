@@ -6,7 +6,7 @@ import styles from './AboutMe.module.scss';
 import SectionButton from './SectionButton';
 interface Props {
 	id: string;
-	title: string;
+	title: JSX.Element;
 	description: JSX.Element[];
 	socials: ImageLinkProps[];
 	scrollToId: string;
