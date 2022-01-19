@@ -12,33 +12,33 @@
 	z-index: 1;
 	background-color: transparent;
 	transition: background-color 0.5s;
-}
-.root:hover {
-	background-color: #dbdbdb;
-}
-.root::before,
-.root::after {
-	transition: opacity 0.5s;
-	border-radius: 1.875rem;
-	content: '';
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	z-index: -1;
-}
-.root::before {
-	box-shadow: -1px 3px 6px 5px rgba(0, 0, 0, 0.5);
-	opacity: 1;
-}
-.root::after {
-	opacity: 0;
-	box-shadow: -2px 4px 7px 5px rgba(0, 0, 0, 0.5);
-}
-.root.hover::before {
-	opacity: 0;
-}
-.root.hover::after {
-	opacity: 1;
+	&::before,
+	&::after {
+		transition: opacity 0.5s;
+		border-radius: 1.875rem;
+		content: '';
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		z-index: -1;
+	}
+	&::before {
+		box-shadow: -1px 3px 6px 5px rgba(0, 0, 0, 0.5);
+		opacity: 1;
+	}
+	&::after {
+		opacity: 0;
+		box-shadow: -2px 4px 7px 5px rgba(0, 0, 0, 0.5);
+	}
+	&:hover {
+		background-color: #dbdbdb;
+		&::before {
+			opacity: 0;
+		}
+		&::after {
+			opacity: 1;
+		}
+	}
 }
 .titleContainer {
 	display: flex;
@@ -53,10 +53,10 @@
 	text-decoration: underline;
 	text-decoration-color: rgba(0, 0, 0, 0);
 	transition: 0.5s;
-}
-.title:hover {
-	cursor: pointer;
-	text-decoration-color: rgba(0, 0, 0, 1);
+	&:hover {
+		cursor: pointer;
+		text-decoration-color: rgba(0, 0, 0, 1);
+	}
 }
 .contentContainer {
 	margin: 0 1.25rem;
@@ -90,6 +90,9 @@
 }
 .repoLinkContainer,
 .liveLinkContainer {
+	&:hover {
+		cursor: default;
+	}
 	margin: 0 0.625rem;
 	display: flex;
 	align-items: center;
@@ -111,12 +114,15 @@
 	font-size: 1.2rem;
 	color: black;
 	transition: background-color 450ms, color 600ms, width 450ms;
-}
-.repoLink:hover,
-.liveLink:hover {
-	background-color: black;
-	color: white;
-	width: 100%;
+	&:hover {
+		background-color: black;
+		color: white;
+		width: 100%;
+		cursor: pointer;
+		.linkImageContainer {
+			filter: brightness(0) invert(1);
+		}
+	}
 }
 .repoLink .linkImageContainer {
 	height: 1.4rem;
@@ -134,20 +140,16 @@
 	filter: brightness(0) invert(0);
 	transition: 600ms;
 }
-.repoLink:hover .linkImageContainer,
-.liveLink:hover .linkImageContainer {
-	filter: brightness(0) invert(1);
-}
 .readMore {
 	font-weight: bold;
 	text-decoration: underline;
 	text-decoration-color: rgba(0, 0, 0, 0);
 	text-decoration-thickness: 1.5px;
 	transition: 0.4s;
-}
-.readMore:hover {
-	cursor: pointer;
-	text-decoration-color: rgba(0, 0, 0, 1);
+	&:hover {
+		cursor: pointer;
+		text-decoration-color: rgba(0, 0, 0, 1);
+	}
 }
 @media only screen and (max-width: 1000px) {
 	.root {
