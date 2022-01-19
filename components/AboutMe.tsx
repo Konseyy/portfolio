@@ -45,7 +45,7 @@ const AboutMe: FC<Props> = ({
 					</div>
 				</div>
 			</div>
-			<SectionButton title="My Projects" scrollToId={scrollToId} />
+			<SectionButton title="Projects" scrollToId={scrollToId} />
 		</section>
 	);
 };

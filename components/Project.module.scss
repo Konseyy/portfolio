@@ -5,16 +5,15 @@
 	margin: 0.625rem;
 	margin-bottom: 3.125rem;
 	border-radius: 1.875rem;
+	border: 0.5px solid white;
 	box-sizing: border-box;
 	max-width: 34.375rem;
-	transition: background-color 0.45s;
 	position: relative;
 	z-index: 1;
-	background-color: transparent;
-	transition: background-color 0.5s;
+	transition: 0.5s;
 	&::before,
 	&::after {
-		transition: opacity 0.5s;
+		transition: opacity 0.45s;
 		border-radius: 1.875rem;
 		content: '';
 		position: absolute;
@@ -23,15 +22,15 @@
 		z-index: -1;
 	}
 	&::before {
-		box-shadow: -1px 3px 6px 5px rgba(0, 0, 0, 0.5);
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
 		opacity: 1;
 	}
 	&::after {
 		opacity: 0;
-		box-shadow: -2px 4px 7px 5px rgba(0, 0, 0, 0.5);
+		box-shadow: 0 0 4px 6px rgba(255, 255, 255, 0.5);
 	}
 	&:hover {
-		background-color: #dbdbdb;
+		border: 0.5px solid rgb(117, 117, 117);
 		&::before {
 			opacity: 0;
 		}
@@ -45,17 +44,18 @@
 	align-items: center;
 	margin: 1.25rem 0.3125rem;
 	margin-left: 0.625rem;
+	cursor: default;
 }
 .title {
-	color: black;
+	color: white;
 	font-size: 2.6rem;
 	font-weight: bold;
 	text-decoration: underline;
-	text-decoration-color: rgba(0, 0, 0, 0);
+	text-decoration-color: rgba(255, 255, 255, 0);
 	transition: 0.5s;
 	&:hover {
 		cursor: pointer;
-		text-decoration-color: rgba(0, 0, 0, 1);
+		text-decoration-color: rgb(255, 255, 255);
 	}
 }
 .contentContainer {
@@ -107,20 +107,19 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	cursor: pointer;
 	padding: 0.625rem 0.75rem;
 	border-radius: 1.25rem;
 	background-color: transparent;
 	font-size: 1.2rem;
-	color: black;
+	color: white;
 	transition: background-color 450ms, color 600ms, width 450ms;
 	&:hover {
-		background-color: black;
-		color: white;
+		background-color: white;
+		color: black;
 		width: 100%;
 		cursor: pointer;
 		.linkImageContainer {
-			filter: brightness(0) invert(1);
+			filter: brightness(0) invert(0);
 		}
 	}
 }
@@ -137,18 +136,18 @@
 	align-items: center;
 	justify-content: center;
 	margin-right: 0.5rem;
-	filter: brightness(0) invert(0);
+	filter: brightness(0) invert(1);
 	transition: 600ms;
 }
 .readMore {
 	font-weight: bold;
 	text-decoration: underline;
-	text-decoration-color: rgba(0, 0, 0, 0);
+	text-decoration-color: rgba(255, 255, 255, 0);
 	text-decoration-thickness: 1.5px;
 	transition: 0.4s;
 	&:hover {
 		cursor: pointer;
-		text-decoration-color: rgba(0, 0, 0, 1);
+		text-decoration-color: rgb(255, 255, 255);
 	}
 }
 @media only screen and (max-width: 1000px) {

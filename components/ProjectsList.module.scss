@@ -1,10 +1,11 @@
 .root {
-	background-image: linear-gradient(
-		#e0e0e0,
-		#e4e4e4 30%,
-		#e4e4e4 60%,
-		#c8c8c8 100%
-	);
+	// background-image: linear-gradient(
+	// 	#e0e0e0,
+	// 	#e4e4e4 30%,
+	// 	#e4e4e4 60%,
+	// 	#c8c8c8 100%
+	// );
+	background-color: black;
 	display: flex;
 	flex-direction: column;
 	padding: 0 150px;
@@ -14,6 +15,7 @@
 	/* align-content: center; */
 	justify-content: center;
 	align-items: center;
+	color:white;
 }
 .title {
 	font-size: 5rem;

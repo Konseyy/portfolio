@@ -13,20 +13,23 @@
 	}
 }
 .landingPage {
-	height: calc(max(100vh - 100px, 600px));
+	height: calc(max(100vh, 600px));
 	display: flex;
 	flex-direction: column;
-	background-image: linear-gradient(#cccccc, #ebebeb 35%, #e0e0e0 90%);
+	// background-image: linear-gradient(black, black 75%, #e0e0e0 90%);
+	background-color: black;
 	justify-content: center;
 	position: relative;
 }
 .landingPageIntro {
 	margin-left: 5vw;
-	font-size: 20rem;
+	font-size: clamp(5.5rem, 20vw, 17rem);
 	display: flex;
 	flex-direction: row;
 	font-weight: bold;
-	text-shadow: 0 0 2px #000000;
+	color: rgb(246, 246, 246);
+	text-shadow: min(0.5vw, 0.35rem) min(0.5vw, 0.35rem) rgb(255, 31, 143),
+		-1px -1px 7px rgba(255, 31, 143, 1);
 }
 .notBold {
 	font-weight: normal;
@@ -41,10 +44,10 @@
 }
 #spacer::before {
 	content: '';
-	height: 21rem;
-	margin-left: 4.5rem;
-	width: 0.55rem;
-	background-color: black;
+	height: clamp(5.7rem, 21vw, 17.5rem);
+	margin-left: clamp(1.5rem, 3.5vw, 4.3rem);
+	width: clamp(0.15rem, 0.45vw, 0.35rem);
+	background-color: white;
 }
 #spacer::before {
 	animation-name: fade;
@@ -57,36 +60,6 @@
 .hideMobile {
 	display: inline-block;
 }
-@media only screen and (max-width: 2600px) {
-	.landingPageIntro {
-		font-size: 15rem;
-	}
-	#spacer::before {
-		margin-left: 3rem;
-		height: 15.5rem;
-		width: 0.45rem;
-	}
-}
-@media only screen and (max-width: 1920px) {
-	.landingPageIntro {
-		font-size: 12rem;
-	}
-	#spacer::before {
-		margin-left: 2.5rem;
-		height: 12.5rem;
-		width: 0.4rem;
-	}
-}
-@media only screen and (max-width: 1000px) {
-	.landingPageIntro {
-		font-size: 10rem;
-	}
-	#spacer::before {
-		margin-left: 2rem;
-		height: 9.5rem;
-		width: 0.25rem;
-	}
-}
 @media only screen and (max-width: 800px) {
 	.landingPage {
 		align-items: center;
@@ -94,13 +67,6 @@
 	.landingPageIntro {
 		margin-left: 20%;
 		margin-right: auto;
-
-		font-size: 5rem;
-	}
-	#spacer::before {
-		margin-left: 1rem;
-		height: 5.2rem;
-		width: 0.15rem;
 	}
 }
 @media only screen and (max-width: 500px) {

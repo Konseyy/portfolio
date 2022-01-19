@@ -86,7 +86,7 @@ const Layout: FC = ({ children }) => {
 					// },
 				]}
 			/>
-			<div style={{ paddingTop: 105 }}>{children}</div>
+			<div style={{ paddingTop: 0 }}>{children}</div>
 		</>
 	);
 };
