@@ -13,16 +13,14 @@
 	padding-top: 150px;
 	padding-bottom: 100px;
 	min-height: 100vh;
-	/* align-content: center; */
 	justify-content: center;
 	align-items: center;
 	color: lib.$text;
 }
 .title {
 	color: lib.$highlight_pale;
-	// text-shadow: min(0.3vw, 0.25rem) min(0.3vw, 0.25rem) lib.$neon;
 	text-shadow: lib.$neon_glow_neon;
-	font-size: 5rem;
+	font-size: calc(max(6.2vw, 5.5rem));
 	font-weight: bold;
 	margin-bottom: 65px;
 }
@@ -74,7 +72,7 @@
 }
 @media only screen and (min-width: 2540px) {
 	.title {
-		font-size: 8.5rem;
+		font-size: 9rem;
 		margin-bottom: 100px;
 	}
 }
