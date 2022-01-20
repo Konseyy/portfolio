@@ -58,7 +58,6 @@
 		transition: 350ms;
 		&:hover {
 			color: lib.$neon;
-			text-shadow: lib.$neon_glow_weak;
 		}
 	}
 }

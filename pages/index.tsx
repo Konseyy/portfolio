@@ -10,7 +10,11 @@ export default function Home({ isConnected }) {
 			<LandingPageInitial id="home" scrollToId="aboutMe" />
 			<AboutMe
 				id="aboutMe"
-				title={<h1>My name is <span>Valdis</span></h1>}
+				title={
+					<h1>
+						My name is <span>Valdis</span>
+					</h1>
+				}
 				description={[
 					<p className="test">
 						I'm currently studying for my Bachelor's degree in Computer Science
@@ -20,26 +24,26 @@ export default function Home({ isConnected }) {
 						</a>{' '}
 						and also working as a Software Developer.
 					</p>,
-					// <p>
-					// 	Most of my experience comes from working as a frontend developer and using technologies
-					// 	like{' '}
-					// 	<a target="_blank" href="https://reactjs.org/">
-					// 		React.js
-					// 	</a>{' '}
-					// 	and{' '}
-					// 	<a target="_blank" href="https://reactnative.dev/">
-					// 		React Native
-					// 	</a>{' '}
-					// 	but I also have experience with frameworks like{' '}
-					// 	<a target="_blank" href="https://laravel.com/">
-					// 		Laravel
-					// 	</a>{' '}
-					// 	and{' '}
-					// 	<a target="_blank" href="https://www.drupal.org/">
-					// 		Drupal
-					// 	</a>
-					// 	.
-					// </p>,
+					<p>
+						Most of my experience comes from working as a frontend developer and
+						using technologies like{' '}
+						<a target="_blank" href="https://reactjs.org/">
+							React.js
+						</a>{' '}
+						and{' '}
+						<a target="_blank" href="https://reactnative.dev/">
+							React Native
+						</a>{' '}
+						but I also have experience with frameworks like{' '}
+						<a target="_blank" href="https://laravel.com/">
+							Laravel
+						</a>{' '}
+						and{' '}
+						<a target="_blank" href="https://www.drupal.org/">
+							Drupal
+						</a>
+						.
+					</p>,
 					<p>
 						Constantly striving to learn new concepts as well as better my
 						knowledge with already familiar technologies.
