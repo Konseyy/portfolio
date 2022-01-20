@@ -28,9 +28,8 @@
 	display: flex;
 	flex-direction: row;
 	font-weight: bold;
-	color: lib.$hightlight_pale;
-	text-shadow: min(0.5vw, 0.35rem) min(0.5vw, 0.35rem) lib.$neon,
-		-1px -1px 7px lib.$neon;
+	color: lib.$highlight_pale;
+	text-shadow: lib.$neon_glow_neon;
 }
 .notBold {
 	font-weight: normal;
@@ -49,6 +48,7 @@
 	margin-left: clamp(1.5rem, 3.5vw, 4.3rem);
 	width: clamp(0.15rem, 0.45vw, 0.35rem);
 	background-color: lib.$text;
+	box-shadow: lib.$neon_glow_weak;
 }
 #spacer::before {
 	animation-name: fade;

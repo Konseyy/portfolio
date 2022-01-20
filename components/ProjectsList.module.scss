@@ -19,8 +19,9 @@
 	color: lib.$text;
 }
 .title {
-	color: lib.$hightlight_pale;
-	text-shadow: min(0.3vw, 0.25rem) min(0.3vw, 0.25rem) lib.$neon;
+	color: lib.$highlight_pale;
+	// text-shadow: min(0.3vw, 0.25rem) min(0.3vw, 0.25rem) lib.$neon;
+	text-shadow: lib.$neon_glow_neon;
 	font-size: 5rem;
 	font-weight: bold;
 	margin-bottom: 65px;
@@ -66,7 +67,7 @@
 }
 @media only screen and (min-width: 2540px) {
 	.title {
-		font-size: 7rem;
+		font-size: 8.5rem;
 		margin-bottom: 100px;
 	}
 }

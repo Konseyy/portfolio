@@ -1,3 +1,4 @@
+@use 'library' as lib;
 .root {
 	display: inline-grid;
 	grid-template-columns: 300px repeat(auto-fit, 200px);
@@ -5,7 +6,7 @@
 	margin: 0.625rem;
 	margin-bottom: 3.125rem;
 	border-radius: 1.875rem;
-	border: 0.5px solid white;
+	border: 0.5px solid lib.$background_inverted;
 	background-color: rgb(0, 0, 0);
 	box-sizing: border-box;
 	max-width: 34.375rem;
@@ -23,12 +24,13 @@
 		z-index: -1;
 	}
 	&::before {
-		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+		box-shadow: 0 0 0 0 rgba(lib.$background_inverted, 0);
 		opacity: 1;
 	}
 	&::after {
 		opacity: 0;
-		box-shadow: 0 0 3px 3px rgba(255, 255, 255, 0.65);
+		// box-shadow: 0 0 3px 3px rgba(lib.$background_inverted, 0.65);
+		box-shadow: lib.$neon_glow_weak;
 	}
 	&:hover {
 		// border: 0.5px solid rgb(255, 31, 143);
@@ -48,15 +50,18 @@
 	cursor: default;
 }
 .title {
-	color: white;
+	color: lib.$text;
 	font-size: 2.6rem;
 	font-weight: bold;
 	text-decoration: underline;
-	text-decoration-color: rgba(255, 255, 255, 0);
-	transition: 0.5s;
+	text-decoration-color: rgba(lib.$neon_values, 0);
+	transition: 0.35s;
 	&:hover {
 		cursor: pointer;
-		text-decoration-color: rgb(255, 255, 255);
+		color: rgba(lib.$neon_values, 1);
+		text-shadow: 0 0 0.07em lib.$neon;
+		text-decoration-color: lib.$highlight_pale;
+		// text-decoration-style:width 0.1em ;
 	}
 }
 .contentContainer {
@@ -112,12 +117,13 @@
 	border-radius: 1.25rem;
 	background-color: transparent;
 	font-size: 1.2rem;
-	color: white;
-	transition: background-color 450ms, color 600ms, width 450ms;
+	color: lib.$text;
+	transition: background-color 450ms, color 600ms, width 450ms, box-shadow 400ms;
 	&:hover {
-		background-color: white;
-		color: black;
-		width: 100%;
+		background-color: lib.$highlight_pale;
+		// box-shadow: lib.$neon_glow_weak;
+		color: lib.$text_inverted;
+		width: 95%;
 		cursor: pointer;
 		.linkImageContainer {
 			filter: brightness(0) invert(0);
@@ -143,12 +149,13 @@
 .readMore {
 	font-weight: bold;
 	text-decoration: underline;
-	text-decoration-color: rgba(255, 255, 255, 0);
+	text-decoration-color: rgba(lib.$background_inverted, 0);
 	text-decoration-thickness: 1.5px;
 	transition: 0.4s;
 	&:hover {
 		cursor: pointer;
-		text-decoration-color: rgb(255, 255, 255);
+		color: lib.$neon;
+		text-decoration-color: lib.$neon;
 	}
 }
 @media only screen and (max-width: 1000px) {

@@ -1,4 +1,4 @@
-@use "library" as lib;
+@use 'library' as lib;
 .root {
 	background-color: lib.$background;
 	padding: 200px 100px;
@@ -40,6 +40,10 @@
 .title {
 	font-size: 5rem;
 	margin-bottom: 25px;
+	font-style: normal;
+	span {
+		text-shadow: lib.$neon_glow_neon;
+	}
 }
 .descriptionContainer {
 	display: flex;
@@ -56,8 +60,8 @@
 		text-decoration: underline;
 		transition: 350ms;
 		&:hover {
-			color: rgb(255, 31, 143);
-			text-shadow: 0 0 1px lib.$neon;
+			color: lib.$neon;
+			text-shadow: lib.$neon_glow_weak;
 		}
 	}
 }
@@ -103,7 +107,7 @@
 }
 @media only screen and (max-width: 500px) {
 	.title {
-		font-size: 2.2rem;
+		font-size: 2rem;
 	}
 	.description {
 		font-size: 1.4rem;
