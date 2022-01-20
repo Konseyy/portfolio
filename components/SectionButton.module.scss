@@ -1,3 +1,4 @@
+@use 'library' as lib;
 .root {
 	position: absolute;
 	width: 100%;
@@ -10,7 +11,7 @@
 	margin-top: 15px;
 }
 .button {
-	color: white;
+	color: lib.$text;
 	padding: 20px;
 	font-size: 4rem;
 	border-radius: 20px;
@@ -22,7 +23,7 @@
 	box-shadow: 0 0 0 0 transparent;
 	box-sizing: border-box;
 	position: relative;
-	text-shadow: 0 0 3px rgba(255, 255, 255, 0);
+	text-shadow: 0 0 3px rgba(lib.$text_inverted, 0);
 	transition: background-color 0.5s, color 0.8s, text-shadow 0.2s;
 	.dropdownContainer {
 		display: flex;
@@ -43,14 +44,14 @@
 		width: 100%;
 		content: '';
 		opacity: 1;
-		box-shadow: 0 0 10px 4px rgba(255, 31, 143, 0.5);
+		box-shadow: 0 0 10px 4px lib.$neon_transparent;
 		transition: opacity 500ms;
 		opacity: 0;
 	}
 	&:hover {
-		background-color: rgba(255, 31, 143, 0.8);
-		stroke: black;
-		text-shadow: 0 0 3px white;
+		background-color: rgba(lib.$neon_values, 0.8);
+		stroke: lib.$text_inverted;
+		text-shadow: 0 0 3px lib.$highlight;
 		cursor: pointer;
 		&::before {
 			opacity: 1;

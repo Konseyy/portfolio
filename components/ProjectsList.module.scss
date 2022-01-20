@@ -1,3 +1,4 @@
+@use 'library' as lib;
 .root {
 	// background-image: linear-gradient(
 	// 	#e0e0e0,
@@ -5,20 +6,21 @@
 	// 	#e4e4e4 60%,
 	// 	#c8c8c8 100%
 	// );
-	background-color: black;
+	background-color: lib.$background;
 	display: flex;
 	flex-direction: column;
 	padding: 0 150px;
 	padding-top: 150px;
 	padding-bottom: 100px;
 	min-height: 100vh;
-	/* align-content: center; */
 	justify-content: center;
 	align-items: center;
-	color:white;
+	color: lib.$text;
 }
 .title {
-	font-size: 5rem;
+	color: lib.$highlight_pale;
+	text-shadow: lib.$neon_glow_neon;
+	font-size: calc(max(6.2vw, 5.5rem));
 	font-weight: bold;
 	margin-bottom: 65px;
 }
@@ -46,10 +48,17 @@
 		grid-template-columns: auto;
 		row-gap: 10px;
 	}
+	.titleContainer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
 	.title {
 		padding-top: 50px;
 		white-space: nowrap;
-		font-size: 2.3rem;
+		white-space: normal;
+		font-size: 5rem;
 		margin-bottom: 30px;
 	}
 }
@@ -63,7 +72,7 @@
 }
 @media only screen and (min-width: 2540px) {
 	.title {
-		font-size: 7rem;
-		margin-bottom: 60px;
+		font-size: 9rem;
+		margin-bottom: 100px;
 	}
 }

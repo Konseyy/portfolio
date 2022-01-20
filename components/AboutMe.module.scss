@@ -1,11 +1,6 @@
+@use 'library' as lib;
 .root {
-	// background-image: linear-gradient(
-	// 	#e0e0e0,
-	// 	#e4e4e4 40%,
-	// 	#e4e4e4 60%,
-	// 	#e0e0e0 100%
-	// );
-	background-color: black;
+	background-color: lib.$background;
 	padding: 200px 100px;
 	min-height: 100vh;
 	display: flex;
@@ -14,7 +9,7 @@
 	position: relative;
 }
 .aboutMe {
-	color:white;
+	color: lib.$text;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -26,14 +21,16 @@
 	border-radius: 25%;
 	overflow: hidden;
 	border: 1px solid black;
-	box-shadow: 0 0 8px 4px rgb(65, 65, 65);
+	box-shadow: 0 0 8px 4px rgb(56, 56, 56);
 }
-.personalPhotoContainer img {
-	transform: scale(1.3);
-	transition: transform 400ms;
-}
-.personalPhotoContainer:hover img {
-	transform: scale(1.1);
+.personalPhotoContainer {
+	img {
+		transform: scale(1.3);
+		transition: transform 400ms;
+	}
+	&:hover img {
+		transform: scale(1.08);
+	}
 }
 .infoContainer {
 	margin-left: 5rem;
@@ -42,7 +39,8 @@
 }
 .title {
 	font-size: 5rem;
-	margin-bottom: 25px
+	margin-bottom: 25px;
+	font-style: normal;
 }
 .descriptionContainer {
 	display: flex;
@@ -54,14 +52,14 @@
 	max-width: 65rem;
 	line-height: 2.45rem;
 	margin-bottom: 20px;
-}
-.description a {
-	color: white;
-	text-decoration: underline;
-	transition: 350ms;
-}
-.description a:hover {
-	color: #006bb3;
+	a {
+		color: lib.$text;
+		text-decoration: underline;
+		transition: 350ms;
+		&:hover {
+			color: lib.$neon;
+		}
+	}
 }
 .socialsContainer {
 	margin-top: auto;
@@ -105,7 +103,7 @@
 }
 @media only screen and (max-width: 500px) {
 	.title {
-		font-size: 2.2rem;
+		font-size: 2rem;
 	}
 	.description {
 		font-size: 1.4rem;

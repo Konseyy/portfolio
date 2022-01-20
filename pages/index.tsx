@@ -10,7 +10,11 @@ export default function Home({ isConnected }) {
 			<LandingPageInitial id="home" scrollToId="aboutMe" />
 			<AboutMe
 				id="aboutMe"
-				title={<h1>My name is <span>Valdis</span></h1>}
+				title={
+					<h1>
+						My name is <span>Valdis</span>
+					</h1>
+				}
 				description={[
 					<p className="test">
 						I'm currently studying for my Bachelor's degree in Computer Science
@@ -21,8 +25,8 @@ export default function Home({ isConnected }) {
 						and also working as a Software Developer.
 					</p>,
 					<p>
-						Most of my experience comes from working as a frontend developer and using technologies
-						like{' '}
+						Most of my experience comes from working as a frontend developer and
+						using technologies like{' '}
 						<a target="_blank" href="https://reactjs.org/">
 							React.js
 						</a>{' '}

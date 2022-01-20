@@ -1,3 +1,4 @@
+@use 'library' as lib;
 .root {
 	display: flex;
 	flex-direction: column;
@@ -18,7 +19,7 @@
 	transition: height 0.2s, width 0.2s, background-color 0.45s;
 }
 .imageContainer.hover {
-	background-color: white;
+	background-color: lib.$background_inverted;
 	height: 100%;
 	width: 100%;
 	cursor: pointer;
@@ -63,7 +64,7 @@
 	color: white;
 }
 .label.black {
-	background-color: white;
+	background-color: lib.$background_inverted;
 	padding: 10px 15px;
 	border-radius: 10px;
 	color: black;
