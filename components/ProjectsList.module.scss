@@ -50,10 +50,17 @@
 		grid-template-columns: auto;
 		row-gap: 10px;
 	}
+	.titleContainer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
 	.title {
 		padding-top: 50px;
 		white-space: nowrap;
-		font-size: 2.3rem;
+		white-space: normal;
+		font-size: 5rem;
 		margin-bottom: 30px;
 	}
 }
