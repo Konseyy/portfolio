@@ -104,7 +104,7 @@
 }
 .repoLink,
 .liveLink {
-	width: 85%;
+	width: 70%;
 	display: inline-flex;
 	box-sizing: border-box;
 	flex-direction: row;
@@ -117,12 +117,13 @@
 	color: lib.$text;
 	transition: background-color 450ms, color 600ms, width 450ms, box-shadow 400ms;
 	&:hover {
-		background-color: lib.$highlight;
-		color: lib.$text_inverted;
-		width: 95%;
+		background-color: lib.$neon;
+		color: lib.$text;
+		box-shadow: 0 0 10px 4px lib.$neon_transparent, 0 0 0.15em lib.$neon;
+		width: 85%;
 		cursor: pointer;
 		.linkImageContainer {
-			filter: brightness(0) invert(0);
+			// filter: brightness(0) invert(0);
 		}
 	}
 }
@@ -206,9 +207,9 @@
 	.liveLink,
 	.repoLink {
 		font-size: 2rem;
-		width: 80%;
+		width: 75%;
 		&:hover {
-			width: 90%;
+			width: 85%;
 		}
 	}
 	.title {
