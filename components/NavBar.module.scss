@@ -1,7 +1,8 @@
+@use 'library' as lib;
 .root {
 	position: fixed;
 	width: 100%;
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgba(lib.$background, 0.7);
 	z-index: 3;
 	backdrop-filter: blur(10px);
 	top: 0;
@@ -18,11 +19,11 @@
 	margin-left: 30px;
 	text-transform: capitalize;
 	font-weight: bold;
-	color: white;
+	color: lib.$text;
 	transition: 0.5s;
 }
 .sectionHeader {
-	background-color: rgba(0, 0, 0, 0.45);
+	background-color: rgba(lib.$background, 0.45);
 	padding: 10px 20px;
 	width: 100%;
 	border-radius: 10px;
@@ -48,23 +49,19 @@
 	position: relative;
 }
 .sectionList {
-	border-top: 2px solid black;
+	border-top: 2px solid lib.$background;
 	opacity: 0;
 	font-size: 1.6rem;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	border-radius: 0 0 10px 10px;
-	background-color: black;
+	background-color: lib.$background;
 	position: absolute;
 	transform-origin: top;
 	transform: scaleY(0);
 	transition: font-size 0.25s, padding 0.25s, transform 0.25s;
-}
-.sectionList {
 	padding-top: 0.7rem;
-}
-.sectionList {
 	padding-bottom: 0.5rem;
 }
 .sectionListItem {
@@ -72,19 +69,19 @@
 	text-align: center;
 	margin-bottom: 0;
 	text-decoration: underline;
-	text-decoration-color: rgba(0, 0, 0, 0);
+	text-decoration-color: rgba(lib.$text_inverted, 0);
 	transition: 0.35s;
 }
 .navItem.active {
 	.sectionList {
-		background-color: white;
+		background-color: lib.$background_inverted;
 	}
 }
 .navItem {
 	&:hover .sectionHeader {
 		border-radius: 10px 10px 0 0;
-		color: black;
-		background-color: white;
+		color: lib.$text;
+		background-color: lib.$background_inverted;
 		cursor: pointer;
 		.dropdownContainer {
 			transform: rotate(-180deg);
@@ -95,14 +92,14 @@
 		&:hover {
 			cursor: pointer;
 		}
-		color: black;
+		color: lib.$text;
 		opacity: 1;
-		background-color: white;
+		background-color: lib.$background_inverted;
 		transform: scaleY(1);
 		.sectionListItem {
 			padding-bottom: 10px;
 			&:hover {
-				text-decoration-color: rgba(0, 0, 0, 1);
+				text-decoration-color: rgba(lib.$text_inverted, 1);
 			}
 		}
 	}

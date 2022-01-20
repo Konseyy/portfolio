@@ -1,3 +1,4 @@
+@use 'library' as lib;
 .root {
 	// background-image: linear-gradient(
 	// 	#e0e0e0,
@@ -5,7 +6,7 @@
 	// 	#e4e4e4 60%,
 	// 	#c8c8c8 100%
 	// );
-	background-color: black;
+	background-color: lib.$background;
 	display: flex;
 	flex-direction: column;
 	padding: 0 150px;
@@ -15,9 +16,11 @@
 	/* align-content: center; */
 	justify-content: center;
 	align-items: center;
-	color:white;
+	color: lib.$text;
 }
 .title {
+	color: lib.$hightlight_pale;
+	text-shadow: min(0.3vw, 0.25rem) min(0.3vw, 0.25rem) lib.$neon;
 	font-size: 5rem;
 	font-weight: bold;
 	margin-bottom: 65px;
@@ -64,6 +67,6 @@
 @media only screen and (min-width: 2540px) {
 	.title {
 		font-size: 7rem;
-		margin-bottom: 60px;
+		margin-bottom: 100px;
 	}
 }

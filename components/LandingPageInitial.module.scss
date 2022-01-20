@@ -1,3 +1,4 @@
+@use 'library' as lib;
 @keyframes fade {
 	0% {
 		opacity: 1;
@@ -27,9 +28,9 @@
 	display: flex;
 	flex-direction: row;
 	font-weight: bold;
-	color: rgb(246, 246, 246);
-	text-shadow: min(0.5vw, 0.35rem) min(0.5vw, 0.35rem) rgb(255, 31, 143),
-		-1px -1px 7px rgba(255, 31, 143, 1);
+	color: lib.$hightlight_pale;
+	text-shadow: min(0.5vw, 0.35rem) min(0.5vw, 0.35rem) lib.$neon,
+		-1px -1px 7px lib.$neon;
 }
 .notBold {
 	font-weight: normal;
@@ -47,11 +48,11 @@
 	height: clamp(5.7rem, 21vw, 17.5rem);
 	margin-left: clamp(1.5rem, 3.5vw, 4.3rem);
 	width: clamp(0.15rem, 0.45vw, 0.35rem);
-	background-color: white;
+	background-color: lib.$text;
 }
 #spacer::before {
 	animation-name: fade;
-	animation-duration: 3.5s;
+	animation-duration: 3s;
 	animation-iteration-count: infinite;
 }
 .showMobile {

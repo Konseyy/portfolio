@@ -1,5 +1,6 @@
+@use "library" as lib;
 .root {
-	background-color: black;
+	background-color: lib.$background;
 	padding: 200px 100px;
 	min-height: 100vh;
 	display: flex;
@@ -8,7 +9,7 @@
 	position: relative;
 }
 .aboutMe {
-	color: white;
+	color: lib.$text;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -20,7 +21,7 @@
 	border-radius: 25%;
 	overflow: hidden;
 	border: 1px solid black;
-	box-shadow: 0 0 8px 4px rgb(65, 65, 65);
+	box-shadow: 0 0 8px 4px rgb(56, 56, 56);
 }
 .personalPhotoContainer {
 	img {
@@ -51,12 +52,12 @@
 	line-height: 2.45rem;
 	margin-bottom: 20px;
 	a {
-		color: white;
+		color: lib.$text;
 		text-decoration: underline;
 		transition: 350ms;
 		&:hover {
 			color: rgb(255, 31, 143);
-			text-shadow: 0 0 1px rgb(255, 31, 143);
+			text-shadow: 0 0 1px lib.$neon;
 		}
 	}
 }
