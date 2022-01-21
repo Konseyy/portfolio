@@ -2,7 +2,7 @@ import React, { FC, useEffect } from 'react';
 import NavBar from './NavBar';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import styles from "./Layout.module.scss";
+import styles from './Layout.module.scss';
 import scrollIdIntoView from '../functions/scrollIdIntoView';
 const Layout: FC = ({ children }) => {
 	const router = useRouter();
@@ -66,6 +66,11 @@ const Layout: FC = ({ children }) => {
 								sectionTitle: 'about me',
 								sectionId: 'aboutMe',
 							},
+							,
+							{
+								sectionTitle: 'skills',
+								sectionId: 'skillSection',
+							},
 							{
 								sectionTitle: 'projects',
 								sectionId: 'projectList',
@@ -87,7 +92,9 @@ const Layout: FC = ({ children }) => {
 					// },
 				]}
 			/>
-			<div style={{ paddingTop: 0 }} className={styles.root}>{children}</div>
+			<div style={{ paddingTop: 0 }} className={styles.root}>
+				{children}
+			</div>
 		</>
 	);
 };
