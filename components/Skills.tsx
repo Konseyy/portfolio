@@ -100,7 +100,7 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 								onMouseEnter={() => {
 									const rootHtml = document.getElementsByTagName('html')[0];
 									rootHtml.style.overflow = 'hidden';
-									rootHtml.style.height = '100%';
+									// rootHtml.style.height = '100%';
 								}}
 								onMouseLeave={() => {
 									const rootHtml = document.getElementsByTagName('html')[0];
