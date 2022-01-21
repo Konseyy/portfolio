@@ -8,6 +8,7 @@ import graphql from '../public/static/img/graphql.png';
 import php from '../public/static/img/php.png';
 import css from '../public/static/img/css.png';
 import sql from '../public/static/img/sql.png';
+import nextjs from '../public/static/img/nextjs.svg';
 
 const skills: skill[] = [
 	{
@@ -26,12 +27,6 @@ const skills: skill[] = [
 		description: [<p>React native for mobile</p>],
 	},
 	{
-		name: 'CSS',
-		image: css,
-		url: 'text.com',
-		description: [<p>This is typescript</p>],
-	},
-	{
 		name: 'JavaScript',
 		image: javascript,
 		url: 'text.com',
@@ -40,6 +35,18 @@ const skills: skill[] = [
 	{
 		name: 'TypeScript',
 		image: typescript,
+		url: 'text.com',
+		description: [<p>This is typescript</p>],
+	},
+	{
+		name: 'CSS',
+		image: css,
+		url: 'text.com',
+		description: [<p>This is typescript</p>],
+	},
+	{
+		name: 'Next.js',
+		image: nextjs,
 		url: 'text.com',
 		description: [<p>This is typescript</p>],
 	},
@@ -62,6 +69,7 @@ const skills: skill[] = [
 		url: 'text.com',
 		description: [<p>This is typescript</p>],
 	},
+
 	{
 		name: 'GraphQL',
 		image: graphql,
