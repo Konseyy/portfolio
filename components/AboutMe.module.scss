@@ -28,8 +28,10 @@
 		transition: transform 400ms;
 	}
 	&:hover,
-	&:focus img {
-		transform: scale(1.08);
+	&:focus {
+		img {
+			transform: scale(1.08);
+		}
 	}
 }
 .infoContainer {

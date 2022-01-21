@@ -87,7 +87,7 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 								} ${idx === 0 ? styles.first : ''} ${
 									idx === slicedSkills.length - 1 ? styles.last : ''
 								}`}
-								onClick={(e) => setSelectedIndex(idx)}
+								onClick={() => setSelectedIndex(idx)}
 								key={skill.name}
 								onWheel={(e) => {
 									let scrollTop =

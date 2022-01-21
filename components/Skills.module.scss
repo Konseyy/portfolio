@@ -10,7 +10,7 @@
 }
 .skillWindow {
 	display: grid;
-	grid-template-columns: 1fr 80%;
+	grid-template-columns: 1fr 70% 2fr;
 	padding-top: 120px;
 	border-radius: 1rem;
 	height: 65%;
@@ -119,5 +119,18 @@
 	p {
 		margin-bottom: 0.9em;
 		overflow-wrap: break-word;
+		line-height: 1.15em;
+	}
+	a {
+		color: lib.$text;
+		text-decoration: underline;
+		transition: 350ms;
+		&:hover,
+		&:focus {
+			color: lib.$neon;
+		}
+	}
+	span{
+		text-shadow: lib.$neon_glow;
 	}
 }
