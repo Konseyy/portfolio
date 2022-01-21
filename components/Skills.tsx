@@ -66,22 +66,7 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 	return (
 		<div className={styles.root} id={id}>
 			<div className={styles.skillWindow}>
-				<ul
-					className={styles.selector}
-					onWheel={(e) => {
-						let scrollTop =
-							window.pageYOffset || document.documentElement.scrollTop;
-						let scrollLeft =
-							window.pageXOffset || document.documentElement.scrollLeft;
-						window.scrollTo(scrollLeft, scrollTop);
-						if (e.deltaY > 0) {
-							handleScrollDown();
-						} else {
-							handleScrollUp();
-						}
-						return false;
-					}}
-				>
+				<ul className={styles.selector}>
 					<li
 						tabIndex={scrollState.startIndex === 0 ? -1 : 0}
 						className={`${styles.scrollContainer} ${
@@ -104,6 +89,19 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 								}`}
 								onClick={(e) => setSelectedIndex(idx)}
 								key={skill.name}
+								onWheel={(e) => {
+									let scrollTop =
+										window.pageYOffset || document.documentElement.scrollTop;
+									let scrollLeft =
+										window.pageXOffset || document.documentElement.scrollLeft;
+									window.scrollTo(scrollLeft, scrollTop);
+									if (e.deltaY > 0) {
+										handleScrollDown();
+									} else {
+										handleScrollUp();
+									}
+									return false;
+								}}
 							>
 								<div className={styles.selectorItem}>
 									<Image src={skill.image} />
