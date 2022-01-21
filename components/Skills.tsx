@@ -90,17 +90,22 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 								onClick={() => setSelectedIndex(idx)}
 								key={skill.name}
 								onWheel={(e) => {
-									let scrollTop =
-										window.pageYOffset || document.documentElement.scrollTop;
-									let scrollLeft =
-										window.pageXOffset || document.documentElement.scrollLeft;
-									window.scrollTo(scrollLeft, scrollTop);
 									if (e.deltaY > 0) {
 										handleScrollDown();
 									} else {
 										handleScrollUp();
 									}
 									return false;
+								}}
+								onMouseEnter={() => {
+									const rootHtml = document.getElementsByTagName('html')[0];
+									rootHtml.style.overflow = 'hidden';
+									rootHtml.style.height = '100%';
+								}}
+								onMouseLeave={() => {
+									const rootHtml = document.getElementsByTagName('html')[0];
+									rootHtml.style.overflow = 'auto';
+									rootHtml.style.height = 'auto';
 								}}
 							>
 								<div className={styles.selectorItem}>
