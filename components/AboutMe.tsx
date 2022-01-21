@@ -25,7 +25,7 @@ const AboutMe: FC<Props> = ({
 					<Image src={me} />
 				</div>
 				<div className={styles.infoContainer}>
-					<h1 className={styles.title}>{title}</h1>
+					<div className={styles.title}>{title}</div>
 					<div
 						className={styles.descriptionContainer}
 						key="descriptionContainer"
@@ -45,7 +45,7 @@ const AboutMe: FC<Props> = ({
 					</div>
 				</div>
 			</div>
-			<SectionButton title="Projects" scrollToId={scrollToId} />
+			<SectionButton title="Skills" scrollToId={scrollToId} />
 		</section>
 	);
 };

@@ -1,6 +1,5 @@
 @use 'library' as lib;
 .root {
-	background-color: lib.$background;
 	padding: 200px 100px;
 	min-height: 100vh;
 	display: flex;
@@ -28,7 +27,8 @@
 		transform: scale(1.3);
 		transition: transform 400ms;
 	}
-	&:hover img {
+	&:hover,
+	&:focus img {
 		transform: scale(1.08);
 	}
 }
@@ -56,7 +56,8 @@
 		color: lib.$text;
 		text-decoration: underline;
 		transition: 350ms;
-		&:hover {
+		&:hover,
+		&:focus {
 			color: lib.$neon;
 		}
 	}

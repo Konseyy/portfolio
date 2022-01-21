@@ -6,6 +6,12 @@
 	justify-content: center;
 	cursor: default;
 }
+.imageBlackAndWhite {
+	filter: brightness(0) invert(1);
+}
+.imageColored {
+	filter: brightness(0) invert(1);
+}
 .imageContainer {
 	display: inline-block;
 	border-radius: 50%;
@@ -17,12 +23,27 @@
 	align-items: center;
 	justify-content: center;
 	transition: height 0.2s, width 0.2s, background-color 0.45s;
-}
-.imageContainer.hover {
-	background-color: lib.$background_inverted;
-	height: 100%;
-	width: 100%;
-	cursor: pointer;
+	&:hover,
+	&:focus {
+		background-color: lib.$background_inverted;
+		height: 100%;
+		width: 100%;
+		cursor: pointer;
+		.image {
+			height: 65%;
+			width: 65%;
+		}
+		.imageBlackAndWhite {
+			filter: brightness(0) invert(0);
+		}
+		.imageColored {
+			filter: brightness(100%) invert(0);
+		}
+		& + .labelContainer .label {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
 }
 .image {
 	display: flex;
@@ -31,22 +52,6 @@
 	height: 85%;
 	width: 85%;
 	transition: filter 0.2s, width 0.2s, height 0.2s;
-}
-.hover .image {
-	height: 65%;
-	width: 65%;
-}
-.imageBlackAndWhite {
-	filter: brightness(0) invert(1);
-}
-.hover .imageBlackAndWhite {
-	filter: brightness(0) invert(0);
-}
-.imageColored {
-	filter: brightness(0) invert(1);
-}
-.hover .imageColored {
-	filter: brightness(100%) invert(0);
 }
 .labelContainer {
 	display: flex;
@@ -68,8 +73,4 @@
 	padding: 10px 15px;
 	border-radius: 10px;
 	color: black;
-}
-.label.show {
-	opacity: 1;
-	visibility: visible;
 }

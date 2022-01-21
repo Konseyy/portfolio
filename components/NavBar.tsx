@@ -46,6 +46,7 @@ const NavBar: FC<Props> = ({ navItems }) => {
 									{navItem.sections.map((section) => {
 										return (
 											<li
+											tabIndex={0}
 												key={`navItem${section.sectionTitle}`}
 												className={styles.sectionListItem}
 												onClick={() => {

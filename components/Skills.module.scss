@@ -1,0 +1,123 @@
+@use 'library' as lib;
+.root {
+	min-height: 100vh;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: lib.$text;
+	font-size: 3vw;
+}
+.skillWindow {
+	display: grid;
+	grid-template-columns: 1fr 80%;
+	padding-top: 120px;
+	border-radius: 1rem;
+	height: 65%;
+	min-width: 90%;
+	max-width: 90%;
+	padding-bottom: 100px;
+	flex-shrink: 1;
+}
+.selector {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	// width: fit-content;
+}
+.scrollContainer {
+	padding: 0.35em 0.65em;
+	height: min(min(5.5vw, 110px), 100%);
+	aspect-ratio: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&:hover {
+		cursor: pointer;
+	}
+	&.inactive {
+		opacity: 0;
+		&:hover {
+			cursor: default;
+		}
+	}
+	&:first-of-type {
+		transform: rotate(180deg);
+		margin-bottom: 0.5em;
+	}
+	&:last-of-type {
+		margin-top: 0.5em;
+	}
+}
+.scroll {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	filter: brightness(0) invert(1);
+	height: min(min(5.5vw, 110px), 100%);
+	aspect-ratio: 1;
+}
+.selectorItemContainer {
+	padding: 0.35em 0.65em;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.5s, border-radius 0s;
+	&.first {
+		border-top-left-radius: 1rem;
+		border-top: 1px;
+	}
+	&.last {
+		border-bottom-left-radius: 1rem;
+		transition: 0;
+	}
+	&.last,
+	&.first {
+		&.active {
+			transition: all 0.5s, border-radius 0s, background-color 0s, box-shadow 0s;
+		}
+	}
+	&:hover,
+	&:focus,
+	&.active {
+		cursor: pointer;
+		background-color: lib.$neon;
+		box-shadow: lib.$neon_glow_weak;
+	}
+}
+.selectorItem {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: min(9.5vw, 110px);
+	aspect-ratio: 1;
+	filter: brightness(0) invert(1);
+}
+.contentSection {
+	padding: 1em 1.5em;
+}
+.titleContainer {
+	margin-bottom: min(1.2em, 60px);
+}
+.title {
+	font-size: min(3.2em, 130px);
+	transition: 0.5s;
+	color: lib.$text;
+	text-decoration: underline;
+	text-decoration-color: rgba(lib.$highlight, 0);
+	&:hover,
+	&:focus {
+		text-decoration-color: rgba(lib.$highlight, 1);
+		text-shadow: 0 0 0.05em lib.$neon;
+		color: lib.$neon;
+		cursor: pointer;
+	}
+}
+.description {
+	font-size: min(1.4em, 50px);
+	p {
+		margin-bottom: 0.9em;
+		overflow-wrap: break-word;
+	}
+}
