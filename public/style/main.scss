@@ -1,6 +1,16 @@
 html {
 	scroll-behavior: smooth;
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
+	scrollbar-width: none; /* Firefox */
+	::-webkit-scrollbar {
+		width: 0; /* Remove scrollbar space */
+		background: transparent; /* Optional: just make scrollbar invisible */
+	}
 }
+html.locked {
+	overflow: hidden;
+}
+
 body {
 	height: 100%;
 	min-width: 350px;
@@ -9,7 +19,7 @@ body {
 body * {
 	font-family: 'Roboto Slab', serif;
 	box-sizing: border-box;
-	&:focus{
+	&:focus {
 		outline: none;
 	}
 }

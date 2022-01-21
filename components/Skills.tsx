@@ -99,13 +99,14 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 								}}
 								onMouseEnter={() => {
 									const rootHtml = document.getElementsByTagName('html')[0];
-									rootHtml.style.overflow = 'hidden';
+									rootHtml.setAttribute("class","locked");
 									// rootHtml.style.height = '100%';
 								}}
 								onMouseLeave={() => {
 									const rootHtml = document.getElementsByTagName('html')[0];
-									rootHtml.style.overflow = 'auto';
-									rootHtml.style.height = 'auto';
+									rootHtml.setAttribute("class","");
+									// rootHtml.style.overflow = 'auto';
+									// rootHtml.style.height = 'auto';
 								}}
 							>
 								<div className={styles.selectorItem}>
