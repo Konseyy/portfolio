@@ -31,6 +31,11 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 		skills.slice(0, displayElements - 1)
 	);
 	useEffect(() => {
+		document
+			.getElementsByTagName('html')[0]
+			.setAttribute('class', 'noScrollBar');
+	}, []);
+	useEffect(() => {
 		setSlicedSkills(
 			skills.slice(scrollState.startIndex, scrollState.endIndex + 1)
 		);
@@ -90,17 +95,23 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 								onClick={() => setSelectedIndex(idx)}
 								key={skill.name}
 								onWheel={(e) => {
-									let scrollTop =
-										window.pageYOffset || document.documentElement.scrollTop;
-									let scrollLeft =
-										window.pageXOffset || document.documentElement.scrollLeft;
-									window.scrollTo(scrollLeft, scrollTop);
 									if (e.deltaY > 0) {
 										handleScrollDown();
 									} else {
 										handleScrollUp();
 									}
 									return false;
+								}}
+								onMouseEnter={() => {
+									const rootHtml = document.getElementsByTagName('html')[0];
+									rootHtml.setAttribute('class', 'noScrollBar locked');
+									// rootHtml.style.height = '100%';
+								}}
+								onMouseLeave={() => {
+									const rootHtml = document.getElementsByTagName('html')[0];
+									rootHtml.setAttribute('class', 'noScrollBar');
+									// rootHtml.style.overflow = 'auto';
+									// rootHtml.style.height = 'auto';
 								}}
 							>
 								<div className={styles.selectorItem}>

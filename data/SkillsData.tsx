@@ -165,7 +165,7 @@ const skills: skill[] = [
 		description: [
 			<p>Most of my experience with using databases is with MySQL.</p>,
 			<p>
-				I have also used <a href="https://www.postgresql.org/">PostgresQL</a>{' '}
+				I have also used <a href="https://www.postgresql.org/">PostgresSQL</a>{' '}
 				and also minimal experience working in a NoSQL environment with{' '}
 				<a href="https://www.mongodb.com/">MongoDB</a>.
 			</p>,
