@@ -5,7 +5,6 @@ import react from '../public/static/img/react.png';
 import reactn from '../public/static/img/reactn.png';
 import laravel from '../public/static/img/laravel.png';
 import graphql from '../public/static/img/graphql.png';
-import php from '../public/static/img/php.png';
 import css from '../public/static/img/css.png';
 import sql from '../public/static/img/sql.png';
 import nextjs from '../public/static/img/nextjs.svg';
@@ -146,26 +145,50 @@ const skills: skill[] = [
 		name: 'Laravel',
 		image: laravel,
 		url: 'https://laravel.com/',
-		description: [<p>React native for mobile</p>],
-	},
-
-	{
-		name: 'PHP',
-		image: php,
-		url: 'https://www.php.net/',
-		description: [<p>This is typescript</p>],
+		description: [
+			<p>
+				Laravel was my first introduction to a software framework, as part of my
+				university Web Technologies II course, in which my final assignment was
+				to make a{' '}
+				<a href="https://github.com/Konseyy/WebTech2FinalProject">project</a>.
+			</p>,
+			<p>
+				I also used Laravel as the main backend framework of the first project I
+				was assigned to work on.
+			</p>,
+		],
 	},
 	{
 		name: 'MySQL',
 		image: sql,
 		url: 'https://www.mysql.com/',
-		description: [<p>This is typescript</p>],
+		description: [
+			<p>Most of my experience with using databases is with MySQL.</p>,
+			<p>
+				I have also used <a href="https://www.postgresql.org/">PostgresQL</a>{' '}
+				and also minimal experience working in a NoSQL environment with{' '}
+				<a href="https://www.mongodb.com/">MongoDB</a>.
+			</p>,
+		],
 	},
 	{
 		name: 'GraphQL',
 		image: graphql,
 		url: 'https://graphql.org/',
-		description: [<p>Main web language</p>],
+		description: [
+			<p>
+				I only recently started experimenting with GraphQL and find it very
+				interesting to work with.
+			</p>,
+			<p>
+				So far I have managed to create a{' '}
+				<a href="/api/graphql">simple endpoint</a> that connects with the GitHub
+				api and returns data about my public repositories, but I am looking
+				forward to do much more with it, especially on personal projects as it
+				is significantly more simple to work with on the frontend side of
+				things.
+			</p>,
+		],
 	},
 ];
 export default skills;
