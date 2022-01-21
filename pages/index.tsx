@@ -4,6 +4,8 @@ import socials from '../data/Socials';
 import projects from '../data/Projects';
 import ProjectsList from '../components/ProjectsList';
 import AboutMe from '../components/AboutMe';
+import Skills from '../components/Skills';
+import skills from '../data/SkillsData';
 export default function Home({ isConnected }) {
 	return (
 		<div>
@@ -54,8 +56,9 @@ export default function Home({ isConnected }) {
 					</p>,
 				]}
 				socials={socials}
-				scrollToId="projectList"
+				scrollToId="skillSection"
 			/>
+			<Skills id="skillSection" scrollToId="projectList" skills={skills} />
 			<ProjectsList id="projectList" projects={projects} />
 		</div>
 	);

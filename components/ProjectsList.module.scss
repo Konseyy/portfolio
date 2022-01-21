@@ -1,12 +1,5 @@
 @use 'library' as lib;
 .root {
-	// background-image: linear-gradient(
-	// 	#e0e0e0,
-	// 	#e4e4e4 30%,
-	// 	#e4e4e4 60%,
-	// 	#c8c8c8 100%
-	// );
-	background-color: lib.$background;
 	display: flex;
 	flex-direction: column;
 	padding: 0 150px;

@@ -31,7 +31,8 @@
 		opacity: 0;
 		box-shadow: lib.$neon_glow_weak;
 	}
-	&:hover {
+	&:hover,
+	&:focus-within {
 		&::before {
 			opacity: 0;
 		}
@@ -54,7 +55,8 @@
 	text-decoration: underline;
 	text-decoration-color: rgba(lib.$neon_values, 0);
 	transition: 0.35s;
-	&:hover {
+	&:hover,
+	&:focus {
 		cursor: pointer;
 		color: rgba(lib.$neon_values, 1);
 		text-shadow: 0 0 0.02em lib.$neon;
@@ -98,7 +100,8 @@
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 0.3125rem;
-	&:hover {
+	&:hover,
+	&:focus {
 		cursor: default;
 	}
 }
@@ -116,7 +119,8 @@
 	font-size: 1.2rem;
 	color: lib.$text;
 	transition: background-color 450ms, color 600ms, width 450ms, box-shadow 400ms;
-	&:hover {
+	&:hover,
+	&:focus {
 		background-color: lib.$neon;
 		color: lib.$text;
 		box-shadow: 0 0 10px 4px lib.$neon_transparent, 0 0 0.15em lib.$neon;
@@ -149,7 +153,8 @@
 	text-decoration-color: rgba(lib.$background_inverted, 0);
 	text-decoration-thickness: 1.5px;
 	transition: 0.4s;
-	&:hover {
+	&:hover,
+	&:focus {
 		cursor: pointer;
 		color: lib.$neon;
 		text-decoration-color: lib.$neon;
@@ -176,7 +181,8 @@
 		font-weight: bold;
 		font-size: 1.4rem;
 		padding: 7px 25px 7px 20px;
-		&:hover {
+		&:hover,
+		&:focus {
 			width: auto;
 		}
 	}
@@ -208,7 +214,8 @@
 	.repoLink {
 		font-size: 2rem;
 		width: 75%;
-		&:hover {
+		&:hover,
+		&:focus {
 			width: 85%;
 		}
 	}

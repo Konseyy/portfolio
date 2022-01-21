@@ -38,8 +38,9 @@ const ImageLink: FC<ImageLinkProps> = ({
 	}, [isHovered]);
 	return (
 		<a
+			tabIndex={-1}
 			href={url}
-			onClick={e=>e.preventDefault()}
+			onClick={(e) => e.preventDefault()}
 			className={styles.root}
 			style={{
 				height: size,
@@ -48,6 +49,7 @@ const ImageLink: FC<ImageLinkProps> = ({
 			}}
 		>
 			<div
+				tabIndex={0}
 				className={`${styles.imageContainer} ${isHovered ? styles.hover : ''}`}
 				onMouseEnter={() => setIsHovered(true)}
 				onMouseLeave={() => setIsHovered(false)}

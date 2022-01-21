@@ -11,6 +11,7 @@ const SectionButton: FC<Props> = ({ scrollToId, title }) => {
 	return (
 		<div className={styles.root}>
 			<div
+				tabIndex={0}
 				className={styles.button}
 				onClick={() => scrollIdIntoView(scrollToId)}
 			>

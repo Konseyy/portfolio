@@ -30,11 +30,13 @@ const Project: FC<ProjectProps> = ({
 	return (
 		<div className={styles.root}>
 			<a
+				tabIndex={-1}
 				className={styles.titleContainer}
 				href={live_link ?? repo_link}
 				onClick={(e) => e.preventDefault()}
 			>
 				<h1
+					tabIndex={0}
 					className={styles.title}
 					onClick={() =>
 						openInBrowser(
@@ -49,11 +51,13 @@ const Project: FC<ProjectProps> = ({
 			<div className={styles.linkContainer}>
 				{live_link && (
 					<a
+						tabIndex={-1}
 						className={styles.liveLinkContainer}
 						href={live_link}
 						onClick={(e) => e.preventDefault()}
 					>
 						<div
+							tabIndex={0}
 							className={styles.liveLink}
 							onClick={() => openInBrowser(live_link, demoNewTab)}
 						>
@@ -65,11 +69,13 @@ const Project: FC<ProjectProps> = ({
 					</a>
 				)}
 				<a
+					tabIndex={-1}
 					className={styles.repoLinkContainer}
 					href={repo_link}
 					onClick={(e) => e.preventDefault()}
 				>
 					<div
+						tabIndex={0}
 						className={styles.repoLink}
 						onClick={() => openInBrowser(repo_link, repoNewTab)}
 					>
@@ -89,6 +95,7 @@ const Project: FC<ProjectProps> = ({
 								`${description.substring(0, MAX_DESCRIPTION_DISPLAY)}... `}
 							{!showMore && (
 								<span
+									tabIndex={0}
 									onClick={() => setShowMore(true)}
 									className={styles.readMore}
 								>
