@@ -36,12 +36,6 @@ const NavBar: FC<Props> = ({ navItems }) => {
 			rootHtml.setAttribute('class', 'noScrollBar');
 		}
 	}, [mobileExpanded]);
-	useEffect(() => {
-		if (activeElement === -1) {
-			const target = document.activeElement as HTMLElement;
-			target.blur();
-		}
-	}, [activeElement === -1]);
 	return (
 		<nav className={`${styles.root}  ${mobileExpanded ? styles.expanded : ''}`}>
 			<ul className={styles.list} key="navBarContainer">
@@ -59,6 +53,8 @@ const NavBar: FC<Props> = ({ navItems }) => {
 										e.stopPropagation();
 										if (idx === activeElement) {
 											setActiveElement(-1);
+											const target = document.activeElement as HTMLElement;
+											target.blur();
 										} else {
 											setActiveElement(idx);
 										}
