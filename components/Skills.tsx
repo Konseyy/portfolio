@@ -103,14 +103,6 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 									}
 									return false;
 								}}
-								onTouchMove={(e) => {
-									console.log('move', e);
-									if (e.touches[0].screenY > startY) {
-										handleScrollDown();
-									} else {
-										handleScrollUp();
-									}
-								}}
 								onMouseEnter={() => {
 									const rootHtml = document.getElementsByTagName('html')[0];
 									rootHtml.setAttribute('class', 'noScrollBar locked');
@@ -128,6 +120,14 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 								onTouchEnd={() => {
 									const rootHtml = document.getElementsByTagName('html')[0];
 									rootHtml.setAttribute('class', 'noScrollBar');
+								}}
+								onTouchMove={(e) => {
+									console.log('move', e);
+									if (e.touches[0].screenY > startY) {
+										handleScrollDown();
+									} else {
+										handleScrollUp();
+									}
 								}}
 							>
 								<div className={styles.selectorItem}>
