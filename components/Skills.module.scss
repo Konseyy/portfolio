@@ -155,11 +155,14 @@
 		height: min(11.5vw, 110px);
 	}
 	.description {
-		font-size: 1.4em;
+		font-size: 1.45em;
 	}
 }
 @media screen and (max-width: 750px) {
 	.selectorItem {
 		height: min(12vw, 110px);
+	}
+	.description {
+		font-size: 1.55em;
 	}
 }
