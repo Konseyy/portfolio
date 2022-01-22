@@ -124,9 +124,9 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 								onTouchMove={(e) => {
 									console.log('move', e);
 									if (e.touches[0].screenY > startY) {
-										handleScrollDown();
-									} else {
 										handleScrollUp();
+									} else {
+										handleScrollDown();
 									}
 								}}
 							>
