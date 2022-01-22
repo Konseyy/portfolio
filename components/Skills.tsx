@@ -133,7 +133,6 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 									unLockScroll();
 								}}
 								onTouchMove={(e) => {
-									e.preventDefault();
 									e.stopPropagation();
 									if (Math.abs(e.touches[0].screenY - startY) < 50) return;
 									setStartY(e.touches[0].screenY);
