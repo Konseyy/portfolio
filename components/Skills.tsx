@@ -159,7 +159,7 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 						onClick={handleScrollDown}
 					>
 						<div className={styles.scroll}>
-							<Image src={dropdown} priority/>
+							<Image src={dropdown} priority={true} />
 						</div>
 					</li>
 				</ul>
