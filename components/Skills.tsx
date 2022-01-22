@@ -82,7 +82,7 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 		rootHtml.classList.remove('locked');
 	};
 	return (
-		<div className={styles.root} id={id}>
+		<section className={styles.root} id={id}>
 			<div className={styles.skillWindow}>
 				<ul className={styles.selector}>
 					<li
@@ -179,7 +179,7 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 				</div>
 			</div>
 			<SectionButton title="Projects" scrollToId={scrollToId} />
-		</div>
+		</section>
 	);
 };
 
