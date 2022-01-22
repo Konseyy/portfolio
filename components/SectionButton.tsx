@@ -13,7 +13,10 @@ const SectionButton: FC<Props> = ({ scrollToId, title }) => {
 			<div
 				tabIndex={0}
 				className={styles.button}
-				onClick={() => scrollIdIntoView(scrollToId)}
+				onClick={(e) => {
+					(document.activeElement as HTMLElement).blur();
+					scrollIdIntoView(scrollToId);
+				}}
 			>
 				<p>{title}</p>
 				<div className={styles.dropdownContainer}>
