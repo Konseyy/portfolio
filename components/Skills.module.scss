@@ -3,7 +3,6 @@
 	min-height: 100vh;
 	position: relative;
 	display: flex;
-	align-items: center;
 	justify-content: center;
 	color: lib.$text;
 	font-size: 3vw;
@@ -130,7 +129,17 @@
 			color: lib.$neon;
 		}
 	}
-	span{
+	span {
 		text-shadow: lib.$neon_glow;
+	}
+}
+@media screen and (max-width: 1000px) {
+	.skillWindow {
+		grid-template-columns: 5fr 70% 1fr;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	.description {
+		font-size: 1.6em;
 	}
 }
