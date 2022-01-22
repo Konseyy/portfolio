@@ -39,11 +39,17 @@
 		.imageColored {
 			filter: brightness(100%) invert(0);
 		}
+	}
+	&:focus {
 		& + .labelContainer .label {
 			opacity: 1;
 			visibility: visible;
 		}
 	}
+}
+.label.show {
+	opacity: 1;
+	visibility: visible;
 }
 .image {
 	display: flex;

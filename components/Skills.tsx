@@ -32,16 +32,12 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 	);
 	const [startY, setStartY] = useState(0);
 	useEffect(() => {
-		document
-			.getElementsByTagName('html')[0]
-			.setAttribute('class', 'noScrollBar');
+		document.getElementsByTagName('html')[0].classList.add('noScroll');
 		window.ontouchend = (e) => {
-			const rootHtml = document.getElementsByTagName('html')[0];
-			rootHtml.setAttribute('class', 'noScrollBar');
+			unLockScroll();
 		};
 		window.ontouchstart = (e) => {
-			const rootHtml = document.getElementsByTagName('html')[0];
-			rootHtml.setAttribute('class', 'noScrollBar');
+			unLockScroll();
 		};
 	}, []);
 	useEffect(() => {
@@ -76,6 +72,14 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 				lastScroll: 'down',
 			});
 		}
+	};
+	const lockScroll = () => {
+		const rootHtml = document.getElementsByTagName('html')[0];
+		rootHtml.classList.add('locked');
+	};
+	const unLockScroll = () => {
+		const rootHtml = document.getElementsByTagName('html')[0];
+		rootHtml.classList.remove('locked');
 	};
 	return (
 		<div className={styles.root} id={id}>
@@ -112,26 +116,21 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 									return false;
 								}}
 								onMouseEnter={() => {
-									const rootHtml = document.getElementsByTagName('html')[0];
-									rootHtml.setAttribute('class', 'noScrollBar locked');
+									lockScroll();
 								}}
 								onMouseLeave={() => {
-									const rootHtml = document.getElementsByTagName('html')[0];
-									rootHtml.setAttribute('class', 'noScrollBar');
+									unLockScroll();
 								}}
 								onTouchStart={(e) => {
 									e.stopPropagation();
 									setStartY(e.touches[0].screenY);
-									const rootHtml = document.getElementsByTagName('html')[0];
-									rootHtml.setAttribute('class', 'noScrollBar locked');
+									lockScroll();
 								}}
 								onTouchEnd={() => {
-									const rootHtml = document.getElementsByTagName('html')[0];
-									rootHtml.setAttribute('class', 'noScrollBar');
+									unLockScroll();
 								}}
 								onTouchCancel={() => {
-									const rootHtml = document.getElementsByTagName('html')[0];
-									rootHtml.setAttribute('class', 'noScrollBar');
+									unLockScroll();
 								}}
 								onTouchMove={(e) => {
 									e.preventDefault();
@@ -159,7 +158,7 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 						onClick={handleScrollDown}
 					>
 						<div className={styles.scroll}>
-							<Image src={dropdown} />
+							<Image src={dropdown} priority={true} />
 						</div>
 					</li>
 				</ul>

@@ -8,7 +8,8 @@ html {
 			background: transparent; /* Optional: just make scrollbar invisible */
 		}
 	}
-	&.locked {
+	&.locked,
+	&.navLocked {
 		overflow: hidden;
 	}
 }

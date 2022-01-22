@@ -4,7 +4,7 @@
 		transform: translateY(0%);
 	}
 	100% {
-		transform: translateY(25%);
+		transform: translateY(20%);
 	}
 }
 .root {
@@ -66,7 +66,7 @@
 	filter: brightness(0) invert(1);
 	height: min(min(5.5vw, 110px), 100%);
 	aspect-ratio: 1;
-	animation: verticalMove 1s infinite alternate;
+	animation: verticalMove 0.85s infinite alternate;
 }
 .selectorItemContainer {
 	padding: 0.35em 0.65em;
@@ -148,7 +148,7 @@
 @media screen and (max-width: 1000px) {
 	.skillWindow {
 		grid-template-columns: 5fr 70% 1fr;
-		padding-top: 50px;
+		padding-top: 150px;
 		padding-bottom: 50px;
 	}
 	.selectorItem {
@@ -164,5 +164,10 @@
 	}
 	.description {
 		font-size: 1.55em;
+	}
+}
+@media screen and (min-width: 750px) {
+	.selector {
+		padding-top: 0;
 	}
 }
