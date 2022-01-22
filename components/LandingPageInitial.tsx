@@ -89,8 +89,8 @@ const LandingPageInitial: FC<Props> = ({ scrollToId, id }) => {
 		let timerDesktop: NodeJS.Timer;
 		let timerMobile: NodeJS.Timer;
 		setTimeout(() => {
-			timerDesktop = typeText(desktopText, setDesktopTextPartial, 100, 30);
-			timerMobile = typeText(mobileText, setMobileTextPartial, 90, 35);
+			timerDesktop = typeText(desktopText, setDesktopTextPartial, 100, 45);
+			timerMobile = typeText(mobileText, setMobileTextPartial, 90, 50);
 		}, 3000);
 		return () => {
 			clearInterval(timerDesktop);
