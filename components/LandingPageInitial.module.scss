@@ -28,6 +28,7 @@
 	font-weight: bold;
 	color: lib.$highlight_pale;
 	text-shadow: lib.$neon_glow_neon;
+	white-space: pre;
 }
 .notBold {
 	font-weight: normal;
@@ -43,21 +44,28 @@
 #spacer::before {
 	content: '';
 	height: clamp(5.7rem, 21vw, 17.5rem);
-	margin-left: clamp(1.5rem, 3.5vw, 4.3rem);
+	margin-left: .05em;
 	width: clamp(0.15rem, 0.45vw, 0.35rem);
 	background-color: lib.$text;
 	box-shadow: lib.$neon_glow_weak;
 }
-#spacer::before {
+#spacer.animate::before {
 	animation-name: fade;
-	animation-duration: 3s;
+	animation-duration: 2.5s;
+	animation-delay: .4s;
 	animation-iteration-count: infinite;
 }
 .showMobile {
-	display: none;
+	&,
+	&::before {
+		display: none;
+	}
 }
 .hideMobile {
-	display: inline-block;
+	&,
+	&::before {
+		display: inline-block;
+	}
 }
 @media only screen and (max-width: 800px) {
 	.landingPage {
@@ -70,9 +78,15 @@
 }
 @media only screen and (max-width: 500px) {
 	.showMobile {
-		display: inline-block;
+		&,
+		&::before {
+			display: inline-block;
+		}
 	}
 	.hideMobile {
-		display: none;
+		&,
+		&::before {
+			display: none;
+		}
 	}
 }
