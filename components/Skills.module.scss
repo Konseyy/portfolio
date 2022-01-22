@@ -166,3 +166,8 @@
 		font-size: 1.55em;
 	}
 }
+@media screen and (min-width: 750px) {
+	.selector {
+		padding-top: 0;
+	}
+}
