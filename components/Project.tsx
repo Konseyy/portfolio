@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import { ImageLinkProps } from './ImageLink';
 import Image from 'next/image';
 import { openInBrowser } from '../functions/openInBrowser';
@@ -25,10 +25,21 @@ const Project: FC<ProjectProps> = ({
 	demoNewTab = true,
 }) => {
 	const [showMore, setShowMore] = useState(false);
+	const selfRef = useRef(null);
 	const MAX_DESCRIPTION_DISPLAY = 95;
 	const descriptionOverflow = description.length - 10 > MAX_DESCRIPTION_DISPLAY;
 	return (
-		<div className={styles.root}>
+		<div
+			tabIndex={0}
+			ref={selfRef}
+			className={styles.root}
+			onTouchStart={(e) => {
+				if (selfRef.current) {
+					e.stopPropagation();
+					selfRef.current.focus();
+				}
+			}}
+		>
 			<a
 				tabIndex={-1}
 				className={styles.titleContainer }
