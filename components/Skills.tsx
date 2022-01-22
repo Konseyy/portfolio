@@ -35,6 +35,16 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 		document
 			.getElementsByTagName('html')[0]
 			.setAttribute('class', 'noScrollBar');
+		window.ontouchend = (e) => {
+			console.log('end window');
+			const rootHtml = document.getElementsByTagName('html')[0];
+			rootHtml.setAttribute('class', 'noScrollBar');
+		};
+		window.ontouchstart = (e) => {
+			console.log('start window');
+			const rootHtml = document.getElementsByTagName('html')[0];
+			rootHtml.setAttribute('class', 'noScrollBar');
+		};
 	}, []);
 	useEffect(() => {
 		setSlicedSkills(
@@ -113,6 +123,7 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 								}}
 								onTouchStart={(e) => {
 									console.log('start', e);
+									e.stopPropagation();
 									setStartY(e.touches[0].screenY);
 									const rootHtml = document.getElementsByTagName('html')[0];
 									rootHtml.setAttribute('class', 'noScrollBar locked');
@@ -121,8 +132,13 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 									const rootHtml = document.getElementsByTagName('html')[0];
 									rootHtml.setAttribute('class', 'noScrollBar');
 								}}
+								onTouchCancel={() => {
+									const rootHtml = document.getElementsByTagName('html')[0];
+									rootHtml.setAttribute('class', 'noScrollBar');
+								}}
 								onTouchMove={(e) => {
-									console.log('move', e);
+									e.preventDefault();
+									e.stopPropagation();
 									if (e.touches[0].screenY > startY) {
 										handleScrollUp();
 									} else {
