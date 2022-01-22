@@ -217,6 +217,7 @@
 			}
 			& > :nth-child(2) {
 				opacity: 0;
+				height: 0;
 			}
 			& > :nth-child(3) {
 				transform: rotate(225deg);
