@@ -18,16 +18,19 @@ const LandingPageInitial: FC<Props> = ({ scrollToId, id }) => {
 		partialText: string;
 		direction: 'backwards' | 'forwards';
 		overflow: number;
+		typeOverflow: number;
 	};
 	const [desktopTextPartial, setDesktopTextPartial] = useState<typing>({
 		partialText: desktopText,
 		direction: 'backwards',
 		overflow: 0,
+		typeOverflow: 0,
 	});
 	const [mobileTextPartial, setMobileTextPartial] = useState<typing>({
 		partialText: mobileText,
 		direction: 'backwards',
 		overflow: 0,
+		typeOverflow: 0,
 	});
 	const delay = async (ms: number) => {
 		return new Promise<void>((r) => {
@@ -50,10 +53,15 @@ const LandingPageInitial: FC<Props> = ({ scrollToId, id }) => {
 					newPartial.partialText = newPartial.partialText.slice(0, -1);
 				}
 				if (oldPartial.direction === 'forwards') {
-					newPartial.partialText = fullText.slice(
-						0,
-						oldPartial.partialText.length + 1
-					);
+					if (newPartial.typeOverflow === 3) {
+						newPartial.partialText = fullText.slice(
+							0,
+							oldPartial.partialText.length + 1
+						);
+						newPartial.typeOverflow = 0;
+					} else {
+						newPartial.typeOverflow += 1;
+					}
 				}
 				if (oldPartial.partialText.length === fullText.length) {
 					if (newPartial.overflow === pauseMultiplier) {
@@ -81,8 +89,8 @@ const LandingPageInitial: FC<Props> = ({ scrollToId, id }) => {
 		let timerDesktop: NodeJS.Timer;
 		let timerMobile: NodeJS.Timer;
 		setTimeout(() => {
-			timerDesktop = typeText(desktopText, setDesktopTextPartial, 350, 10);
-			timerMobile = typeText(mobileText, setMobileTextPartial, 330, 10);
+			timerDesktop = typeText(desktopText, setDesktopTextPartial, 100, 30);
+			timerMobile = typeText(mobileText, setMobileTextPartial, 90, 35);
 		}, 3000);
 		return () => {
 			clearInterval(timerDesktop);
