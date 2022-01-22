@@ -141,7 +141,15 @@
 		padding-top: 50px;
 		padding-bottom: 50px;
 	}
+	.selectorItem {
+		height: min(11.5vw, 110px);
+	}
 	.description {
 		font-size: 1.6em;
+	}
+}
+@media screen and (max-width: 750px) {
+	.selectorItem {
+		height: min(12vw, 110px);
 	}
 }
