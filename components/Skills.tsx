@@ -89,7 +89,7 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 						onClick={handleScrollUp}
 					>
 						<div className={styles.scroll}>
-							<Image src={dropdown} />
+							<Image src={dropdown} placeholder="blur" />
 						</div>
 					</li>
 					{slicedSkills.map((skill, idx) => {
@@ -146,7 +146,7 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 								}}
 							>
 								<div className={styles.selectorItem}>
-									<Image src={skill.image} />
+									<Image src={skill.image} placeholder="blur" />
 								</div>
 							</li>
 						);
@@ -159,7 +159,7 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 						onClick={handleScrollDown}
 					>
 						<div className={styles.scroll}>
-							<Image src={dropdown} priority={true} />
+							<Image src={dropdown} priority={true} placeholder="blur" />
 						</div>
 					</li>
 				</ul>

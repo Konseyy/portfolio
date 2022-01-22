@@ -17,7 +17,7 @@ const SectionButton: FC<Props> = ({ scrollToId, title }) => {
 			>
 				<p>{title}</p>
 				<div className={styles.dropdownContainer}>
-					<Image src={dropdown} />
+					<Image src={dropdown} placeholder="blur" />
 				</div>
 			</div>
 		</div>

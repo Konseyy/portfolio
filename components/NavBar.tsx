@@ -35,7 +35,7 @@ const NavBar: FC<Props> = ({ navItems }) => {
 							<div className={styles.sectionHeader}>
 								<h1>{navItem.displayTitle}</h1>
 								<div className={styles.dropdownContainer}>
-									<Image src={dropdown} />
+									<Image src={dropdown} placeholder="blur" />
 								</div>
 							</div>
 							<div className={styles.sectionListContainer}>
@@ -46,7 +46,7 @@ const NavBar: FC<Props> = ({ navItems }) => {
 									{navItem.sections.map((section) => {
 										return (
 											<li
-											tabIndex={0}
+												tabIndex={0}
 												key={`navItem${section.sectionTitle}`}
 												className={styles.sectionListItem}
 												onClick={() => {
