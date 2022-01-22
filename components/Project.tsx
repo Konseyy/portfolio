@@ -31,7 +31,7 @@ const Project: FC<ProjectProps> = ({
 		<div className={styles.root}>
 			<a
 				tabIndex={-1}
-				className={styles.titleContainer}
+				className={styles.titleContainer }
 				href={live_link ?? repo_link}
 				onClick={(e) => e.preventDefault()}
 			>
