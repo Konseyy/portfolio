@@ -36,12 +36,10 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 			.getElementsByTagName('html')[0]
 			.setAttribute('class', 'noScrollBar');
 		window.ontouchend = (e) => {
-			console.log('end window');
 			const rootHtml = document.getElementsByTagName('html')[0];
 			rootHtml.setAttribute('class', 'noScrollBar');
 		};
 		window.ontouchstart = (e) => {
-			console.log('start window');
 			const rootHtml = document.getElementsByTagName('html')[0];
 			rootHtml.setAttribute('class', 'noScrollBar');
 		};
@@ -122,7 +120,6 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 									rootHtml.setAttribute('class', 'noScrollBar');
 								}}
 								onTouchStart={(e) => {
-									// console.log('start', e);
 									e.stopPropagation();
 									setStartY(e.touches[0].screenY);
 									const rootHtml = document.getElementsByTagName('html')[0];
