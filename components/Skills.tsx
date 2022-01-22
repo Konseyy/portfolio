@@ -30,6 +30,7 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 	const [slicedSkills, setSlicedSkills] = useState(
 		skills.slice(0, displayElements - 1)
 	);
+	const [startY, setStartY] = useState(0);
 	useEffect(() => {
 		document
 			.getElementsByTagName('html')[0]
@@ -102,16 +103,31 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 									}
 									return false;
 								}}
+								onTouchMove={(e) => {
+									console.log('move', e);
+									if (e.touches[0].screenY > startY) {
+										handleScrollDown();
+									} else {
+										handleScrollUp();
+									}
+								}}
 								onMouseEnter={() => {
 									const rootHtml = document.getElementsByTagName('html')[0];
 									rootHtml.setAttribute('class', 'noScrollBar locked');
-									// rootHtml.style.height = '100%';
 								}}
 								onMouseLeave={() => {
 									const rootHtml = document.getElementsByTagName('html')[0];
 									rootHtml.setAttribute('class', 'noScrollBar');
-									// rootHtml.style.overflow = 'auto';
-									// rootHtml.style.height = 'auto';
+								}}
+								onTouchStart={(e) => {
+									console.log('start', e);
+									setStartY(e.touches[0].screenY);
+									const rootHtml = document.getElementsByTagName('html')[0];
+									rootHtml.setAttribute('class', 'noScrollBar locked');
+								}}
+								onTouchEnd={() => {
+									const rootHtml = document.getElementsByTagName('html')[0];
+									rootHtml.setAttribute('class', 'noScrollBar');
 								}}
 							>
 								<div className={styles.selectorItem}>
