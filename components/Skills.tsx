@@ -122,7 +122,7 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 									rootHtml.setAttribute('class', 'noScrollBar');
 								}}
 								onTouchStart={(e) => {
-									console.log('start', e);
+									// console.log('start', e);
 									e.stopPropagation();
 									setStartY(e.touches[0].screenY);
 									const rootHtml = document.getElementsByTagName('html')[0];
@@ -139,6 +139,8 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 								onTouchMove={(e) => {
 									e.preventDefault();
 									e.stopPropagation();
+									if (Math.abs(e.touches[0].screenY - startY) < 50) return;
+									setStartY(e.touches[0].screenY);
 									if (e.touches[0].screenY > startY) {
 										handleScrollUp();
 									} else {
