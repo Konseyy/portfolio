@@ -1,4 +1,12 @@
 @use 'library' as lib;
+@keyframes verticalMove {
+	0% {
+		transform: translateY(0%);
+	}
+	100% {
+		transform: translateY(25%);
+	}
+}
 .root {
 	min-height: 100vh;
 	position: relative;
@@ -33,6 +41,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
 	&:hover {
 		cursor: pointer;
 	}
@@ -57,6 +66,7 @@
 	filter: brightness(0) invert(1);
 	height: min(min(5.5vw, 110px), 100%);
 	aspect-ratio: 1;
+	animation: verticalMove 1s infinite alternate;
 }
 .selectorItemContainer {
 	padding: 0.35em 0.65em;
