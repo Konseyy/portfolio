@@ -199,13 +199,13 @@
 			opacity: 1;
 		}
 		& > :nth-child(1) {
-			margin-bottom: 1.5em;
+			margin-bottom: 1.5rem;
 			transform: rotate(-270deg);
 		}
 		& > :nth-child(2) {
 		}
 		& > :nth-child(3) {
-			margin-top: 1.5em;
+			margin-top: 1.5rem;
 			transform: rotate(270deg);
 		}
 		&.expanded {
