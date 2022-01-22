@@ -60,7 +60,7 @@ const ImageLink: FC<ImageLinkProps> = ({
 						colored ? styles.imageColored : styles.imageBlackAndWhite
 					} ${styles.image}`}
 				>
-					<Image src={image} placeholder="blur" />
+					<Image src={image} />
 				</div>
 			</div>
 			<div className={styles.labelContainer}>

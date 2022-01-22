@@ -35,7 +35,7 @@ const NavBar: FC<Props> = ({ navItems }) => {
 							<div className={styles.sectionHeader}>
 								<h1>{navItem.displayTitle}</h1>
 								<div className={styles.dropdownContainer}>
-									<Image src={dropdown} placeholder="blur" />
+									<Image src={dropdown} />
 								</div>
 							</div>
 							<div className={styles.sectionListContainer}>

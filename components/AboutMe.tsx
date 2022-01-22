@@ -22,7 +22,7 @@ const AboutMe: FC<Props> = ({
 		<section id={id} className={styles.root}>
 			<div className={styles.aboutMe}>
 				<div className={styles.personalPhotoContainer}>
-					<Image src={me} placeholder="blur" />
+					<Image src={me} />
 				</div>
 				<div className={styles.infoContainer}>
 					<div className={styles.title}>{title}</div>

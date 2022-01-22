@@ -62,7 +62,7 @@ const Project: FC<ProjectProps> = ({
 							onClick={() => openInBrowser(live_link, demoNewTab)}
 						>
 							<div className={styles.linkImageContainer}>
-								<Image src={demo} placeholder="blur" />
+								<Image src={demo} />
 							</div>
 							<p>Demo</p>
 						</div>
@@ -80,7 +80,7 @@ const Project: FC<ProjectProps> = ({
 						onClick={() => openInBrowser(repo_link, repoNewTab)}
 					>
 						<div className={styles.linkImageContainer}>
-							<Image src={code} placeholder="blur" />
+							<Image src={code} />
 						</div>
 						<p>Source</p>
 					</div>
