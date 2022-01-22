@@ -1,9 +1,16 @@
 @use 'library' as lib;
+@keyframes verticalMove {
+	0% {
+		transform: translateY(0%);
+	}
+	100% {
+		transform: translateY(25%);
+	}
+}
 .root {
 	min-height: 100vh;
 	position: relative;
 	display: flex;
-	align-items: center;
 	justify-content: center;
 	color: lib.$text;
 	font-size: 3vw;
@@ -23,6 +30,8 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding-top: 2.5em;
+	// justify-content: center;
 	// width: fit-content;
 }
 .scrollContainer {
@@ -32,6 +41,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
 	&:hover {
 		cursor: pointer;
 	}
@@ -56,6 +66,7 @@
 	filter: brightness(0) invert(1);
 	height: min(min(5.5vw, 110px), 100%);
 	aspect-ratio: 1;
+	animation: verticalMove 1s infinite alternate;
 }
 .selectorItemContainer {
 	padding: 0.35em 0.65em;
@@ -130,7 +141,28 @@
 			color: lib.$neon;
 		}
 	}
-	span{
+	span {
 		text-shadow: lib.$neon_glow;
+	}
+}
+@media screen and (max-width: 1000px) {
+	.skillWindow {
+		grid-template-columns: 5fr 70% 1fr;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	.selectorItem {
+		height: min(11.5vw, 110px);
+	}
+	.description {
+		font-size: 1.45em;
+	}
+}
+@media screen and (max-width: 750px) {
+	.selectorItem {
+		height: min(12vw, 110px);
+	}
+	.description {
+		font-size: 1.55em;
 	}
 }

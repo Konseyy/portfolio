@@ -30,10 +30,19 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 	const [slicedSkills, setSlicedSkills] = useState(
 		skills.slice(0, displayElements - 1)
 	);
+	const [startY, setStartY] = useState(0);
 	useEffect(() => {
 		document
 			.getElementsByTagName('html')[0]
 			.setAttribute('class', 'noScrollBar');
+		window.ontouchend = (e) => {
+			const rootHtml = document.getElementsByTagName('html')[0];
+			rootHtml.setAttribute('class', 'noScrollBar');
+		};
+		window.ontouchstart = (e) => {
+			const rootHtml = document.getElementsByTagName('html')[0];
+			rootHtml.setAttribute('class', 'noScrollBar');
+		};
 	}, []);
 	useEffect(() => {
 		setSlicedSkills(
@@ -105,13 +114,35 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 								onMouseEnter={() => {
 									const rootHtml = document.getElementsByTagName('html')[0];
 									rootHtml.setAttribute('class', 'noScrollBar locked');
-									// rootHtml.style.height = '100%';
 								}}
 								onMouseLeave={() => {
 									const rootHtml = document.getElementsByTagName('html')[0];
 									rootHtml.setAttribute('class', 'noScrollBar');
-									// rootHtml.style.overflow = 'auto';
-									// rootHtml.style.height = 'auto';
+								}}
+								onTouchStart={(e) => {
+									e.stopPropagation();
+									setStartY(e.touches[0].screenY);
+									const rootHtml = document.getElementsByTagName('html')[0];
+									rootHtml.setAttribute('class', 'noScrollBar locked');
+								}}
+								onTouchEnd={() => {
+									const rootHtml = document.getElementsByTagName('html')[0];
+									rootHtml.setAttribute('class', 'noScrollBar');
+								}}
+								onTouchCancel={() => {
+									const rootHtml = document.getElementsByTagName('html')[0];
+									rootHtml.setAttribute('class', 'noScrollBar');
+								}}
+								onTouchMove={(e) => {
+									e.preventDefault();
+									e.stopPropagation();
+									if (Math.abs(e.touches[0].screenY - startY) < 50) return;
+									setStartY(e.touches[0].screenY);
+									if (e.touches[0].screenY > startY) {
+										handleScrollUp();
+									} else {
+										handleScrollDown();
+									}
 								}}
 							>
 								<div className={styles.selectorItem}>
