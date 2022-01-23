@@ -24,7 +24,7 @@ const skills: skill[] = [
 				It was the first frontend framework I ever used professionally and I
 				still love using it. Ever since I found out that{' '}
 				<a
-					rel="norefferer"
+					rel="noreferrer"
 					href="https://reactjs.org/docs/components-and-props.html"
 				>
 					function components
@@ -47,7 +47,7 @@ const skills: skill[] = [
 				hours and what I had done for the day, but I couldn't find any app for
 				doing this that suited my tastes, so I made my own{' '}
 				<a
-					rel="norefferer"
+					rel="noreferrer"
 					href="https://play.google.com/store/apps/details?id=com.shiftlog"
 				>
 					lightweight work tracking app
@@ -81,7 +81,7 @@ const skills: skill[] = [
 				At first I wasn't really sure what the point of TypeScript was, but I
 				decided to try it out when I was making my{' '}
 				<a
-					rel="norefferer"
+					rel="noreferrer"
 					href="https://play.google.com/store/apps/details?id=com.shiftlog"
 				>
 					first mobile application
@@ -139,12 +139,12 @@ const skills: skill[] = [
 			<p>
 				It takes everything I already loved about react and makes using it so
 				much easier. The{' '}
-				<a rel="norefferer" href="https://nextjs.org/docs/routing/introduction">
+				<a rel="noreferrer" href="https://nextjs.org/docs/routing/introduction">
 					integrated routing
 				</a>{' '}
 				as well as{' '}
 				<a
-					rel="norefferer"
+					rel="noreferrer"
 					href="https://nextjs.org/docs/basic-features/built-in-css-support"
 				>
 					integrated scss support and locally scoped styling
@@ -163,7 +163,7 @@ const skills: skill[] = [
 				university Web Technologies II course, in which my final assignment was
 				to make a{' '}
 				<a
-					rel="norefferer"
+					rel="noreferrer"
 					href="https://github.com/Konseyy/WebTech2FinalProject"
 				>
 					project
@@ -184,11 +184,11 @@ const skills: skill[] = [
 			<p>Most of my experience with using databases is with MySQL.</p>,
 			<p>
 				I have also used{' '}
-				<a rel="norefferer" href="https://www.postgresql.org/">
+				<a rel="noreferrer" href="https://www.postgresql.org/">
 					PostgresSQL
 				</a>{' '}
 				and also minimal experience working in a NoSQL environment with{' '}
-				<a rel="norefferer" href="https://www.mongodb.com/">
+				<a rel="noreferrer" href="https://www.mongodb.com/">
 					MongoDB
 				</a>
 				.
@@ -206,7 +206,7 @@ const skills: skill[] = [
 			</p>,
 			<p>
 				So far I have managed to create a{' '}
-				<a rel="norefferer" href="/api/graphql">
+				<a rel="noreferrer" href="/api/graphql">
 					simple endpoint
 				</a>{' '}
 				that connects with the GitHub api and returns data about my public

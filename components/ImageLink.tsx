@@ -38,7 +38,7 @@ const ImageLink: FC<ImageLinkProps> = ({
 	}, [isHovered]);
 	return (
 		<a
-			rel="norefferer"
+			rel="noreferrer"
 			tabIndex={-1}
 			href={url}
 			onClick={(e) => e.preventDefault()}

@@ -30,7 +30,7 @@ const Project: FC<ProjectProps> = ({
 	return (
 		<div className={styles.root}>
 			<a
-				rel="norefferer"
+				rel="noreferrer"
 				tabIndex={-1}
 				className={styles.titleContainer}
 				href={live_link ?? repo_link}
@@ -52,7 +52,7 @@ const Project: FC<ProjectProps> = ({
 			<div className={styles.linkContainer}>
 				{live_link && (
 					<a
-						rel="norefferer"
+						rel="noreferrer"
 						tabIndex={-1}
 						className={styles.liveLinkContainer}
 						href={live_link}
@@ -71,7 +71,7 @@ const Project: FC<ProjectProps> = ({
 					</a>
 				)}
 				<a
-					rel="norefferer"
+					rel="noreferrer"
 					tabIndex={-1}
 					className={styles.repoLinkContainer}
 					href={repo_link}
