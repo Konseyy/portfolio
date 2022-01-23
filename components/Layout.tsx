@@ -2,6 +2,7 @@ import React, { FC, useEffect } from 'react';
 import NavBar from './NavBar';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import Script from 'next/script';
 import styles from './Layout.module.scss';
 import scrollIdIntoView from '../functions/scrollIdIntoView';
 const Layout: FC = ({ children }) => {
@@ -65,6 +66,17 @@ const Layout: FC = ({ children }) => {
 				/>
 				<link rel="manifest" href="/site.webmanifest" />
 				<title>Valdis - Developer</title>
+				<Script
+					src="https://www.googletagmanager.com/gtag/js?id=G-MJSJXH851F"
+					strategy="afterInteractive"
+				/>
+				<Script>
+					{`window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+
+				gtag('config', 'G-MJSJXH851F');`}
+				</Script>
 			</Head>
 			<NavBar
 				navItems={[
