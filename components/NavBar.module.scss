@@ -19,7 +19,7 @@
 	flex-direction: row;
 }
 .sectionHeader {
-	background-color: rgba(lib.$background, 0.45);
+	background-color: rgba(lib.$background, 0.9);
 	padding: 10px 20px;
 	width: 100%;
 	border-radius: 10px;
@@ -30,7 +30,7 @@
 	h1 {
 		font-size: 2.6rem;
 	}
-	transition: color 0.5s;
+	transition: all 0.5s, border-radius 0s;
 }
 .dropdownContainer {
 	margin-left: 0.65rem;
@@ -45,14 +45,13 @@
 	position: relative;
 }
 .sectionList {
-	border-top: 2px solid lib.$background;
 	opacity: 0;
 	font-size: 1.6rem;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	border-radius: 0 0 10px 10px;
-	background-color: lib.$background;
+	background-color: rgba(lib.$background, 0.9);
 	position: absolute;
 	transform-origin: top;
 	transform: scaleY(0);
@@ -75,38 +74,28 @@
 	font-weight: bold;
 	color: lib.$text;
 	transition: 0.5s;
-	.active {
-		.sectionList {
-			background-color: lib.$background_inverted;
-		}
-	}
 	&:hover,
 	&:focus-within {
 		.sectionHeader {
 			border-radius: 10px 10px 0 0;
-			color: lib.$text_inverted;
-			background-color: lib.$background_inverted;
+			text-shadow: lib.$neon_glow;
 			cursor: pointer;
+			border-width: 1px;
 			.dropdownContainer {
 				transform: rotate(-180deg);
-				filter: brightness(0) invert(0);
 			}
 		}
-	}
-	&:hover,
-	&:focus-within {
 		.sectionList {
 			&:hover {
 				cursor: pointer;
 			}
-			color: lib.$text_inverted;
 			opacity: 1;
-			background-color: lib.$background_inverted;
 			transform: scaleY(1);
 			.sectionListItem {
 				padding-bottom: 10px;
 				&:hover {
-					text-decoration-color: rgba(lib.$text_inverted, 1);
+					text-shadow: lib.$neon_glow;
+					text-decoration-color: rgba(lib.$text, 1);
 				}
 			}
 		}
@@ -123,15 +112,24 @@
 		display: none;
 		flex-direction: column;
 	}
+	.sectionList {
+		position: relative;
+		background-color: transparent;
+	}
+	.sectionListContainer {
+		height: 0;
+		transform: scaleY(0);
+	}
+	.sectionHeader {
+		padding: 1em 2em;
+		background-color: transparent;
+	}
 	.navItem {
 		margin-left: 0;
 		&:hover,
 		&:focus-within {
-			.sectionList {
-				.sectionListItem {
-					color: lib.$text_inverted;
-				}
-				background-color: lib.$background_inverted;
+			.sectionHeader {
+				padding-bottom: 0.25em;
 			}
 			.sectionListContainer {
 				height: auto;
@@ -144,17 +142,6 @@
 				}
 			}
 		}
-	}
-	.sectionList {
-		position: relative;
-	}
-	.sectionListContainer {
-		height: 0;
-		transform: scaleY(0);
-	}
-	.sectionHeader {
-		padding: 1em 2em;
-		background-color: transparent;
 	}
 	.root.expanded {
 		background-color: rgba(0, 0, 0, 0.86);
@@ -179,6 +166,12 @@
 		}
 	}
 
+	.burgerLine {
+		filter: brightness(0) invert(1);
+		aspect-ratio: 1;
+		height: 2.5em;
+		position: absolute;
+	}
 	.mobileExpandContainer {
 		display: flex;
 		align-items: center;
@@ -193,7 +186,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		* {
+		.burgerLine {
 			transform: rotate(90deg);
 			transition: 0.5s;
 		}
@@ -209,7 +202,7 @@
 			transform: rotate(270deg);
 		}
 		&.expanded {
-			* {
+			.burgerLine {
 				margin: 0;
 			}
 			& > :nth-child(1) {
@@ -224,19 +217,9 @@
 			}
 		}
 	}
-	.burgerLine {
-		filter: brightness(0) invert(1);
-		aspect-ratio: 1;
-		height: 2.5em;
-		position: absolute;
-	}
 }
 @media only screen and (max-width: 650px) {
 	.mobileExpandContainer {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin-left: auto;
 		margin-right: 1.5em;
 	}
 }

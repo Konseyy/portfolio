@@ -30,6 +30,7 @@ const Project: FC<ProjectProps> = ({
 	return (
 		<div className={styles.root}>
 			<a
+				rel="noreferrer"
 				tabIndex={-1}
 				className={styles.titleContainer}
 				href={live_link ?? repo_link}
@@ -51,6 +52,7 @@ const Project: FC<ProjectProps> = ({
 			<div className={styles.linkContainer}>
 				{live_link && (
 					<a
+						rel="noreferrer"
 						tabIndex={-1}
 						className={styles.liveLinkContainer}
 						href={live_link}
@@ -62,13 +64,14 @@ const Project: FC<ProjectProps> = ({
 							onClick={() => openInBrowser(live_link, demoNewTab)}
 						>
 							<div className={styles.linkImageContainer}>
-								<Image src={demo} />
+								<Image src={demo} alt={`demo link for ${title}`} />
 							</div>
 							<p>Demo</p>
 						</div>
 					</a>
 				)}
 				<a
+					rel="noreferrer"
 					tabIndex={-1}
 					className={styles.repoLinkContainer}
 					href={repo_link}
@@ -80,7 +83,7 @@ const Project: FC<ProjectProps> = ({
 						onClick={() => openInBrowser(repo_link, repoNewTab)}
 					>
 						<div className={styles.linkImageContainer}>
-							<Image src={code} />
+							<Image src={code} alt={`repository link for ${title}`} />
 						</div>
 						<p>Source</p>
 					</div>

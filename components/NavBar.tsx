@@ -63,7 +63,7 @@ const NavBar: FC<Props> = ({ navItems }) => {
 									<div className={styles.sectionHeader}>
 										<h1>{navItem.displayTitle}</h1>
 										<div className={styles.dropdownContainer}>
-											<Image src={dropdown} />
+											<Image src={dropdown} alt="direction indicator" />
 										</div>
 									</div>
 									<div className={styles.sectionListContainer}>
@@ -119,13 +119,13 @@ const NavBar: FC<Props> = ({ navItems }) => {
 						}`}
 					>
 						<div className={styles.burgerLine}>
-							<Image src={line} />
+							<Image src={line} alt="mobile expand line" />
 						</div>
 						<div className={styles.burgerLine}>
-							<Image src={line} />
+							<Image src={line} alt="mobile expand line" />
 						</div>
 						<div className={styles.burgerLine}>
-							<Image src={line} />
+							<Image src={line} alt="mobile expand line" />
 						</div>
 					</div>
 				</li>

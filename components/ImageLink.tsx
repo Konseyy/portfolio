@@ -38,6 +38,7 @@ const ImageLink: FC<ImageLinkProps> = ({
 	}, [isHovered]);
 	return (
 		<a
+			rel="noreferrer"
 			tabIndex={-1}
 			href={url}
 			onClick={(e) => e.preventDefault()}
@@ -60,7 +61,7 @@ const ImageLink: FC<ImageLinkProps> = ({
 						colored ? styles.imageColored : styles.imageBlackAndWhite
 					} ${styles.image}`}
 				>
-					<Image src={image} />
+					<Image src={image} alt={title} />
 				</div>
 			</div>
 			<div className={styles.labelContainer}>
