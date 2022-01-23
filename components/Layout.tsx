@@ -70,7 +70,7 @@ const Layout: FC = ({ children }) => {
 					src="https://www.googletagmanager.com/gtag/js?id=G-MJSJXH851F"
 					strategy="afterInteractive"
 				/>
-				<Script>
+				<Script id="google-analytics" strategy="afterInteractive">
 					{`window.dataLayer = window.dataLayer || [];
 				function gtag(){dataLayer.push(arguments);}
 				gtag('js', new Date());
