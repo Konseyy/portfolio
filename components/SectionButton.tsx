@@ -20,7 +20,7 @@ const SectionButton: FC<Props> = ({ scrollToId, title }) => {
 			>
 				<p>{title}</p>
 				<div className={styles.dropdownContainer}>
-					<Image src={dropdown} />
+					<Image src={dropdown} alt="direction indicator" />
 				</div>
 			</div>
 		</div>
