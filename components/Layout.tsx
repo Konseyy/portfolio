@@ -28,6 +28,20 @@ const Layout: FC = ({ children }) => {
 	return (
 		<>
 			<Head>
+				<meta
+					property="og:title"
+					content="Valdis Developer Portfolio"
+					key="title"
+				/>
+				<meta
+					name="description"
+					content="My personal development portfolio, featuring information about me as well as showcasing my projects"
+				/>
+				<meta
+					name="keywords"
+					content="HTML, CSS, JavaScript, TypeScript, React, Next.js, React Native, Programming, Web development, Developer, Laravel, Drupal, PHP, SQL, GraphQL, Portfolio"
+				/>
+				<meta name="author" content="Valdis" />
 				<link
 					href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap"
 					rel="stylesheet"
