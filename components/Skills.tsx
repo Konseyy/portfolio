@@ -163,7 +163,11 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 				</ul>
 				<div className={styles.contentSection}>
 					<div className={styles.titleContainer}>
-						<a href={slicedSkills[selectedIndex].url} className={styles.title}>
+						<a
+							href={slicedSkills[selectedIndex].url}
+							className={styles.title}
+							rel="norefferer"
+						>
 							{slicedSkills[selectedIndex].name}
 						</a>
 					</div>

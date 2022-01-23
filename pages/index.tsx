@@ -21,7 +21,7 @@ export default function Home({ isConnected }) {
 					<p className="test">
 						I'm currently studying for my Bachelor's degree in Computer Science
 						at the{' '}
-						<a target="_blank" href="https://www.df.lu.lv/">
+						<a rel="norefferer" target="_blank" href="https://www.df.lu.lv/">
 							University of Latvia
 						</a>{' '}
 						and also working as a Software Developer.
@@ -29,19 +29,19 @@ export default function Home({ isConnected }) {
 					<p>
 						Most of my experience comes from working as a frontend developer and
 						using technologies like{' '}
-						<a target="_blank" href="https://reactjs.org/">
+						<a rel="norefferer" target="_blank" href="https://reactjs.org/">
 							React.js
 						</a>{' '}
 						and{' '}
-						<a target="_blank" href="https://reactnative.dev/">
+						<a rel="norefferer" target="_blank" href="https://reactnative.dev/">
 							React Native
 						</a>{' '}
 						but I also have experience with frameworks like{' '}
-						<a target="_blank" href="https://laravel.com/">
+						<a rel="norefferer" target="_blank" href="https://laravel.com/">
 							Laravel
 						</a>{' '}
 						and{' '}
-						<a target="_blank" href="https://www.drupal.org/">
+						<a rel="norefferer" target="_blank" href="https://www.drupal.org/">
 							Drupal
 						</a>
 						.

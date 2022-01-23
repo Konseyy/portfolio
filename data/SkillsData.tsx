@@ -23,7 +23,10 @@ const skills: skill[] = [
 			<p>
 				It was the first frontend framework I ever used professionally and I
 				still love using it. Ever since I found out that{' '}
-				<a href="https://reactjs.org/docs/components-and-props.html">
+				<a
+					rel="norefferer"
+					href="https://reactjs.org/docs/components-and-props.html"
+				>
 					function components
 				</a>{' '}
 				existed, I've become even more fond of it.
@@ -43,7 +46,10 @@ const skills: skill[] = [
 				I ran into a situation at work where I had to keep track of my work
 				hours and what I had done for the day, but I couldn't find any app for
 				doing this that suited my tastes, so I made my own{' '}
-				<a href="https://play.google.com/store/apps/details?id=com.shiftlog">
+				<a
+					rel="norefferer"
+					href="https://play.google.com/store/apps/details?id=com.shiftlog"
+				>
 					lightweight work tracking app
 				</a>
 				.
@@ -74,7 +80,10 @@ const skills: skill[] = [
 			<p>
 				At first I wasn't really sure what the point of TypeScript was, but I
 				decided to try it out when I was making my{' '}
-				<a href="https://play.google.com/store/apps/details?id=com.shiftlog">
+				<a
+					rel="norefferer"
+					href="https://play.google.com/store/apps/details?id=com.shiftlog"
+				>
 					first mobile application
 				</a>
 				. I was very surprised at how easy it made it to find mistakes in my
@@ -130,11 +139,14 @@ const skills: skill[] = [
 			<p>
 				It takes everything I already loved about react and makes using it so
 				much easier. The{' '}
-				<a href="https://nextjs.org/docs/routing/introduction">
+				<a rel="norefferer" href="https://nextjs.org/docs/routing/introduction">
 					integrated routing
 				</a>{' '}
 				as well as{' '}
-				<a href="https://nextjs.org/docs/basic-features/built-in-css-support">
+				<a
+					rel="norefferer"
+					href="https://nextjs.org/docs/basic-features/built-in-css-support"
+				>
 					integrated scss support and locally scoped styling
 				</a>{' '}
 				make my coding experience so much easier.
@@ -150,7 +162,13 @@ const skills: skill[] = [
 				Laravel was my first introduction to a software framework, as part of my
 				university Web Technologies II course, in which my final assignment was
 				to make a{' '}
-				<a href="https://github.com/Konseyy/WebTech2FinalProject">project</a>.
+				<a
+					rel="norefferer"
+					href="https://github.com/Konseyy/WebTech2FinalProject"
+				>
+					project
+				</a>
+				.
 			</p>,
 			<p>
 				I also used Laravel as the main backend framework of the first project I
@@ -165,9 +183,15 @@ const skills: skill[] = [
 		description: [
 			<p>Most of my experience with using databases is with MySQL.</p>,
 			<p>
-				I have also used <a href="https://www.postgresql.org/">PostgresSQL</a>{' '}
+				I have also used{' '}
+				<a rel="norefferer" href="https://www.postgresql.org/">
+					PostgresSQL
+				</a>{' '}
 				and also minimal experience working in a NoSQL environment with{' '}
-				<a href="https://www.mongodb.com/">MongoDB</a>.
+				<a rel="norefferer" href="https://www.mongodb.com/">
+					MongoDB
+				</a>
+				.
 			</p>,
 		],
 	},
@@ -182,11 +206,13 @@ const skills: skill[] = [
 			</p>,
 			<p>
 				So far I have managed to create a{' '}
-				<a href="/api/graphql">simple endpoint</a> that connects with the GitHub
-				api and returns data about my public repositories, but I am looking
-				forward to do much more with it, especially on personal projects as it
-				is significantly more simple to work with on the frontend side of
-				things.
+				<a rel="norefferer" href="/api/graphql">
+					simple endpoint
+				</a>{' '}
+				that connects with the GitHub api and returns data about my public
+				repositories, but I am looking forward to do much more with it,
+				especially on personal projects as it is significantly more simple to
+				work with on the frontend side of things.
 			</p>,
 		],
 	},
