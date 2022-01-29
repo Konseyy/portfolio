@@ -5,6 +5,8 @@ import mongodb from '../public/static/img/mongodb.png';
 import graphql from '../public/static/img/graphql.png';
 import actions from '../public/static/img/actions.png';
 import git from '../public/static/img/git.png';
+import nodejs from '../public/static/img/nodejs.png';
+import vuejs from '../public/static/img/vuejs.png';
 import { ProjectProps } from '../components/Project';
 const projects: ProjectProps[] = [
 	{
@@ -23,17 +25,6 @@ const projects: ProjectProps[] = [
 				title: 'React.js',
 				url: 'https://reactjs.org/',
 			},
-			// {
-			// 	image: mongodb,
-			// 	title: 'MongoDB',
-			// 	url: 'https://www.mongodb.com/',
-			// },
-			// {
-			// 	image: graphql,
-			// 	title: 'GraphQL',
-			// 	url: 'https://graphql.org/',
-			// 	colored: true,
-			// },
 			{
 				image: typescript,
 				title: 'TypeScript',
@@ -66,6 +57,26 @@ const projects: ProjectProps[] = [
 		],
 	},
 	{
+		title: 'Quiz WebApp',
+		description:
+			'A quiz webapp made with a Vue.js frontend and optional Express.js backend. This webapp fetches data about quizes, questions and checks answers using either a public REST API or calls to a locally running Express.js server',
+		repo_link: 'https://github.com/Konseyy/printful-assignment',
+		live_link: 'https://www.quiz.valdis.me/',
+		demoNewTab: false,
+		technologies: [
+			{
+				image: vuejs,
+				title: 'Vue.js',
+				url: 'https://vuejs.org/',
+			},
+			{
+				image: nodejs,
+				title: 'Node.js',
+				url: 'https://nodejs.org/en/',
+			},
+		],
+	},
+	{
 		title: 'Minesweeper',
 		description: 'A Minesweeper clone made with React.js and TypeScript',
 		repo_link: 'https://github.com/Konseyy/react_minesweeper',
@@ -93,11 +104,6 @@ const projects: ProjectProps[] = [
 		live_link: '/api/graphql',
 		demoNewTab: false,
 		technologies: [
-			// {
-			// 	image: mongodb,
-			// 	title: 'MongoDB',
-			// 	url: 'https://www.mongodb.com/',
-			// },
 			{
 				image: graphql,
 				title: 'GraphQL',
