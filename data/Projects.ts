@@ -57,9 +57,9 @@ const projects: ProjectProps[] = [
 		],
 	},
 	{
-		title: 'Quiz WebApp',
+		title: 'Quiz Site',
 		description:
-			'A quiz webapp made with a Vue.js frontend and optional Express.js backend. This webapp fetches data about quizes, questions and checks answers using either a public REST API or calls to a locally running Express.js server',
+			'A quiz website made with a Vue.js frontend and optional Express.js backend. It fetches data about quizes, questions and checks answers using either a public REST API or calls to a locally running Express.js server',
 		repo_link: 'https://github.com/Konseyy/printful-assignment',
 		live_link: 'https://www.quiz.valdis.me/',
 		demoNewTab: false,
