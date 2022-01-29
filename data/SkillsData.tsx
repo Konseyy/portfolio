@@ -9,6 +9,7 @@ import css from '../public/static/img/css.png';
 import sql from '../public/static/img/sql.png';
 import nextjs from '../public/static/img/nextjs.svg';
 import sass from '../public/static/img/sass.png';
+import vuejs from '../public/static/img/vuejs.png';
 
 const skills: skill[] = [
 	{
@@ -53,6 +54,27 @@ const skills: skill[] = [
 					lightweight work tracking app
 				</a>
 				.
+			</p>,
+		],
+	},
+	{
+		name: 'Vue.js',
+		image: vuejs,
+		url: 'https://v3.vuejs.org/',
+		description: [
+			<p>
+				I had known about Vue.js for a while since it was always showing up in
+				videos i watched but I never really had a reason to try it.
+			</p>,
+			<p>
+				That is, until an opportunity came up to make a{' '}
+				<a rel="noreferrer" href="https://www.quiz.valdis.me/">
+					small project
+				</a>{' '}
+				using it. While I do still prefer using React for making websites as JSX
+				appeals more to me than templates, I definitely see the advantage of
+				using Vue to make something quick and get it working with less initial
+				boilerplate.
 			</p>,
 		],
 	},
@@ -195,26 +217,26 @@ const skills: skill[] = [
 			</p>,
 		],
 	},
-	{
-		name: 'GraphQL',
-		image: graphql,
-		url: 'https://graphql.org/',
-		description: [
-			<p>
-				I only recently started experimenting with GraphQL and find it very
-				interesting to work with.
-			</p>,
-			<p>
-				So far I have managed to create a{' '}
-				<a rel="noreferrer" href="/api/graphql">
-					simple endpoint
-				</a>{' '}
-				that connects with the GitHub api and returns data about my public
-				repositories, but I am looking forward to do much more with it,
-				especially on personal projects as it is significantly more simple to
-				work with on the frontend side of things.
-			</p>,
-		],
-	},
+	// {
+	// 	name: 'GraphQL',
+	// 	image: graphql,
+	// 	url: 'https://graphql.org/',
+	// 	description: [
+	// 		<p>
+	// 			I only recently started experimenting with GraphQL and find it very
+	// 			interesting to work with.
+	// 		</p>,
+	// 		<p>
+	// 			So far I have managed to create a{' '}
+	// 			<a rel="noreferrer" href="/api/graphql">
+	// 				simple endpoint
+	// 			</a>{' '}
+	// 			that connects with the GitHub api and returns data about my public
+	// 			repositories, but I am looking forward to do much more with it,
+	// 			especially on personal projects as it is significantly more simple to
+	// 			work with on the frontend side of things.
+	// 		</p>,
+	// 	],
+	// },
 ];
 export default skills;
