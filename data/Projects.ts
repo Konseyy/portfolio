@@ -95,31 +95,31 @@ const projects: ProjectProps[] = [
 			},
 		],
 	},
-	{
-		title: 'GraphQL Endpoint',
-		description:
-			'A GraphQL endpoint that fetches data about all my public repositories from the GitHub api. Integration with MongoDB and different mutations coming later',
-		repo_link:
-			'https://github.com/Konseyy/portfolio/blob/main/pages/api/graphql.ts',
-		live_link: '/api/graphql',
-		demoNewTab: false,
-		technologies: [
-			{
-				image: graphql,
-				title: 'GraphQL',
-				url: 'https://graphql.org/',
-			},
-			{
-				image: nextjs,
-				title: 'Next.js',
-				url: 'https://nextjs.org/',
-			},
-			{
-				image: typescript,
-				title: 'TypeScript',
-				url: 'https://www.typescriptlang.org/',
-			},
-		],
-	},
+	// {
+	// 	title: 'GraphQL Endpoint',
+	// 	description:
+	// 		'A GraphQL endpoint that fetches data about all my public repositories from the GitHub api. Integration with MongoDB and different mutations coming later',
+	// 	repo_link:
+	// 		'https://github.com/Konseyy/portfolio/blob/main/pages/api/graphql.ts',
+	// 	live_link: '/api/graphql',
+	// 	demoNewTab: false,
+	// 	technologies: [
+	// 		{
+	// 			image: graphql,
+	// 			title: 'GraphQL',
+	// 			url: 'https://graphql.org/',
+	// 		},
+	// 		{
+	// 			image: nextjs,
+	// 			title: 'Next.js',
+	// 			url: 'https://nextjs.org/',
+	// 		},
+	// 		{
+	// 			image: typescript,
+	// 			title: 'TypeScript',
+	// 			url: 'https://www.typescriptlang.org/',
+	// 		},
+	// 	],
+	// },
 ];
 export default projects;
