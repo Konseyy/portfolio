@@ -17,7 +17,7 @@ export default async function handler(
 		return;
 	}
 	if (!req.body.module) {
-		console.error('Module not found in req body', req.body);
+		console.error('Module not found in req body', req.body, typeof(req.body), typeof(req.body.module));
 		res.status(400).json({
 			statusCode: 400,
 			message: "Please provide 'module' in the request body.",
