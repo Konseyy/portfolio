@@ -8,18 +8,17 @@ export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse
 ) {
-	// if (req.method !== 'POST') {
-	// 	console.error('Method not allowed', req.method);
-	// 	res.status(405).json({
-	// 		statusCode: 405,
-	// 		message: 'Only POST method allowed',
-	// 	});
-	// 	return;
-	// }
-	const body = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
-	console.log("received request",JSON.stringify(body));
+	if (req.method !== 'POST') {
+		console.error('Method not allowed', req.method);
+		res.status(405).json({
+			statusCode: 405,
+			message: 'Only POST method allowed',
+		});
+		return;
+	}
+	const body = req.body;
 	if (!body.module) {
-		console.error('Module not found in req body');
+		console.error('Module not found in req body', JSON.stringify(body));
 		res.status(400).json({
 			statusCode: 400,
 			message: "Please provide 'module' in the request body.",
@@ -29,6 +28,7 @@ export default async function handler(
 	const module = body.module;
 	const availableModules = ['tasks', 'projects'];
 	if (!availableModules.includes(module)) {
+		console.error('Module not found', module);
 		res.status(404).json({
 			statusCode: 404,
 			message: `Module '${module}' not found. Please enter a module from the list of available modules`,
