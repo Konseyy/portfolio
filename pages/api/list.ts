@@ -7,9 +7,13 @@ export default async function handler(
 	res: NextApiResponse
 ) {
 	res.setHeader('Access-Control-Allow-Origin', '*');
-	res.setHeader('Access-Control-Allow-Methods', 'POST');
+	res.setHeader('Access-Control-Allow-Methods', 'POST,OPTIONS');
 	res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 	res.setHeader('Access-Control-Max-Age', '3600');
+	if (req.method === 'OPTIONS') {
+		res.status(200).end();
+		return;
+	}
 	if (req.method !== 'POST') {
 		console.error('Method not allowed', req.method);
 		res.status(405).json({
