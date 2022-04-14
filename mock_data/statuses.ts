@@ -60,7 +60,7 @@ export const mockTaskStatuses = [
 	{
 		status_id: 'task_status5',
 		status_name: 'Needs review',
-		color: '#33001a',
+		color: '#00004d',
 		module: 'tasks',
 		is_default: 0,
 	},
