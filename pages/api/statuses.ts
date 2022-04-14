@@ -1,11 +1,15 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { mockProjectStatuses, mockTaskStatuses } from '../../mock_data/statuses';
+import {
+	mockProjectStatuses,
+	mockTaskStatuses,
+} from '../../mock_data/statuses';
 
 export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse
 ) {
 	if (req.method !== 'POST') {
+		console.error('Method not allowed', req.method);
 		res.status(405).json({
 			statusCode: 405,
 			message: 'Only POST method allowed',
@@ -13,6 +17,7 @@ export default async function handler(
 		return;
 	}
 	if (!req.body.module) {
+		console.error('Module not found in req body', req.body);
 		res.status(400).json({
 			statusCode: 400,
 			message: "Please provide 'module' in the request body.",
