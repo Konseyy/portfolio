@@ -1,59 +1,51 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import {
+	mockProjectStatuses,
+	mockTaskStatuses,
+} from '../../mock_data/Statuses';
 
 export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse
 ) {
-	const params = req.query;
-	if (!params.module) {
-		res.status(200).json({
-			message: 'Please provide a module.',
-		});
-	}
-	console.log('query is', params);
-	const availableModules = ['tasks', 'projects'];
-	if (!availableModules.includes(params.module as string)) {
-		res.status(200).json({
-			message: `Module ${params.module} is not available.`,
+	if (req.method !== 'POST') {
+		res.status(405).json({
+			statusCode: 405,
+			message: 'Only POST method allowed',
 		});
 		return;
 	}
-	('https://homeassignment.scoro.com/api/v2/statuses/list');
-	try {
-		const statusResponse = await fetch(
-			'https://homeassignment.scoro.com/api/v2/tasks/list',
-			{
-				method: 'POST',
-				body: JSON.stringify({
-					lang: 'eng',
-					company_account_id: process.env.LIST_COMPANY_ID,
-					apiKey: process.env.LIST_API_KEY,
-					filter: {
-						module: [params.module],
-					},
-				}),
-			}
-		);
-		const statusResponseJSON = await statusResponse.json();
-		if (statusResponseJSON.statusCode === 200) {
-			res.status(200).json({
-				message: 'Success',
-				data: statusResponseJSON.data,
-			});
-		} else {
-			console.error(
-				`error fetching status data, received status code ${statusResponseJSON.statusCode}`
-			);
-			res.status(500).json({
-				message: 'Error fetching status data.',
-				data: [],
-			});
-		}
-	} catch (e) {
-		console.error('error fetching status data', e);
-		res.status(500).json({
-			message: 'Error fetching status data.',
-			data: [],
+	if (!req.body.module) {
+		res.status(400).json({
+			statusCode: 400,
+			message: "Please provide 'module' in the request body.",
 		});
+		return;
+	}
+	const module = req.body.module;
+	const availableModules = ['tasks', 'projects'];
+	if (!availableModules.includes(module)) {
+		res.status(404).json({
+			statusCode: 404,
+			message: `Module '${module}' not found. Please enter a module from the list of available modules`,
+			availableModules: availableModules.map((i) => `'${i}'`).join(', '),
+		});
+		return;
+	}
+	switch (module) {
+		case 'tasks':
+			res.status(200).json({
+				status: 'OK',
+				statusCode: 200,
+				data: mockTaskStatuses,
+			});
+			break;
+		case 'projects':
+			res.status(200).json({
+				status: 'OK',
+				statusCode: 200,
+				data: mockProjectStatuses,
+			});
+			break;
 	}
 }
