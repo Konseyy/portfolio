@@ -68,5 +68,5 @@ export const mockTaskData = [
 		event_name: 'Potential customer events',
 		event_id: 1087,
 	},
-	{ status: 'task_status9', event_name: 'Call client', event_id: 1088 },
+	{ status: 'task_status4', event_name: 'Call client', event_id: 1088 },
 ];
