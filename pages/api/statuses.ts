@@ -16,15 +16,16 @@ export default async function handler(
 	// 	});
 	// 	return;
 	// }
-	if (!req.body.module) {
-		console.error('Module not found in req body', req.body, typeof(req.body), typeof(req.body.module));
+	const body = JSON.parse(req.body);
+	if (!body.module) {
+		console.error('Module not found in req body');
 		res.status(400).json({
 			statusCode: 400,
 			message: "Please provide 'module' in the request body.",
 		});
 		return;
 	}
-	const module = req.body.module;
+	const module = body.module;
 	const availableModules = ['tasks', 'projects'];
 	if (!availableModules.includes(module)) {
 		res.status(404).json({
