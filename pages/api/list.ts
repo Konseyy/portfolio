@@ -1,102 +1,48 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import { mockProjectData } from '../../mock_data/projects';
+import { mockTaskData } from '../../mock_data/tasks';
 
 export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse
 ) {
-	const params = req.query;
-	if (!params.type) {
-		res.status(200).json({
-			message: 'Please provide a type.',
+	if (req.method !== 'POST') {
+		res.status(405).json({
+			statusCode: 405,
+			message: 'Only POST method allowed',
 		});
+		return;
 	}
-	console.log('query is', params);
-	switch (params.type) {
+	if (!req.body.module) {
+		res.status(400).json({
+			statusCode: 400,
+			message: "Please provide 'module' in the request body.",
+		});
+		return;
+	}
+	const module = req.body.module;
+	const availableModules = ['tasks', 'projects'];
+	if (!availableModules.includes(module)) {
+		res.status(404).json({
+			statusCode: 404,
+			message: `Module '${module}' not found. Please enter a module from the list of available modules`,
+			availableModules: availableModules.map((i) => `'${i}'`).join(', '),
+		});
+		return;
+	}
+	switch (module) {
 		case 'tasks':
-			try {
-				const tasksResponse = await fetch(
-					'https://homeassignment.scoro.com/api/v2/tasks/list',
-					{
-						method: 'POST',
-						body: JSON.stringify({
-							lang: 'eng',
-							company_account_id: process.env.LIST_COMPANY_ID,
-							apiKey: process.env.LIST_API_KEY,
-							request: {},
-						}),
-					}
-				);
-				const tasksResponseJSON = await tasksResponse.json();
-				if (tasksResponseJSON.statusCode === 200) {
-					res.status(200).json({
-						message: 'Success',
-						data: tasksResponseJSON.data.map((t) => ({
-							id: t.event_id,
-							title: t.event_name,
-							status: t.status,
-						})),
-					});
-				} else {
-					console.error(
-						`error fetching task data, received status code ${tasksResponseJSON.statusCode}`
-					);
-					res.status(500).json({
-						message: 'Error fetching task data.',
-						data: [],
-					});
-				}
-			} catch (e) {
-				console.error('error fetching task data', e);
-				res.status(500).json({
-					message: 'Error fetching task data.',
-					data: [],
-				});
-			}
+			res.status(200).json({
+				status: 'OK',
+				statusCode: 200,
+				data: mockTaskData,
+			});
 			break;
 		case 'projects':
-			try {
-				const projectsResponse = await fetch(
-					'https://homeassignment.scoro.com/api/v2/projects/list',
-					{
-						method: 'POST',
-						body: JSON.stringify({
-							lang: 'eng',
-							company_account_id: process.env.LIST_COMPANY_ID,
-							apiKey: process.env.LIST_API_KEY,
-							request: {},
-						}),
-					}
-				);
-				const projectsResponseJSON = await projectsResponse.json();
-				if (projectsResponseJSON.statusCode === 200) {
-					res.status(200).json({
-						message: 'Success',
-						data: projectsResponseJSON.data.map((p) => ({
-							id: p.project_id,
-							title: p.project_name,
-							status: p.status,
-						})),
-					});
-				} else {
-					console.error(
-						`error fetching project data, received status code ${projectsResponseJSON.statusCode}`
-					);
-					res.status(500).json({
-						message: 'Error fetching project data.',
-						data: [],
-					});
-				}
-			} catch (e) {
-				console.error('error fetching project data', e);
-				res.status(500).json({
-					message: 'Error fetching project data.',
-					data: [],
-				});
-			}
-			break;
-		default:
 			res.status(200).json({
-				message: 'type not recognized',
+				status: 'OK',
+				statusCode: 200,
+				data: mockProjectData,
 			});
 			break;
 	}
