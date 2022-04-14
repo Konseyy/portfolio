@@ -8,14 +8,14 @@ export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse
 ) {
-	if (req.method !== 'POST') {
-		console.error('Method not allowed', req.method);
-		res.status(405).json({
-			statusCode: 405,
-			message: 'Only POST method allowed',
-		});
-		return;
-	}
+	// if (req.method !== 'POST') {
+	// 	console.error('Method not allowed', req.method);
+	// 	res.status(405).json({
+	// 		statusCode: 405,
+	// 		message: 'Only POST method allowed',
+	// 	});
+	// 	return;
+	// }
 	if (!req.body.module) {
 		console.error('Module not found in req body', req.body, typeof(req.body), typeof(req.body.module));
 		res.status(400).json({
