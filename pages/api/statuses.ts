@@ -16,7 +16,7 @@ export default async function handler(
 		});
 		return;
 	}
-	const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
+	const body = req.body;
 	if (!body.module) {
 		console.error('Module not found in req body', JSON.stringify(body));
 		res.status(400).json({
