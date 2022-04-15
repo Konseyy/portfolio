@@ -113,11 +113,6 @@ const projects: ProjectProps[] = [
 				title: 'Next.js',
 				url: 'https://nextjs.org/',
 			},
-			{
-				image: typescript,
-				title: 'TypeScript',
-				url: 'https://www.typescriptlang.org/',
-			},
 		],
 	},
 	{
