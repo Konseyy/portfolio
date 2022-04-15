@@ -23,7 +23,7 @@
 }
 
 .landingPage {
-	height: calc(max(100vh, 600px));
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -32,6 +32,8 @@
 
 .landingPageIntro {
 	margin-left: 5vw;
+	margin-top: auto;
+	margin-bottom: auto;
 	font-size: clamp(5.5rem, 20vw, 17rem);
 	display: flex;
 	flex-direction: row;

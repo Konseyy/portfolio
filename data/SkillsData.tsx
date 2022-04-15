@@ -73,10 +73,8 @@ const skills: skill[] = [
 				<a rel="noreferrer" href="https://www.quiz.valdis.me/">
 					small project
 				</a>{' '}
-				using it. While I do still prefer using React for making websites as JSX
-				appeals more to me than templates, I definitely see the advantage of
-				using Vue to make something quick and get it working with less initial
-				boilerplate.
+				using it. While I do still prefer using React, I definitely see the
+				advantage of Vue to get stuff working with less initial boilerplate.
 			</p>,
 			<p>
 				I also ended up making another Vue.js{' '}
