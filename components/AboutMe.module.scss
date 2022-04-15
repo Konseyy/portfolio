@@ -1,18 +1,22 @@
-@use 'library' as lib;
+@use 'library'as lib;
+
 .root {
-	padding: 200px 100px;
+	padding: 0 100px;
+	padding-top: 100px;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	position: relative;
 }
+
 .aboutMe {
 	color: lib.$text;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 }
+
 .personalPhotoContainer {
 	height: 22rem;
 	width: 22rem;
@@ -22,11 +26,13 @@
 	border: 1px solid black;
 	box-shadow: 0 0 8px 4px rgb(56, 56, 56);
 }
+
 .personalPhotoContainer {
 	img {
 		transform: scale(1.3);
 		transition: transform 400ms;
 	}
+
 	&:hover,
 	&:focus {
 		img {
@@ -34,80 +40,98 @@
 		}
 	}
 }
+
 .infoContainer {
 	margin-left: 5rem;
 	display: flex;
 	flex-direction: column;
 }
+
 .title {
 	font-size: 5rem;
 	margin-bottom: 25px;
 	font-style: normal;
 }
+
 .descriptionContainer {
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 20px;
 }
+
 .description {
 	font-size: 2rem;
 	max-width: 65rem;
 	line-height: 2.45rem;
 	margin-bottom: 20px;
+
 	a {
 		color: lib.$text;
 		text-decoration: underline;
 		transition: 350ms;
+
 		&:hover,
 		&:focus {
 			color: lib.$neon;
 		}
 	}
 }
+
 .socialsContainer {
 	margin-top: auto;
 	display: flex;
 	flex-direction: row;
 	gap: 15px;
 }
+
 @media only screen and (max-width: 1700px) {
 	.root {
 		padding-left: 20px;
 		padding-right: 20px;
 	}
+
 	.aboutMe {
 		flex-direction: column;
 	}
+
 	.personalPhotoContainer {
 		margin-bottom: 4rem;
 	}
 }
+
 @media only screen and (max-width: 1000px) {
 	.root {
 		padding-top: 120px;
 	}
+
 	.personalPhotoContainer {
 		height: 50vw;
 		width: 50vw;
 	}
+
 	.title {
 		font-size: 3rem;
 	}
+
 	.description {
 		font-size: 1.8rem;
 		line-height: 2.3rem;
 	}
+
 	.infoContainer {
 		margin: 0 25px;
 	}
+
 	.socialsContainer {
 		gap: 5px;
 	}
 }
+
 @media only screen and (max-width: 500px) {
 	.title {
 		font-size: 2rem;
 	}
+
 	.description {
 		font-size: 1.4rem;
 		line-height: 1.7rem;
