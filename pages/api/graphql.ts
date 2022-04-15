@@ -12,6 +12,10 @@ import {
 const cors = corsImport();
 
 const handler = cors(async (req: NextApiRequest, res: NextApiResponse) => {
+	if (req.method === 'OPTIONS') {
+		res.status(200).end();
+		return;
+	}
 	const { db } = await connectToDatabase();
 	const typeDefs = gql`
 		type GithubProjectsPager {
