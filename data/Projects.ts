@@ -12,7 +12,7 @@ const projects: ProjectProps[] = [
 	{
 		title: 'This Website',
 		description:
-			'My portfolio website meant for displaying information about me as well as showcasing some of my projects',
+			'My portfolio website meant for displaying information about me as well as showcasing some of my projects. Also provides backend endpoints for some of my other projects',
 		repo_link: 'https://github.com/Konseyy/portfolio',
 		technologies: [
 			{
@@ -57,11 +57,11 @@ const projects: ProjectProps[] = [
 		],
 	},
 	{
-		title: 'Quiz Site',
+		title: 'Status Changer',
 		description:
-			'A quiz website made with a Vue.js frontend and optional Express.js backend. It fetches data about quizes, questions and checks answers using either a public REST API or calls to a locally running Express.js server',
-		repo_link: 'https://github.com/Konseyy/printful-assignment',
-		live_link: 'https://www.quiz.valdis.me/',
+			'A website meant for displaying a custom Vue.js component for task status tracking. Handles staying in viewport, status reorder and status change local caching',
+		repo_link: 'https://github.com/Konseyy/vue-status',
+		live_link: 'https://status-component.valdis.me/',
 		demoNewTab: false,
 		technologies: [
 			{
@@ -70,9 +70,9 @@ const projects: ProjectProps[] = [
 				url: 'https://vuejs.org/',
 			},
 			{
-				image: nodejs,
-				title: 'Node.js',
-				url: 'https://nodejs.org/en/',
+				image: typescript,
+				title: 'TypeScript',
+				url: 'https://www.typescriptlang.org/',
 			},
 		],
 	},
@@ -95,31 +95,50 @@ const projects: ProjectProps[] = [
 			},
 		],
 	},
-	// {
-	// 	title: 'GraphQL Endpoint',
-	// 	description:
-	// 		'A GraphQL endpoint that fetches data about all my public repositories from the GitHub api. Integration with MongoDB and different mutations coming later',
-	// 	repo_link:
-	// 		'https://github.com/Konseyy/portfolio/blob/main/pages/api/graphql.ts',
-	// 	live_link: '/api/graphql',
-	// 	demoNewTab: false,
-	// 	technologies: [
-	// 		{
-	// 			image: graphql,
-	// 			title: 'GraphQL',
-	// 			url: 'https://graphql.org/',
-	// 		},
-	// 		{
-	// 			image: nextjs,
-	// 			title: 'Next.js',
-	// 			url: 'https://nextjs.org/',
-	// 		},
-	// 		{
-	// 			image: typescript,
-	// 			title: 'TypeScript',
-	// 			url: 'https://www.typescriptlang.org/',
-	// 		},
-	// 	],
-	// },
+	{
+		title: 'GraphQL Endpoint',
+		description: 'A GraphQL Endpoint serving as an api for other projects',
+		repo_link:
+			'https://github.com/Konseyy/portfolio/blob/main/pages/api/graphql.ts',
+		live_link: '/api/graphql',
+		demoNewTab: false,
+		technologies: [
+			{
+				image: graphql,
+				title: 'GraphQL',
+				url: 'https://graphql.org/',
+			},
+			{
+				image: nextjs,
+				title: 'Next.js',
+				url: 'https://nextjs.org/',
+			},
+			{
+				image: typescript,
+				title: 'TypeScript',
+				url: 'https://www.typescriptlang.org/',
+			},
+		],
+	},
+	{
+		title: 'Quiz Site',
+		description:
+			'A quiz website made with a Vue.js frontend and optional Express.js backend. It fetches data about quizes, questions and checks answers using either a public REST API or calls to a locally running Express.js server',
+		repo_link: 'https://github.com/Konseyy/printful-assignment',
+		live_link: 'https://www.quiz.valdis.me/',
+		demoNewTab: false,
+		technologies: [
+			{
+				image: vuejs,
+				title: 'Vue.js',
+				url: 'https://vuejs.org/',
+			},
+			{
+				image: nodejs,
+				title: 'Node.js',
+				url: 'https://nodejs.org/en/',
+			},
+		],
+	},
 ];
 export default projects;
