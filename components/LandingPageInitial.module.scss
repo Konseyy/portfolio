@@ -1,18 +1,27 @@
-@use 'library' as lib;
+@use 'library'as lib;
+
 @keyframes fade {
 	0% {
 		opacity: 1;
 	}
+
 	45% {
 		opacity: 0;
 	}
+
 	55% {
 		opacity: 0;
 	}
+
 	100% {
 		opacity: 1;
 	}
 }
+
+.movingText {
+	user-select: none;
+}
+
 .landingPage {
 	height: calc(max(100vh, 600px));
 	display: flex;
@@ -20,6 +29,7 @@
 	justify-content: center;
 	position: relative;
 }
+
 .landingPageIntro {
 	margin-left: 5vw;
 	font-size: clamp(5.5rem, 20vw, 17rem);
@@ -30,17 +40,21 @@
 	text-shadow: lib.$neon_glow_neon;
 	white-space: pre;
 }
+
 .notBold {
 	font-weight: normal;
 	margin-left: -0.5vw;
 }
+
 .landingPageIntro span {
 	letter-spacing: -1.5rem;
 }
+
 #spacer {
 	display: flex;
 	align-items: center;
 }
+
 #spacer::before {
 	content: '';
 	height: clamp(5.7rem, 21vw, 17.5rem);
@@ -49,41 +63,52 @@
 	background-color: lib.$text;
 	box-shadow: lib.$neon_glow_weak;
 }
+
 #spacer.animate::before {
 	animation-name: fade;
 	animation-duration: 2.5s;
 	animation-delay: .4s;
 	animation-iteration-count: infinite;
 }
+
 .showMobile {
+
 	&,
 	&::before {
 		display: none;
 	}
 }
+
 .hideMobile {
+
 	&,
 	&::before {
 		display: inline-block;
 	}
 }
+
 @media only screen and (max-width: 800px) {
 	.landingPage {
 		align-items: center;
 	}
+
 	.landingPageIntro {
 		margin-left: 20%;
 		margin-right: auto;
 	}
 }
+
 @media only screen and (max-width: 500px) {
 	.showMobile {
+
 		&,
 		&::before {
 			display: inline-block;
 		}
 	}
+
 	.hideMobile {
+
 		&,
 		&::before {
 			display: none;
