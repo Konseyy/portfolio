@@ -144,7 +144,7 @@ const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
 								}}
 							>
 								<div className={styles.selectorItem}>
-									<Image src={skill.image} alt={skill.name} />
+									<Image priority={true} src={skill.image} alt={skill.name} />
 								</div>
 							</li>
 						);

@@ -1,4 +1,5 @@
-@use 'library' as lib;
+@use 'library'as lib;
+
 .root {
 	display: flex;
 	flex-direction: column;
@@ -10,13 +11,16 @@
 	align-items: center;
 	color: lib.$text;
 }
+
 .title {
 	color: lib.$highlight_pale;
 	text-shadow: lib.$neon_glow_neon;
 	font-size: calc(max(6.2vw, 5.5rem));
 	font-weight: bold;
 	margin-bottom: 65px;
+	user-select: none;
 }
+
 .projectsContainer {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -24,29 +28,35 @@
 	row-gap: 15px;
 	/* max-width: 2000px; */
 }
+
 @media only screen and (max-width: 1700px) {
 	.root {
 		padding-bottom: 20px;
 	}
+
 	.projectsContainer {
 		grid-template-columns: auto auto;
 		row-gap: 20px;
 	}
 }
+
 @media only screen and (max-width: 1150px) {
 	.root {
 		padding-bottom: 15px;
 	}
+
 	.projectsContainer {
 		grid-template-columns: auto;
 		row-gap: 10px;
 	}
+
 	.titleContainer {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		text-align: center;
 	}
+
 	.title {
 		padding-top: 50px;
 		white-space: nowrap;
@@ -55,14 +65,17 @@
 		margin-bottom: 30px;
 	}
 }
+
 @media only screen and (max-width: 1000px) {
 	.root {
 		padding-top: 0;
 	}
+
 	.title {
 		padding-top: 110px;
 	}
 }
+
 @media only screen and (min-width: 2540px) {
 	.title {
 		font-size: 9rem;

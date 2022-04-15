@@ -100,8 +100,8 @@ const LandingPageInitial: FC<Props> = ({ scrollToId, id }) => {
 	return (
 		<section id={id} className={styles.landingPage}>
 			<div className={styles.landingPageIntro}>
-				<p className={styles.hideMobile}>{desktopTextPartial.partialText}</p>
-				<p className={styles.showMobile}>{mobileTextPartial.partialText}</p>
+				<p className={`${styles.hideMobile} ${styles.movingText}`}>{desktopTextPartial.partialText}</p>
+				<p className={`${styles.showMobile} ${styles.movingText}`}>{mobileTextPartial.partialText}</p>
 				{/* <p className={styles.notBold}>,</p> */}
 				<span
 					id={styles.spacer}

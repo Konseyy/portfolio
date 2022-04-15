@@ -3,10 +3,8 @@ import typescript from '../public/static/img/typescript.png';
 import javascript from '../public/static/img/javascript.png';
 import react from '../public/static/img/react.png';
 import reactn from '../public/static/img/reactn.png';
-import laravel from '../public/static/img/laravel.png';
-import graphql from '../public/static/img/graphql.png';
+import drupal from '../public/static/img/drupal.png';
 import css from '../public/static/img/css.png';
-import sql from '../public/static/img/sql.png';
 import nextjs from '../public/static/img/nextjs.svg';
 import sass from '../public/static/img/sass.png';
 import vuejs from '../public/static/img/vuejs.png';
@@ -23,14 +21,14 @@ const skills: skill[] = [
 			</p>,
 			<p>
 				It was the first frontend framework I ever used professionally and I
-				still love using it. Ever since I found out that{' '}
+				still love using it. Especially since I found out that{' '}
 				<a
 					rel="noreferrer"
 					href="https://reactjs.org/docs/components-and-props.html"
 				>
-					function components
+					functional components
 				</a>{' '}
-				existed, I've become even more fond of it.
+				existed :)
 			</p>,
 		],
 	},
@@ -55,6 +53,10 @@ const skills: skill[] = [
 				</a>
 				.
 			</p>,
+			<p>
+				Beyond that, I've spent about 6 months maintaining a React Native mobile
+				app at work
+			</p>,
 		],
 	},
 	{
@@ -76,6 +78,13 @@ const skills: skill[] = [
 				using Vue to make something quick and get it working with less initial
 				boilerplate.
 			</p>,
+			<p>
+				I also ended up making another Vue.js{' '}
+				<a rel="noreferrer" href="https://status-component.valdis.me/">
+					project
+				</a>{' '}
+				using the new script setup and TypeScript
+			</p>,
 		],
 	},
 	{
@@ -88,9 +97,8 @@ const skills: skill[] = [
 				creations to come to life.
 			</p>,
 			<p>
-				I've become very used to it's coding style and using its supported
-				features like Arrow functions, the Promise API with async/await and the
-				built in Array methods.
+				I've become very used to it's coding style and using the ECMAScript
+				goodies that come with it
 			</p>,
 		],
 	},
@@ -176,67 +184,15 @@ const skills: skill[] = [
 		],
 	},
 	{
-		name: 'Laravel',
-		image: laravel,
-		url: 'https://laravel.com/',
+		name: 'Drupal',
+		image: drupal,
+		url: 'https://www.drupal.org/',
 		description: [
 			<p>
-				Laravel was my first introduction to a software framework, as part of my
-				university Web Technologies II course, in which my final assignment was
-				to make a{' '}
-				<a
-					rel="noreferrer"
-					href="https://github.com/Konseyy/WebTech2FinalProject"
-				>
-					project
-				</a>
-				.
-			</p>,
-			<p>
-				I also used Laravel as the main backend framework of the first project I
-				was assigned to work on.
+				Most of my backend framework experience comes from my job, working with
+				Drupal.
 			</p>,
 		],
 	},
-	{
-		name: 'MySQL',
-		image: sql,
-		url: 'https://www.mysql.com/',
-		description: [
-			<p>Most of my experience with using databases is with MySQL.</p>,
-			<p>
-				I have also used{' '}
-				<a rel="noreferrer" href="https://www.postgresql.org/">
-					PostgresSQL
-				</a>{' '}
-				and also minimal experience working in a NoSQL environment with{' '}
-				<a rel="noreferrer" href="https://www.mongodb.com/">
-					MongoDB
-				</a>
-				.
-			</p>,
-		],
-	},
-	// {
-	// 	name: 'GraphQL',
-	// 	image: graphql,
-	// 	url: 'https://graphql.org/',
-	// 	description: [
-	// 		<p>
-	// 			I only recently started experimenting with GraphQL and find it very
-	// 			interesting to work with.
-	// 		</p>,
-	// 		<p>
-	// 			So far I have managed to create a{' '}
-	// 			<a rel="noreferrer" href="/api/graphql">
-	// 				simple endpoint
-	// 			</a>{' '}
-	// 			that connects with the GitHub api and returns data about my public
-	// 			repositories, but I am looking forward to do much more with it,
-	// 			especially on personal projects as it is significantly more simple to
-	// 			work with on the frontend side of things.
-	// 		</p>,
-	// 	],
-	// },
 ];
 export default skills;
