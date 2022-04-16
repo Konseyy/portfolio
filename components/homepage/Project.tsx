@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react';
-import { ImageLinkProps } from './ImageLink';
+import { ImageLinkProps } from '../ImageLink';
 import Image from 'next/image';
 import { openInBrowser } from '../../functions/openInBrowser';
-import ImageLink from './ImageLink';
+import ImageLink from '../ImageLink';
 import code from '../../public/static/img/code.png';
 import demo from '../../public/static/img/demo.png';
 import styles from './Project.module.scss';

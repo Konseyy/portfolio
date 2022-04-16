@@ -1,4 +1,4 @@
-export const aboutMeContent = [
+const aboutMeContent = [
 	<p className="test">
 		I'm currently studying for my Bachelor's degree in Computer Science at the{' '}
 		<a rel="noreferrer" target="_blank" href="https://www.df.lu.lv/">
@@ -35,3 +35,5 @@ export const aboutMeContent = [
 		music.
 	</p>,
 ];
+
+export default aboutMeContent;

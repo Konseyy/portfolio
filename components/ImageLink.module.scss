@@ -1,4 +1,5 @@
-@use '../library' as lib;
+@use 'library'as lib;
+
 .root {
 	display: flex;
 	flex-direction: column;
@@ -6,12 +7,15 @@
 	justify-content: center;
 	cursor: default;
 }
+
 .imageBlackAndWhite {
 	filter: brightness(0) invert(1);
 }
+
 .imageColored {
 	filter: brightness(0) invert(1);
 }
+
 .imageContainer {
 	display: inline-block;
 	border-radius: 50%;
@@ -23,34 +27,41 @@
 	align-items: center;
 	justify-content: center;
 	transition: height 0.2s, width 0.2s, background-color 0.45s;
+
 	&:hover,
 	&:focus {
 		background-color: lib.$background_inverted;
 		height: 100%;
 		width: 100%;
 		cursor: pointer;
+
 		.image {
 			height: 65%;
 			width: 65%;
 		}
+
 		.imageBlackAndWhite {
 			filter: brightness(0) invert(0);
 		}
+
 		.imageColored {
 			filter: brightness(100%) invert(0);
 		}
 	}
+
 	&:focus {
-		& + .labelContainer .label {
+		&+.labelContainer .label {
 			opacity: 1;
 			visibility: visible;
 		}
 	}
 }
+
 .label.show {
 	opacity: 1;
 	visibility: visible;
 }
+
 .image {
 	display: flex;
 	align-items: center;
@@ -59,11 +70,13 @@
 	width: 85%;
 	transition: filter 0.2s, width 0.2s, height 0.2s;
 }
+
 .labelContainer {
 	display: flex;
 	justify-content: center;
 	position: relative;
 }
+
 .label {
 	margin-top: 5px;
 	opacity: 0;
@@ -74,6 +87,7 @@
 	position: absolute;
 	color: white;
 }
+
 .label.black {
 	background-color: lib.$background_inverted;
 	padding: 10px 15px;
