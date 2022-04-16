@@ -1,6 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
 import scrollIdIntoView from '../functions/scrollIdIntoView';
-import { openInBrowser } from '../functions/openInBrowser';
 import dropdown from '../public/static/img/dropdown.png';
 import line from '../public/static/img/line.png';
 import styles from './NavBar.module.scss';

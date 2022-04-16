@@ -1,11 +1,12 @@
 import clientPromise from '../lib/mongodb';
-import LandingPageInitial from '../components/LandingPageInitial';
+import LandingPageInitial from '../components/homepage/LandingPageInitial';
 import socials from '../data/Socials';
 import projects from '../data/Projects';
-import ProjectsList from '../components/ProjectsList';
-import AboutMe from '../components/AboutMe';
-import Skills from '../components/Skills';
+import ProjectsList from '../components/homepage/ProjectsList';
+import AboutMe from '../components/homepage/AboutMe';
+import Skills from '../components/homepage/Skills';
 import skills from '../data/SkillsData';
+import { aboutMeContent } from '../data/AboutMeContent';
 export default function Home({ isConnected }) {
 	return (
 		<div>
@@ -17,44 +18,7 @@ export default function Home({ isConnected }) {
 						My name is <span>Valdis</span>
 					</h1>
 				}
-				description={[
-					<p className="test">
-						I'm currently studying for my Bachelor's degree in Computer Science
-						at the{' '}
-						<a rel="noreferrer" target="_blank" href="https://www.df.lu.lv/">
-							University of Latvia
-						</a>{' '}
-						and also working as a Software Developer.
-					</p>,
-					<p>
-						Most of my experience comes from working as a frontend developer and
-						using technologies like{' '}
-						<a rel="noreferrer" target="_blank" href="https://reactjs.org/">
-							React.js
-						</a>{' '}
-						and{' '}
-						<a rel="noreferrer" target="_blank" href="https://reactnative.dev/">
-							React Native
-						</a>{' '}
-						but I also have experience with frameworks like{' '}
-						<a rel="noreferrer" target="_blank" href="https://laravel.com/">
-							Laravel
-						</a>{' '}
-						and{' '}
-						<a rel="noreferrer" target="_blank" href="https://www.drupal.org/">
-							Drupal
-						</a>
-						.
-					</p>,
-					<p>
-						Constantly striving to learn new concepts as well as better my
-						knowledge with already familiar technologies.
-					</p>,
-					<p>
-						In my free time I like to workout in the gym as well as listen to
-						and play music.
-					</p>,
-				]}
+				description={aboutMeContent}
 				socials={socials}
 				scrollToId="skillSection"
 			/>

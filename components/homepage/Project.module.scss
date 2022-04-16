@@ -1,4 +1,4 @@
-@use 'library' as lib;
+@use '../library' as lib;
 .root {
 	display: inline-grid;
 	grid-template-columns: 300px repeat(auto-fit, 200px);
@@ -126,9 +126,6 @@
 		box-shadow: 0 0 10px 4px lib.$neon_transparent, 0 0 0.15em lib.$neon;
 		width: 85%;
 		cursor: pointer;
-		.linkImageContainer {
-			// filter: brightness(0) invert(0);
-		}
 	}
 }
 .repoLink .linkImageContainer {

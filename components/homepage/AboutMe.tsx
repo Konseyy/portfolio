@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import ImageLink, { ImageLinkProps } from '../components/ImageLink';
+import ImageLink, { ImageLinkProps } from './ImageLink';
 import Image from 'next/image';
-import me from '../public/static/img/me.jpg';
+import me from '../../public/static/img/me.jpg';
 import styles from './AboutMe.module.scss';
 import SectionButton from './SectionButton';
 interface Props {

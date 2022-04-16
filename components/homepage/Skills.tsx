@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { FC, useEffect, useState } from 'react';
 import SectionButton from './SectionButton';
 import styles from './Skills.module.scss';
-import dropdown from '../public/static/img/dropdown.png';
+import dropdown from '../../public/static/img/dropdown.png';
 export type skill = {
 	image: StaticImageData;
 	name: string;

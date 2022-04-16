@@ -1,4 +1,5 @@
-@use "library" as lib;
-.root{
+@use "library"as lib;
+
+.root {
 	background-color: lib.$background;
 }
