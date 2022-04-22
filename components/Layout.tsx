@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import Script from 'next/script';
 import styles from './Layout.module.scss';
 import scrollIdIntoView from '../helpers/scrollIdIntoView';
+import { NavBarContent } from '../data/NavBarData';
 const Layout: FC = ({ children }) => {
 	const router = useRouter();
 	useEffect(() => {
@@ -78,47 +79,8 @@ const Layout: FC = ({ children }) => {
 				gtag('config', 'G-MJSJXH851F');`}
 				</Script>
 			</Head>
-			<NavBar
-				navItems={[
-					{
-						displayTitle: 'Home',
-						pagePath: '/',
-						sections: [
-							{
-								sectionTitle: 'home',
-								sectionId: 'home',
-							},
-							{
-								sectionTitle: 'about me',
-								sectionId: 'aboutMe',
-							},
-							,
-							{
-								sectionTitle: 'skills',
-								sectionId: 'skillSection',
-							},
-							{
-								sectionTitle: 'projects',
-								sectionId: 'projectList',
-							},
-						],
-					},
-					// {
-					// 	displayTitle: 'contact me',
-					// 	pagePath: '/contact',
-					// 	sections: [
-					// 		{
-					// 			sectionTitle: 'Email me',
-					// 			sectionId: 'contact',
-					// 			onClick: () => {
-					// 				router.push('mailto:vgbukalders@gmail.com');
-					// 			},
-					// 		},
-					// 	],
-					// },
-				]}
-			/>
-			<div style={{ paddingTop: 0 }} className={styles.root}>
+			<NavBar navItems={NavBarContent} />
+			<div className={styles.root}>
 				{children}
 			</div>
 		</>

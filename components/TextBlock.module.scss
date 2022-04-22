@@ -1,0 +1,42 @@
+@use 'library'as lib;
+
+.titleBlock {
+	margin-bottom: .5em;
+	font-size: 1.3em;
+}
+
+.root {
+	background-color: rgb(30, 30, 30);
+	display: inline-flex;
+	flex-direction: column;
+	padding: 1.4em 1.1em;
+	border-radius: .3em;
+	border-left: .1em solid rgba(lib.$neon_values, 0.5);
+	white-space: pre-wrap;
+	position: relative;
+}
+
+.copyButtonContainer {
+	position: absolute;
+	top: .35em;
+	right: .35em;
+	width: min(1.15em, 30px);
+	height: min(1.15em, 30px);
+	display: flex;
+}
+
+.copyButton {
+
+	filter: brightness(0) invert(1);
+	transition: filter .2s ease-in-out;
+
+	&:hover {
+		cursor: pointer;
+		filter: brightness(0) invert(.75);
+	}
+
+	&:active {
+		transition: none;
+		filter: brightness(0) invert(.5);
+	}
+}

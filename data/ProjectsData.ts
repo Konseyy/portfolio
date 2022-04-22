@@ -5,7 +5,7 @@ import graphql from '../public/static/img/graphql.png';
 import actions from '../public/static/img/actions.png';
 import nodejs from '../public/static/img/nodejs.png';
 import vuejs from '../public/static/img/vuejs.png';
-import { ProjectProps } from '../components/homepage/Project';
+import { ProjectProps } from '../components/home_page/Project';
 const projects: ProjectProps[] = [
 	{
 		title: 'This Website',

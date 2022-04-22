@@ -5,17 +5,8 @@ import line from '../public/static/img/line.png';
 import styles from './NavBar.module.scss';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-type NonEmptyArray<T> = [T, ...T[]];
-type NavItem = {
-	displayTitle: string;
-	pagePath: string;
-	sections: NonEmptyArray<NavSection>;
-};
-type NavSection = {
-	sectionTitle: string;
-	sectionId?: string;
-	onClick?: () => void;
-};
+import { NavItem, NonEmptyArray } from '../types/NavBar';
+
 interface Props {
 	navItems: NonEmptyArray<NavItem>;
 }
