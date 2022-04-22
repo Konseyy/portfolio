@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
 import styles from './Layout.module.scss';
-import scrollIdIntoView from '../functions/scrollIdIntoView';
+import scrollIdIntoView from '../helpers/scrollIdIntoView';
 const Layout: FC = ({ children }) => {
 	const router = useRouter();
 	useEffect(() => {

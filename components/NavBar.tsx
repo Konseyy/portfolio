@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
-import scrollIdIntoView from '../functions/scrollIdIntoView';
+import scrollIdIntoView from '../helpers/scrollIdIntoView';
 import dropdown from '../public/static/img/dropdown.png';
 import line from '../public/static/img/line.png';
 import styles from './NavBar.module.scss';
