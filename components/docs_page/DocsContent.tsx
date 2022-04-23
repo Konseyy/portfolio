@@ -4,29 +4,24 @@ import TextBlock from '../TextBlock';
 import style from './DocsContent.module.scss';
 
 const DocsContent = () => {
+	const formatDescription = (description: string) => {
+		const linkInDescription = description
+			? description.match(/(.*?)<a.*? href="(.*?)"[.\s]*?>(.*?)<\/a>(.*)/)
+			: null;
+		return linkInDescription ? (
+			<div>
+				{linkInDescription[1]}
+				<a href={linkInDescription[2]}>{linkInDescription[3]}</a>
+				{linkInDescription[4]}
+			</div>
+		) : (
+			<div>{description}</div>
+		);
+	};
 	return (
 		<div className={style.root}>
 			<div className={style.middleSection}>
 				{DocsData.map((section) => {
-					const linkInDescription = section.description
-						? section.description.match(
-								/(.*?)<a.*? href="(.*?)"[.\s]*?>(.*?)<\/a>(.*)/
-						  )
-						: null;
-					const descriptionElement = useMemo(
-						() =>
-							linkInDescription ? (
-								<div>
-									{linkInDescription[1]}
-									<a href={linkInDescription[2]}>{linkInDescription[3]}</a>
-									{linkInDescription[4]}
-								</div>
-							) : (
-								<div>{section.description}</div>
-							),
-						[linkInDescription]
-					);
-
 					return (
 						<div
 							key={section.id}
@@ -35,7 +30,7 @@ const DocsContent = () => {
 						>
 							<div className={style.sectionTitle}>{section.title}</div>
 							<div className={style.sectionDescription}>
-								{descriptionElement}
+								{formatDescription(section.description)}
 							</div>
 							<div>
 								{section.entries.map((block, idx) => (

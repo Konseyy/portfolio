@@ -37,7 +37,7 @@ export const DocsData: DocsSection[] = [
 				textBlock: rest_list_req,
 			},
 			{
-				title: `Response`,
+				title: `Response <a href="/api/list">/api/list</a>`,
 				textBlock: rest_list_resp,
 			},
 			// Statuses
@@ -50,7 +50,7 @@ export const DocsData: DocsSection[] = [
 				textBlock: rest_statuses_req,
 			},
 			{
-				title: `Response`,
+				title: `Response <a href="/api/statuses">/api/statuses</a>`,
 				textBlock: rest_statuses_resp,
 			},
 		],
