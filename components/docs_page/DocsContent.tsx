@@ -1,24 +1,9 @@
-import React, { FC, useEffect, useMemo, useState } from 'react';
+import React, { FC, useMemo } from 'react';
 import { DocsData } from './DocsData';
 import TextBlock from '../TextBlock';
 import style from './DocsContent.module.scss';
 
-const DocsContent = () => {
-	const [hostName, setHostName] = useState('');
-	const setHost = async () => {
-		const host = await (await fetch('/api/host')).json();
-		setHostName(
-			`${host.protocol ? host.protocol + '://' : ''}${host.host ?? ''}`
-		);
-	};
-	useEffect(() => {
-		setHost();
-	}, []);
-
-	const host =
-		typeof window !== 'undefined'
-			? `${window.location.protocol}//${window.location.host}`
-			: '';
+const DocsContent = ({ host }) => {
 	const FormattedDescription: FC<{ description: string }> = ({
 		description,
 	}) => {
@@ -73,9 +58,7 @@ const DocsContent = () => {
 													}}
 												>
 													{group.link
-														? hostName
-															? `${hostName}${group.link}`
-															: ''
+														? `${host}${group.link}`
 														: block.textBlock}
 												</TextBlock>
 												{group.link && (
