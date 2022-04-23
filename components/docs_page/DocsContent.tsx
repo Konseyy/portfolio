@@ -2,6 +2,7 @@ import React, { FC, useMemo } from 'react';
 import { DocsData } from './DocsData';
 import TextBlock from '../TextBlock';
 import style from './DocsContent.module.scss';
+import Link from 'next/link';
 
 const DocsContent = () => {
 	const host =
@@ -54,7 +55,9 @@ const DocsContent = () => {
 														group.link ? style.withLink : ''
 													}`}
 													title={block.title ?? ''}
-													description={block.description ?? ''}
+													description={
+														group.link ? '' : block.description ?? ''
+													}
 													style={{
 														paddingTop: '.2em',
 														paddingBottom: '.3em',
@@ -64,7 +67,13 @@ const DocsContent = () => {
 														? `${host}${group.link}`
 														: block.textBlock}
 												</TextBlock>
-												{group.link && <TextBlock>{block.textBlock}</TextBlock>}
+												{group.link && (
+													<TextBlock
+														description={group.link && block.description}
+													>
+														{block.textBlock}
+													</TextBlock>
+												)}
 											</div>
 										);
 									});
