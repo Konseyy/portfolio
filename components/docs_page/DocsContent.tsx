@@ -28,12 +28,16 @@ const DocsContent = () => {
 					);
 
 					return (
-						<div key={section.id} id={section.id}>
+						<div
+							key={section.id}
+							id={section.id}
+							className={style.sectionBlockContainer}
+						>
 							<div className={style.sectionTitle}>{section.title}</div>
 							<div className={style.sectionDescription}>
 								{descriptionElement}
 							</div>
-							<div className={style.sectionBlockContainer}>
+							<div>
 								{section.entries.map((block, idx) => (
 									<TextBlock
 										key={idx}
