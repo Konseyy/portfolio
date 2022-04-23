@@ -1,9 +1,18 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC, useEffect, useMemo, useState } from 'react';
 import { DocsData } from './DocsData';
 import TextBlock from '../TextBlock';
 import style from './DocsContent.module.scss';
 
 const DocsContent = () => {
+	const [hostName, setHostName] = useState('');
+	const setHost = async () => {
+		const host = await (await fetch('/api/host')).json();
+		setHostName(`${host.protocol ?? ''}${host.host ?? ''}`);
+	};
+	useEffect(() => {
+		setHost();
+	}, []);
+
 	const host =
 		typeof window !== 'undefined'
 			? `${window.location.protocol}//${window.location.host}`
@@ -46,9 +55,8 @@ const DocsContent = () => {
 								{section.entryGroups.map((group) => {
 									return group.entries.map((block, idx) => {
 										return (
-											<div className={style.sectionGroup}>
+											<div key={idx} className={style.sectionGroup}>
 												<TextBlock
-													key={idx}
 													id={block.id ?? ''}
 													className={`${style.textBlock} ${
 														group.link ? style.withLink : ''
@@ -63,7 +71,7 @@ const DocsContent = () => {
 													}}
 												>
 													{group.link
-														? `${host}${group.link}`
+														? `${hostName}${group.link}`
 														: block.textBlock}
 												</TextBlock>
 												{group.link && (
