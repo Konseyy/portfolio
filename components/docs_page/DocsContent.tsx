@@ -2,7 +2,6 @@ import React, { FC, useMemo } from 'react';
 import { DocsData } from './DocsData';
 import TextBlock from '../TextBlock';
 import style from './DocsContent.module.scss';
-import Link from 'next/link';
 
 const DocsContent = () => {
 	const host =
