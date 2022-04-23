@@ -1,4 +1,5 @@
-@use 'library' as lib;
+@use '../library'as lib;
+
 .root {
 	position: fixed;
 	width: 100%;
@@ -6,7 +7,9 @@
 	z-index: 3;
 	backdrop-filter: blur(10px);
 	top: 0;
+	user-select: none;
 }
+
 .list {
 	padding: 10px 0;
 	display: flex;
@@ -14,10 +17,12 @@
 	align-content: center;
 	z-index: 3;
 }
+
 .navList {
 	display: flex;
 	flex-direction: row;
 }
+
 .sectionHeader {
 	background-color: rgba(lib.$background, 0.9);
 	padding: 10px 20px;
@@ -27,11 +32,15 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+
 	h1 {
 		font-size: 2.6rem;
 	}
-	transition: all 0.5s, border-radius 0s;
+
+	transition: all 0.5s,
+	border-radius 0s;
 }
+
 .dropdownContainer {
 	margin-left: 0.65rem;
 	width: 0.8rem;
@@ -41,9 +50,11 @@
 	transform: rotate(0);
 	transition: transform 0.35s;
 }
+
 .sectionListContainer {
 	position: relative;
 }
+
 .sectionList {
 	opacity: 0;
 	font-size: 1.6rem;
@@ -59,6 +70,7 @@
 	padding-top: 0.7rem;
 	padding-bottom: 0.5rem;
 }
+
 .sectionListItem {
 	width: 100%;
 	text-align: center;
@@ -67,6 +79,7 @@
 	text-decoration-color: rgba(lib.$text_inverted, 0);
 	transition: 0.35s;
 }
+
 .navItem {
 	padding: 5px;
 	margin-left: 30px;
@@ -74,6 +87,7 @@
 	font-weight: bold;
 	color: lib.$text;
 	transition: 0.5s;
+
 	&:hover,
 	&:focus-within {
 		.sectionHeader {
@@ -81,18 +95,23 @@
 			text-shadow: lib.$neon_glow;
 			cursor: pointer;
 			border-width: 1px;
+
 			.dropdownContainer {
 				transform: rotate(-180deg);
 			}
 		}
+
 		.sectionList {
 			&:hover {
 				cursor: pointer;
 			}
+
 			opacity: 1;
 			transform: scaleY(1);
+
 			.sectionListItem {
 				padding-bottom: 10px;
+
 				&:hover {
 					text-shadow: lib.$neon_glow;
 					text-decoration-color: rgba(lib.$text, 1);
@@ -101,56 +120,71 @@
 		}
 	}
 }
+
 .mobileExpandContainer {
 	display: none;
 }
+
 @media only screen and (max-width: 1000px) {
 	.root {
 		width: 100vw;
 	}
+
 	.navList {
 		display: none;
 		flex-direction: column;
 	}
+
 	.sectionList {
 		position: relative;
 		background-color: transparent;
 	}
+
 	.sectionListContainer {
 		height: 0;
 		transform: scaleY(0);
 	}
+
 	.sectionHeader {
 		padding: 1em 2em;
 		background-color: transparent;
 	}
+
 	.navItem {
 		margin-left: 0;
+
 		&:hover,
 		&:focus-within {
 			.sectionHeader {
 				padding-bottom: 0.25em;
 			}
+
 			.sectionListContainer {
 				height: auto;
 				transform: scaleY(1);
 			}
+
 			.sectionListItem {
 				padding-bottom: 10px;
+
 				&:hover {
 					text-decoration-color: rgba(lib.$text_inverted, 1);
 				}
 			}
 		}
 	}
+
 	.root.expanded {
 		background-color: rgba(0, 0, 0, 0.86);
+
 		.list {
 			height: 100vh;
+
 			.mobileExpandContainer {
 				margin-top: 0.5em;
 				align-self: flex-start;
 			}
+
 			.navListContainer {
 				position: absolute;
 				width: 100%;
@@ -158,6 +192,7 @@
 				display: flex;
 				justify-content: center;
 			}
+
 			.navList {
 				margin-top: 5em;
 				display: flex;
@@ -172,6 +207,7 @@
 		height: 2.5em;
 		position: absolute;
 	}
+
 	.mobileExpandContainer {
 		display: flex;
 		align-items: center;
@@ -179,6 +215,7 @@
 		margin-left: auto;
 		margin-right: 3em;
 	}
+
 	.mobileExpand {
 		height: 3em;
 		width: 3em;
@@ -186,38 +223,47 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
 		.burgerLine {
 			transform: rotate(90deg);
 			transition: 0.5s;
 		}
-		& > :nth-child(1) {
+
+		&> :nth-child(1) {
 			margin-bottom: 1.5rem;
 			transform: rotate(-270deg);
 		}
-		& > :nth-child(2) {
+
+		&> :nth-child(2) {
 			opacity: 1;
 		}
-		& > :nth-child(3) {
+
+		&> :nth-child(3) {
 			margin-top: 1.5rem;
 			transform: rotate(270deg);
 		}
+
 		&.expanded {
 			.burgerLine {
 				margin: 0;
 			}
-			& > :nth-child(1) {
+
+			&> :nth-child(1) {
 				transform: rotate(-225deg);
 			}
-			& > :nth-child(2) {
+
+			&> :nth-child(2) {
 				opacity: 0;
 				height: 0;
 			}
-			& > :nth-child(3) {
+
+			&> :nth-child(3) {
 				transform: rotate(225deg);
 			}
 		}
 	}
 }
+
 @media only screen and (max-width: 650px) {
 	.mobileExpandContainer {
 		margin-right: 1.5em;

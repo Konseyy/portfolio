@@ -14,6 +14,8 @@ interface Props {
 const LandingPageInitial: FC<Props> = ({ scrollToId, id }) => {
 	const desktopText = 'Hello, ';
 	const mobileText = 'Hi, ';
+	let timerDesktop: NodeJS.Timer;
+	let timerMobile: NodeJS.Timer;
 	type typing = {
 		partialText: string;
 		direction: 'backwards' | 'forwards';
@@ -32,13 +34,6 @@ const LandingPageInitial: FC<Props> = ({ scrollToId, id }) => {
 		overflow: 0,
 		typeOverflow: 0,
 	});
-	const delay = async (ms: number) => {
-		return new Promise<void>((r) => {
-			setTimeout(() => {
-				r();
-			}, ms);
-		});
-	};
 	const typeText = (
 		fullText: string,
 		setPartialText: Dispatch<React.SetStateAction<typing>>,
@@ -86,8 +81,6 @@ const LandingPageInitial: FC<Props> = ({ scrollToId, id }) => {
 		return timer;
 	};
 	useEffect(() => {
-		let timerDesktop: NodeJS.Timer;
-		let timerMobile: NodeJS.Timer;
 		setTimeout(() => {
 			timerDesktop = typeText(desktopText, setDesktopTextPartial, 100, 45);
 			timerMobile = typeText(mobileText, setMobileTextPartial, 90, 50);

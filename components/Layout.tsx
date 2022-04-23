@@ -1,10 +1,11 @@
 import React, { FC, useEffect } from 'react';
-import NavBar from './NavBar';
+import NavBar from './navbar/NavBar';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
 import styles from './Layout.module.scss';
-import scrollIdIntoView from '../functions/scrollIdIntoView';
+import scrollIdIntoView from '../helpers/scrollIdIntoView';
+import { NavBarContent } from './navbar/NavBarData';
 const Layout: FC = ({ children }) => {
 	const router = useRouter();
 	useEffect(() => {
@@ -78,49 +79,8 @@ const Layout: FC = ({ children }) => {
 				gtag('config', 'G-MJSJXH851F');`}
 				</Script>
 			</Head>
-			<NavBar
-				navItems={[
-					{
-						displayTitle: 'Home',
-						pagePath: '/',
-						sections: [
-							{
-								sectionTitle: 'home',
-								sectionId: 'home',
-							},
-							{
-								sectionTitle: 'about me',
-								sectionId: 'aboutMe',
-							},
-							,
-							{
-								sectionTitle: 'skills',
-								sectionId: 'skillSection',
-							},
-							{
-								sectionTitle: 'projects',
-								sectionId: 'projectList',
-							},
-						],
-					},
-					// {
-					// 	displayTitle: 'contact me',
-					// 	pagePath: '/contact',
-					// 	sections: [
-					// 		{
-					// 			sectionTitle: 'Email me',
-					// 			sectionId: 'contact',
-					// 			onClick: () => {
-					// 				router.push('mailto:vgbukalders@gmail.com');
-					// 			},
-					// 		},
-					// 	],
-					// },
-				]}
-			/>
-			<div style={{ paddingTop: 0 }} className={styles.root}>
-				{children}
-			</div>
+			<NavBar navItems={NavBarContent} />
+			<div className={styles.root}>{children}</div>
 		</>
 	);
 };

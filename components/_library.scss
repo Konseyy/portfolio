@@ -8,6 +8,8 @@ $text_inverted: black;
 $neon: rgba(255, 31, 143, 1);
 $neon_values: rgb(255, 31, 143);
 $neon_transparent: rgba(255, 31, 143, 0.5);
-$neon_glow_neon: 0.022em 0.022em $neon, -0.007em -0.007em 7px $neon;
-$neon_glow_weak:  0 0 0.7em $neon;
-$neon_glow: $neon_glow_neon, $neon_glow_weak;
+$neon_glow_neon: 0.022em 0.022em $neon,
+-0.007em -0.007em 7px $neon;
+$neon_glow_weak: 0 0 0.7em $neon;
+$neon_glow: $neon_glow_neon,
+$neon_glow_weak;

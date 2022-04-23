@@ -1,4 +1,19 @@
-@use "library" as lib;
-.root{
+@use "library"as lib;
+
+.root {
 	background-color: lib.$background;
+	min-height: 100vh;
+	padding-right: 2%;
+	padding-left: 2%;
+	color: white;
+}
+
+.root a {
+	color: lib.$text;
+	transition: 350ms;
+
+	&:hover,
+	&:focus {
+		color: lib.$neon;
+	}
 }

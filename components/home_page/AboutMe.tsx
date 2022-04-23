@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import ImageLink, { ImageLinkProps } from '../components/ImageLink';
+import ImageLink, { ImageLinkProps } from '../ImageLink';
 import Image from 'next/image';
-import me from '../public/static/img/me.jpg';
+import me from '../../public/static/img/me.jpg';
 import styles from './AboutMe.module.scss';
 import SectionButton from './SectionButton';
 interface Props {
@@ -22,7 +22,7 @@ const AboutMe: FC<Props> = ({
 		<section id={id} className={styles.root}>
 			<div className={styles.aboutMe}>
 				<div className={styles.personalPhotoContainer}>
-					<Image src={me} alt='photo of me'/>
+					<Image src={me} alt="photo of me" />
 				</div>
 				<div className={styles.infoContainer}>
 					<div className={styles.title}>{title}</div>

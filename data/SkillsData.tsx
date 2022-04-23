@@ -1,4 +1,4 @@
-import { skill } from '../components/Skills';
+import { skill } from '../components/home_page/Skills';
 import typescript from '../public/static/img/typescript.png';
 import javascript from '../public/static/img/javascript.png';
 import react from '../public/static/img/react.png';
