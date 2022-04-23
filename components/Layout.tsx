@@ -1,11 +1,11 @@
 import React, { FC, useEffect } from 'react';
-import NavBar from './NavBar';
+import NavBar from './navbar/NavBar';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
 import styles from './Layout.module.scss';
 import scrollIdIntoView from '../helpers/scrollIdIntoView';
-import { NavBarContent } from '../data/NavBarData';
+import { NavBarContent } from './navbar/NavBarData';
 const Layout: FC = ({ children }) => {
 	const router = useRouter();
 	useEffect(() => {

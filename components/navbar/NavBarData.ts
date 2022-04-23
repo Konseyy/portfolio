@@ -1,4 +1,4 @@
-import { NavItem, NonEmptyArray } from '../types/NavBar';
+import { NavItem, NonEmptyArray } from '../../types/NavBar';
 
 export const NavBarContent: NonEmptyArray<NavItem> = [
 	{
@@ -29,12 +29,12 @@ export const NavBarContent: NonEmptyArray<NavItem> = [
 		pagePath: '/docs',
 		sections: [
 			{
-				sectionTitle: 'Status Component',
-				sectionId: 'vueStatus',
+				sectionTitle: 'REST',
+				sectionId: 'restDocs',
 			},
 			{
-				sectionTitle: 'GitHub Projects',
-				sectionId: 'githubProjects',
+				sectionTitle: 'GraphQL',
+				sectionId: 'gqlDocs',
 			},
 		],
 	},

@@ -1,6 +1,28 @@
-.root{
+.root {
 	line-height: normal;
-}
-.textBlock{
+	width: 100%;
+	display: flex;
+	justify-content: center;
 	font-size: 1.3rem;
+
+	a {
+		text-decoration: underline;
+	}
+}
+
+.middleSection {
+	min-width: clamp(300px, 80%, 1400px)
+}
+
+.sectionTitle {
+	font-size: 2em;
+}
+
+.sectionDescription {
+	font-size: 1.3em;
+}
+
+.sectionBlockContainer {
+	margin-top: 2em;
+	margin-bottom: 3em;
 }

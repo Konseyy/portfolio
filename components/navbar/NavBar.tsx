@@ -1,11 +1,11 @@
 import React, { FC, useEffect, useState } from 'react';
-import scrollIdIntoView from '../helpers/scrollIdIntoView';
-import dropdown from '../public/static/img/dropdown.png';
-import line from '../public/static/img/line.png';
+import scrollIdIntoView from '../../helpers/scrollIdIntoView';
+import dropdown from '../../public/static/img/dropdown.png';
+import line from '../../public/static/img/line.png';
 import styles from './NavBar.module.scss';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { NavItem, NonEmptyArray } from '../types/NavBar';
+import { NavItem, NonEmptyArray } from '../../types/NavBar';
 
 interface Props {
 	navItems: NonEmptyArray<NavItem>;
