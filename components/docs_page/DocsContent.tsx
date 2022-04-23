@@ -2,13 +2,8 @@ import React, { FC, useMemo } from 'react';
 import { DocsData } from './DocsData';
 import TextBlock from '../TextBlock';
 import style from './DocsContent.module.scss';
-import Link from 'next/link';
 
-const DocsContent = () => {
-	const host =
-		typeof window !== 'undefined'
-			? `${window.location.protocol}//${window.location.host}`
-			: '';
+const DocsContent = ({ host }) => {
 	const FormattedDescription: FC<{ description: string }> = ({
 		description,
 	}) => {
@@ -47,9 +42,8 @@ const DocsContent = () => {
 								{section.entryGroups.map((group) => {
 									return group.entries.map((block, idx) => {
 										return (
-											<div className={style.sectionGroup}>
+											<div key={idx} className={style.sectionGroup}>
 												<TextBlock
-													key={idx}
 													id={block.id ?? ''}
 													className={`${style.textBlock} ${
 														group.link ? style.withLink : ''
