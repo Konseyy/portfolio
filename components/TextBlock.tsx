@@ -31,6 +31,7 @@ const TextBlock: FC<Props> = ({
 	if (description && description[0] === '\n') {
 		description = description.slice(1);
 	}
+	const spacedOut = useMemo(() => children.replace(/ /g, '  '), [children]);
 	const hrefInTitle = title.match(
 		/(.*?)<a.*? href="(.*?)"[.\s]*?>(.*?)<\/a>(.*)/
 	);
@@ -62,6 +63,40 @@ const TextBlock: FC<Props> = ({
 			),
 		[linkInDescription]
 	);
+	const highLightTypes = (content: string) => {
+		const variableRegex = /([\s\S]*?)<var>(.*?)<\/var>([\s\S]*)/;
+		const matchesVariable = content.match(variableRegex);
+		if (matchesVariable) {
+			return (
+				<span>
+					{highLightTypes(matchesVariable[1])}
+					<span className={style.highlightedVariable}>
+						{highLightTypes(matchesVariable[2])}
+					</span>
+					{highLightTypes(matchesVariable[3])}
+				</span>
+			);
+		}
+		const typeRegex = /([\s\S]*?)<type>(.*?)<\/type>([\s\S]*)/;
+		const matchesType = content.match(typeRegex);
+		if (matchesType) {
+			return (
+				<span>
+					{highLightTypes(matchesType[1])}
+					<span className={style.highlightedType}>
+						{highLightTypes(matchesType[2])}
+					</span>
+					{highLightTypes(matchesType[3])}
+				</span>
+			);
+		}
+
+		return <span>{content}</span>;
+	};
+	const highlightedContent = useMemo(
+		() => highLightTypes(spacedOut),
+		[spacedOut]
+	);
 	return (
 		<div className={`${className} ${style.root}`} id={id ?? ''}>
 			{title && <div className={style.titleBlock}>{titleElement ?? title}</div>}
@@ -77,7 +112,7 @@ const TextBlock: FC<Props> = ({
 				>
 					<Image className={style.copyButton} src={copyIcon} />
 				</a>
-				{children}
+				{highlightedContent}
 			</div>
 		</div>
 	);
