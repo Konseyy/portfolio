@@ -103,7 +103,7 @@ const TextBlock: FC<Props> = ({
 			{description && (
 				<div className={style.descriptionBlock}>{descriptionElement}</div>
 			)}
-			<div className={style.textBlock}>
+			<div className={style.textBlockContainer}>
 				<a
 					className={style.copyButtonContainer}
 					onClick={() => {
@@ -112,7 +112,7 @@ const TextBlock: FC<Props> = ({
 				>
 					<Image className={style.copyButton} src={copyIcon} />
 				</a>
-				{highlightedContent}
+				<div className={style.textBlock}>{highlightedContent}</div>
 			</div>
 		</div>
 	);
