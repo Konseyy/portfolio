@@ -16,6 +16,10 @@
 
 .sectionBlockContainer {}
 
+.sectionGroup {
+	margin-top: 2em;
+}
+
 .sectionTitle {
 	padding-top: 100px;
 	font-size: 2em;
@@ -26,6 +30,9 @@
 }
 
 .textBlock {
-	margin-top: 2em;
 	margin-bottom: 3em;
+
+	&.withLink {
+		margin-bottom: 0;
+	}
 }

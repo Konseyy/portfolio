@@ -2,8 +2,13 @@ import React, { FC, useMemo } from 'react';
 import { DocsData } from './DocsData';
 import TextBlock from '../TextBlock';
 import style from './DocsContent.module.scss';
+import Link from 'next/link';
 
 const DocsContent = () => {
+	const host =
+		typeof window !== 'undefined'
+			? `${window.location.protocol}//${window.location.host}`
+			: '';
 	const FormattedDescription: FC<{ description: string }> = ({
 		description,
 	}) => {
@@ -39,17 +44,40 @@ const DocsContent = () => {
 								<FormattedDescription description={section.description} />
 							</div>
 							<div>
-								{section.entries.map((block, idx) => (
-									<TextBlock
-										key={idx}
-										id={block.id ?? ''}
-										className={style.textBlock}
-										title={block.title ?? ''}
-										description={block.description ?? ''}
-									>
-										{block.textBlock}
-									</TextBlock>
-								))}
+								{section.entryGroups.map((group) => {
+									return group.entries.map((block, idx) => {
+										return (
+											<div className={style.sectionGroup}>
+												<TextBlock
+													key={idx}
+													id={block.id ?? ''}
+													className={`${style.textBlock} ${
+														group.link ? style.withLink : ''
+													}`}
+													title={block.title ?? ''}
+													description={
+														group.link ? '' : block.description ?? ''
+													}
+													style={{
+														paddingTop: '.2em',
+														paddingBottom: '.3em',
+													}}
+												>
+													{group.link
+														? `${host}${group.link}`
+														: block.textBlock}
+												</TextBlock>
+												{group.link && (
+													<TextBlock
+														description={group.link && block.description}
+													>
+														{block.textBlock}
+													</TextBlock>
+												)}
+											</div>
+										);
+									});
+								})}
 							</div>
 						</div>
 					);

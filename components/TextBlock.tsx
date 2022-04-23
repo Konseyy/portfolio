@@ -8,6 +8,7 @@ interface Props {
 	id?: string;
 	title?: string;
 	description?: string;
+	style?: { [key: string]: any };
 }
 const TextBlock: FC<Props> = ({
 	children,
@@ -15,6 +16,7 @@ const TextBlock: FC<Props> = ({
 	title,
 	description,
 	id,
+	style: styleProp,
 }) => {
 	//remove \n at start of string
 	if (children[0] === '\n') {
@@ -120,7 +122,7 @@ const TextBlock: FC<Props> = ({
 					<DescriptionElement />
 				</div>
 			)}
-			<div className={style.textBlockContainer}>
+			<div className={style.textBlockContainer} style={styleProp}>
 				<a
 					className={style.copyButtonContainer}
 					onClick={() => {
