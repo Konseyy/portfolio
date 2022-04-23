@@ -4,19 +4,25 @@ import TextBlock from '../TextBlock';
 import style from './DocsContent.module.scss';
 
 const DocsContent = () => {
-	const formatDescription = (description: string) => {
-		const linkInDescription = description
-			? description.match(/(.*?)<a.*? href="(.*?)"[.\s]*?>(.*?)<\/a>(.*)/)
-			: null;
-		return linkInDescription ? (
-			<div>
-				{linkInDescription[1]}
-				<a href={linkInDescription[2]}>{linkInDescription[3]}</a>
-				{linkInDescription[4]}
-			</div>
-		) : (
-			<div>{description}</div>
+	const FormattedDescription = ({ description }: { description: string }) => {
+		const linkInDescription = useMemo(
+			() =>
+				description
+					? description.match(/(.*?)<a.*? href="(.*?)"[.\s]*?>(.*?)<\/a>(.*)/)
+					: null,
+			[description]
 		);
+		if (linkInDescription) {
+			return (
+				<div>
+					{linkInDescription[1]}
+					<a href={linkInDescription[2]}>{linkInDescription[3]}</a>
+					{linkInDescription[4]}
+				</div>
+			);
+		} else {
+			return <div>{description}</div>;
+		}
 	};
 	return (
 		<div className={style.root}>
@@ -30,7 +36,7 @@ const DocsContent = () => {
 						>
 							<div className={style.sectionTitle}>{section.title}</div>
 							<div className={style.sectionDescription}>
-								{formatDescription(section.description)}
+								<FormattedDescription description={section.description} />
 							</div>
 							<div>
 								{section.entries.map((block, idx) => (
