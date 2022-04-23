@@ -8,7 +8,7 @@ const DocsContent = () => {
 	const setHost = async () => {
 		const host = await (await fetch('/api/host')).json();
 		setHostName(
-			`${host.protocol ? host.protoco + '://' : ''}${host.host ?? ''}`
+			`${host.protocol ? host.protocol + '://' : ''}${host.host ?? ''}`
 		);
 	};
 	useEffect(() => {
