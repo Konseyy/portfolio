@@ -1,10 +1,12 @@
-import React, { useMemo } from 'react';
+import React, { FC, useMemo } from 'react';
 import { DocsData } from './DocsData';
 import TextBlock from '../TextBlock';
 import style from './DocsContent.module.scss';
 
 const DocsContent = () => {
-	const FormattedDescription = ({ description }: { description: string }) => {
+	const FormattedDescription: FC<{ description: string }> = ({
+		description,
+	}) => {
 		const linkInDescription = useMemo(
 			() =>
 				description
