@@ -7,7 +7,9 @@ const DocsContent = () => {
 	const [hostName, setHostName] = useState('');
 	const setHost = async () => {
 		const host = await (await fetch('/api/host')).json();
-		setHostName(`${host.protocol ?? ''}${host.host ?? ''}`);
+		setHostName(
+			`${host.protocol ? host.protoco + '//' : ''}${host.host ?? ''}`
+		);
 	};
 	useEffect(() => {
 		setHost();
@@ -71,7 +73,9 @@ const DocsContent = () => {
 													}}
 												>
 													{group.link
-														? `${hostName}${group.link}`
+														? hostName
+															? `${hostName}${group.link}`
+															: ''
 														: block.textBlock}
 												</TextBlock>
 												{group.link && (
