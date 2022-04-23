@@ -1,4 +1,5 @@
-@use '../library' as lib;
+@use '../library'as lib;
+
 .root {
 	display: inline-grid;
 	grid-template-columns: 300px repeat(auto-fit, 200px);
@@ -13,6 +14,7 @@
 	position: relative;
 	z-index: 1;
 	transition: 0.5s;
+
 	&::before,
 	&::after {
 		transition: opacity 0.35s;
@@ -23,24 +25,29 @@
 		width: 100%;
 		z-index: -1;
 	}
+
 	&::before {
 		box-shadow: 0 0 0 0 rgba(lib.$background_inverted, 0);
 		opacity: 1;
 	}
+
 	&::after {
 		opacity: 0;
 		box-shadow: lib.$neon_glow_weak;
 	}
+
 	&:hover,
 	&:focus-within {
 		&::before {
 			opacity: 0;
 		}
+
 		&::after {
 			opacity: 1;
 		}
 	}
 }
+
 .titleContainer {
 	display: flex;
 	align-items: center;
@@ -48,6 +55,7 @@
 	margin-left: 0.625rem;
 	cursor: default;
 }
+
 .title {
 	color: lib.$text;
 	font-size: 2.6rem;
@@ -55,6 +63,7 @@
 	text-decoration: underline;
 	text-decoration-color: rgba(lib.$neon_values, 0);
 	transition: 0.35s;
+
 	&:hover,
 	&:focus {
 		cursor: pointer;
@@ -63,36 +72,43 @@
 		text-decoration-color: lib.$highlight_pale;
 	}
 }
+
 .contentContainer {
 	margin: 0 1.25rem;
 	grid-column: span 2;
 }
+
 .description {
 	font-size: 1.4rem;
 	line-height: 1.5rem;
 	margin-bottom: 1.5625rem;
 }
+
 .technologiesSection {
 	display: flex;
 	flex-direction: column;
 	gap: 0.3125rem;
 }
+
 .technologiesHeader {
 	font-size: 1.1rem;
 	font-weight: bold;
 	margin-bottom: 0.3125rem;
 }
+
 .technologiesContainer {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
 	align-items: center;
 }
+
 .linkContainer {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
+
 .repoLinkContainer,
 .liveLinkContainer {
 	margin: 0 0.625rem;
@@ -100,11 +116,13 @@
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 0.3125rem;
+
 	&:hover,
 	&:focus {
 		cursor: default;
 	}
 }
+
 .repoLink,
 .liveLink {
 	width: 70%;
@@ -119,6 +137,7 @@
 	font-size: 1.2rem;
 	color: lib.$text;
 	transition: background-color 450ms, color 600ms, width 450ms, box-shadow 400ms;
+
 	&:hover,
 	&:focus {
 		background-color: lib.$neon;
@@ -128,14 +147,17 @@
 		cursor: pointer;
 	}
 }
+
 .repoLink .linkImageContainer {
 	height: 1.4rem;
 	width: 1.4rem;
 }
+
 .liveLink .linkImageContainer {
 	height: 1.3rem;
 	width: 1.3rem;
 }
+
 .linkImageContainer {
 	display: flex;
 	align-items: center;
@@ -144,12 +166,14 @@
 	filter: brightness(0) invert(1);
 	transition: 600ms;
 }
+
 .readMore {
 	font-weight: bold;
 	text-decoration: underline;
 	text-decoration-color: rgba(lib.$background_inverted, 0);
 	text-decoration-thickness: 1.5px;
 	transition: 0.4s;
+
 	&:hover,
 	&:focus {
 		cursor: pointer;
@@ -157,23 +181,28 @@
 		text-decoration-color: lib.$neon;
 	}
 }
+
 @media only screen and (max-width: 1000px) {
 	.root {
 		grid-template-columns: auto;
 		width: 92vw;
 		margin-bottom: 0.9375rem;
 	}
+
 	.title {
 		line-height: 3rem;
 	}
+
 	.contentContainer {
 		grid-column: span 1;
 	}
+
 	.liveLinkContainer,
 	.repoLinkContainer {
 		align-items: flex-start;
 		justify-content: flex-start;
 	}
+
 	.liveLink,
 	.repoLink {
 		width: auto;
@@ -181,55 +210,67 @@
 		font-weight: bold;
 		font-size: 1.4rem;
 		padding: 7px 25px 7px 20px;
+
 		&:hover,
 		&:focus {
 			width: auto;
 		}
 	}
+
 	.linkContainer {
 		margin-bottom: 15px;
 	}
 }
+
 @media only screen and (max-width: 1150px) {
 	.root {
 		margin-bottom: 1.25rem;
 	}
 }
+
 @media only screen and (max-width: 1700px) {
 	.root {
 		margin-bottom: 1.875rem;
 	}
 }
+
 @media only screen and (min-width: 1150px) {
 	.title {
 		line-height: 2.8rem;
 	}
 }
+
 @media only screen and (min-width: 2540px) {
 	.root {
 		max-width: 700px;
 		grid-template-columns: 400px repeat(auto-fit, 300px);
 	}
+
 	.liveLink,
 	.repoLink {
 		font-size: 2rem;
 		width: 75%;
+
 		&:hover,
 		&:focus {
 			width: 85%;
 		}
 	}
+
 	.title {
 		font-size: 3.5rem;
 		line-height: 4rem;
 	}
+
 	.titleContainer {
 		margin-bottom: 2.5rem;
 	}
+
 	.description {
 		font-size: 1.9rem;
 		line-height: 2.3rem;
 	}
+
 	.technologiesHeader {
 		font-size: 1.9rem;
 		margin-bottom: 0.625rem;
