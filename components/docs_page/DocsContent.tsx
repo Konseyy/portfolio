@@ -4,7 +4,10 @@ import TextBlock from '../TextBlock';
 import style from './DocsContent.module.scss';
 
 const DocsContent = () => {
-	const host = typeof window !== 'undefined' ? window.location.host : '';
+	const host =
+		typeof window !== 'undefined'
+			? `${window.location.protocol}//${window.location.host}`
+			: '';
 	const FormattedDescription: FC<{ description: string }> = ({
 		description,
 	}) => {
