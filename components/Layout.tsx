@@ -80,9 +80,7 @@ const Layout: FC = ({ children }) => {
 				</Script>
 			</Head>
 			<NavBar navItems={NavBarContent} />
-			<div className={styles.root}>
-				{children}
-			</div>
+			<div className={styles.root}>{children}</div>
 		</>
 	);
 };
