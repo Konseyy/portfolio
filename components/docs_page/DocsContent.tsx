@@ -31,12 +31,10 @@ const DocsContent = () => {
 			<div className={style.middleSection}>
 				{DocsData.map((section) => {
 					return (
-						<div
-							key={section.id}
-							id={section.id}
-							className={style.sectionBlockContainer}
-						>
-							<div className={style.sectionTitle}>{section.title}</div>
+						<div key={section.id} className={style.sectionBlockContainer}>
+							<div id={section.id} className={style.sectionTitle}>
+								{section.title}
+							</div>
 							<div className={style.sectionDescription}>
 								<FormattedDescription description={section.description} />
 							</div>
