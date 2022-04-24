@@ -20,7 +20,6 @@ const TextBlock: FC<Props> = ({
 	annotation,
 	style: styleProp,
 }) => {
-	//remove \n at start of string
 	if (children[0] === '\n') {
 		children = children.slice(1);
 	}
@@ -31,28 +30,37 @@ const TextBlock: FC<Props> = ({
 		description = description.slice(1);
 	}
 	const spacedOut = useMemo(() => children.replace(/ /g, '  '), [children]);
-	const hrefInTitle = useMemo(
-		() =>
-			title
-				? title.match(/(.*?)<a.*? href="(.*?)"[.\s]*?>(.*?)<\/a>(.*)/)
-				: null,
-		[title]
-	);
-	const linkInDescription = useMemo(
-		() =>
-			description
-				? description.match(/(.*?)<a.*? href="(.*?)"[.\s]*?>(.*?)<\/a>(.*)/)
-				: null,
-		[description]
-	);
+	const hrefInTitle = title
+		? title.match(/(.*?)<a.*? href="(.*?)"[.\s]*?>(.*?)<\/a>(.*)/)
+		: null;
+
+	const linkInDescription = description
+		? description.match(/(.*?)<a.*? href="(.*?)"[.\s]*?>(.*?)<\/a>(.*)/)
+		: null;
 	const matchesVariable = (content: string) => {
 		const variableRegex = /([\s\S]*?)<var>(.*?)<\/var>([\s\S]*)/;
-		return useMemo(() => content.match(variableRegex), [content]);
+		return content.match(variableRegex);
 	};
 	const matchesType = (content: string) => {
 		const typeRegex = /([\s\S]*?)<type>(.*?)<\/type>([\s\S]*)/;
-		return useMemo(() => content.match(typeRegex), [content]);
+		return content.match(typeRegex);
 	};
+	const stripTags = (content: string) => {
+		const varMatch = matchesVariable(content);
+		if (varMatch) {
+			return `${stripTags(varMatch[1])}${stripTags(varMatch[2])}${stripTags(
+				varMatch[3]
+			)}`;
+		}
+		const typeMatch = matchesType(content);
+		if (typeMatch) {
+			return `${stripTags(typeMatch[1])}${stripTags(typeMatch[2])}${stripTags(
+				typeMatch[3]
+			)}`;
+		}
+		return content;
+	};
+	const strippedTags = useMemo(() => stripTags(children), [children]);
 	const highLightTypes = (content: string) => {
 		const varMatch = matchesVariable(content);
 		if (varMatch) {
@@ -104,7 +112,10 @@ const TextBlock: FC<Props> = ({
 			);
 		} else return <div>{description}</div>;
 	};
-	const highlightedTextContent = highLightTypes(spacedOut);
+	const highlightedTextContent = useMemo(
+		() => highLightTypes(spacedOut),
+		[spacedOut]
+	);
 	const ContentElement = () => {
 		return highlightedTextContent;
 	};
@@ -128,7 +139,7 @@ const TextBlock: FC<Props> = ({
 				<a
 					className={style.copyButtonContainer}
 					onClick={() => {
-						navigator.clipboard.writeText(children);
+						navigator.clipboard.writeText(strippedTags);
 					}}
 				>
 					<Image className={style.copyButton} src={copyIcon} />
