@@ -1,13 +1,13 @@
-import { skill } from '../components/home_page/Skills';
-import typescript from '../public/static/img/typescript.png';
-import javascript from '../public/static/img/javascript.png';
-import react from '../public/static/img/react.png';
-import reactn from '../public/static/img/reactn.png';
-import drupal from '../public/static/img/drupal.png';
-import css from '../public/static/img/css.png';
-import nextjs from '../public/static/img/nextjs.svg';
-import sass from '../public/static/img/sass.png';
-import vuejs from '../public/static/img/vuejs.png';
+import { skill } from './Skills';
+import typescript from '@/img/typescript.png';
+import javascript from '@/img/javascript.png';
+import react from '@/img/react.png';
+import reactn from '@/img/reactn.png';
+import drupal from '@/img/drupal.png';
+import css from '@/img/css.png';
+import nextjs from '@/img/nextjs.svg';
+import sass from '@/img/sass.png';
+import vuejs from '@/img/vuejs.png';
 
 const skills: skill[] = [
 	{

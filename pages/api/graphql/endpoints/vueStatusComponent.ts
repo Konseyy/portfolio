@@ -1,10 +1,7 @@
 import { gql } from 'apollo-server-core';
-import { mockProjectData } from '../../../../mock_data/projects';
-import {
-	mockProjectStatuses,
-	mockTaskStatuses,
-} from '../../../../mock_data/statuses';
-import { mockTaskData } from '../../../../mock_data/tasks';
+import { mockProjectData } from '@/data/projects';
+import { mockProjectStatuses, mockTaskStatuses } from '@/data/statuses';
+import { mockTaskData } from '@/data/tasks';
 
 export const typeDefs = gql`
 	type vueStatusListType {

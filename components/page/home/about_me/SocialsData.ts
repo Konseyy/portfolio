@@ -1,6 +1,6 @@
-import { ImageLinkProps } from '../components/ImageLink';
-import github from '../public/static/img/github.png';
-import linkedin from '../public/static/img/linkedin.png';
+import { ImageLinkProps } from '@/components/image_link/ImageLink';
+import github from '@/img/github.png';
+import linkedin from '@/img/linkedin.png';
 const socials: ImageLinkProps[] = [
 	{
 		image: github,

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React, { FC, useMemo } from 'react';
 import style from './TextBlock.module.scss';
-import copyIcon from '../public/static/img/copy.png';
+import copyIcon from '@/img/copy.png';
 interface Props {
 	children: string;
 	className?: string;

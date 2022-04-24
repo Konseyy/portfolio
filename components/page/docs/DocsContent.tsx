@@ -1,6 +1,6 @@
 import React, { FC, useMemo } from 'react';
 import { DocsData } from './DocsData';
-import TextBlock from '../TextBlock';
+import TextBlock from '@/components/text_block/TextBlock';
 import style from './DocsContent.module.scss';
 
 const DocsContent = ({ host }) => {

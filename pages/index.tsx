@@ -1,12 +1,8 @@
 import clientPromise from '../lib/mongodb';
-import LandingPageInitial from '../components/home_page/LandingPageInitial';
-import ProjectsList from '../components/home_page/ProjectsList';
-import AboutMe from '../components/home_page/AboutMe';
-import Skills from '../components/home_page/Skills';
-import socialsData from '../data/SocialsData';
-import projectsData from '../data/ProjectsData';
-import skillsData from '../data/SkillsData';
-import aboutMeData from '../data/AboutMeContent';
+import LandingPageInitial from '@/components/page/home/landing_page_initial/LandingPageInitial';
+import ProjectsList from '@/components/page/home/projects/ProjectsList';
+import AboutMe from '@/components/page/home/about_me/AboutMe';
+import Skills from '@/components/page/home/skills/Skills';
 export default function Home({ isConnected }) {
 	return (
 		<div>
@@ -18,12 +14,10 @@ export default function Home({ isConnected }) {
 						My name is <span>Valdis</span>
 					</h1>
 				}
-				description={aboutMeData}
-				socials={socialsData}
 				scrollToId="skillSection"
 			/>
-			<Skills id="skillSection" scrollToId="projectList" skills={skillsData} />
-			<ProjectsList id="projectList" projects={projectsData} />
+			<Skills id="skillSection" scrollToId="projectList"/>
+			<ProjectsList id="projectList"/>
 		</div>
 	);
 }

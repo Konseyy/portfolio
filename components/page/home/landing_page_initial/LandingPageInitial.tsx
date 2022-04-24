@@ -1,12 +1,11 @@
 import React, {
 	Dispatch,
 	FC,
-	SetStateAction,
 	useEffect,
 	useState,
 } from 'react';
 import styles from './LandingPageInitial.module.scss';
-import SectionButton from './SectionButton';
+import SectionButton from '../SectionButton';
 interface Props {
 	scrollToId: string;
 	id: string;

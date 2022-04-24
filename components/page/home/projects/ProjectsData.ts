@@ -1,11 +1,11 @@
-import react from '../public/static/img/react.png';
-import typescript from '../public/static/img/typescript.png';
-import nextjs from '../public/static/img/nextjs.svg';
-import graphql from '../public/static/img/graphql.png';
-import actions from '../public/static/img/actions.png';
-import nodejs from '../public/static/img/nodejs.png';
-import vuejs from '../public/static/img/vuejs.png';
-import { ProjectProps } from '../components/home_page/Project';
+import react from '@/img/react.png';
+import typescript from '@/img/typescript.png';
+import nextjs from '@/img/nextjs.svg';
+import graphql from '@/img/graphql.png';
+import actions from '@/img/actions.png';
+import nodejs from '@/img/nodejs.png';
+import vuejs from '@/img/vuejs.png';
+import { ProjectProps } from './Project';
 const projects: ProjectProps[] = [
 	{
 		title: 'This Website',

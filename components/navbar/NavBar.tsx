@@ -1,16 +1,13 @@
 import React, { FC, useEffect, useState } from 'react';
-import scrollIdIntoView from '../../helpers/scrollIdIntoView';
-import dropdown from '../../public/static/img/dropdown.png';
-import line from '../../public/static/img/line.png';
+import scrollIdIntoView from '@/helpers/scrollIdIntoView';
+import dropdown from '@/img/dropdown.png';
+import line from '@/img/line.png';
 import styles from './NavBar.module.scss';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { NavItem, NonEmptyArray } from '../../types/NavBar';
+import {NavBarContent} from './NavBarData';
 
-interface Props {
-	navItems: NonEmptyArray<NavItem>;
-}
-const NavBar: FC<Props> = ({ navItems }) => {
+const NavBar: FC = () => {
 	const router = useRouter();
 	const [mobileExpanded, setMobileExpanded] = useState(false);
 	const [activeElement, setActiveElement] = useState(-1);
@@ -31,7 +28,7 @@ const NavBar: FC<Props> = ({ navItems }) => {
 			<ul className={styles.list} key="navBarContainer">
 				<li className={styles.navListContainer}>
 					<ul className={styles.navList}>
-						{navItems.map((navItem, idx) => {
+						{NavBarContent.map((navItem, idx) => {
 							return (
 								<li
 									tabIndex={0}
