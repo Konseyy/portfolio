@@ -8,6 +8,7 @@ interface Props {
 	id?: string;
 	title?: string;
 	description?: string;
+	annotation?: string;
 	style?: { [key: string]: any };
 }
 const TextBlock: FC<Props> = ({
@@ -16,6 +17,7 @@ const TextBlock: FC<Props> = ({
 	title,
 	description,
 	id,
+	annotation,
 	style: styleProp,
 }) => {
 	//remove \n at start of string
@@ -131,6 +133,7 @@ const TextBlock: FC<Props> = ({
 				>
 					<Image className={style.copyButton} src={copyIcon} />
 				</a>
+				{annotation && <div className={style.annotation}>{annotation}</div>}
 				<div className={style.textBlock}>
 					<ContentElement />
 				</div>

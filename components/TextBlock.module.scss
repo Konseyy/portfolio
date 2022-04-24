@@ -44,6 +44,11 @@
 	color: lib.$neon
 }
 
+.annotation {
+	font-size: .8em;
+	user-select: none;
+	opacity: .75;
+}
 
 .copyButtonContainer {
 	user-select: none;

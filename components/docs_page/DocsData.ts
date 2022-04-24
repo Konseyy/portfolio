@@ -11,6 +11,7 @@ import {
 type DocsEntry = {
 	title?: string;
 	description?: string;
+	annotation?: string;
 	textBlock: string;
 	id?: string;
 };
@@ -41,10 +42,12 @@ export const DocsData: DocsSection[] = [
 							Returns list of items for status changing that belong to the module specified in the JSON body,
 							Available modules: ${statusModules.map((module) => `"${module}"`).join(', ')}
 							`,
+						annotation: 'JSON',
 						textBlock: rest_list_req,
 					},
 					{
 						title: `Response <a href="/api/list">/api/list</a>`,
+						annotation: 'JSON',
 						textBlock: rest_list_resp,
 					},
 				],
@@ -59,10 +62,12 @@ export const DocsData: DocsSection[] = [
 							Returns list of statuses for the module specified in the JSON body,
 							Available modules: ${statusModules.map((module) => `"${module}"`).join(', ')}
 							`,
+						annotation: 'JSON',
 						textBlock: rest_statuses_req,
 					},
 					{
 						title: `Response <a href="/api/statuses">/api/statuses</a>`,
+						annotation: 'JSON',
 						textBlock: rest_statuses_resp,
 					},
 				],
@@ -85,6 +90,7 @@ export const DocsData: DocsSection[] = [
 				Returns list of items for status changing that belong to the module specified
 				Available modules: ${statusModules.map((module) => `"${module}"`).join(', ')}
 				`,
+						annotation: 'GraphQL Query',
 						textBlock: gql_list_query,
 					},
 					{
@@ -93,6 +99,7 @@ export const DocsData: DocsSection[] = [
 				Returns list of statuses for the module specified
 				Available modules: ${statusModules.map((module) => `"${module}"`).join(', ')}
 				`,
+						annotation: 'GraphQL Query',
 						textBlock: gql_statuses_query,
 					},
 					{
@@ -101,6 +108,7 @@ export const DocsData: DocsSection[] = [
 				Returns list of public repositories from my GitHub profile using the GitHub API,
 				Pager parameters are optional
 				`,
+						annotation: 'GraphQL Query',
 						textBlock: gql_github_projects_query,
 					},
 				],

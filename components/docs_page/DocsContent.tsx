@@ -49,6 +49,7 @@ const DocsContent = ({ host }) => {
 														group.link ? style.withLink : ''
 													}`}
 													title={block.title ?? ''}
+													annotation={!group.link && (block.annotation ?? '')}
 													description={
 														group.link ? '' : block.description ?? ''
 													}
@@ -64,6 +65,7 @@ const DocsContent = ({ host }) => {
 												{group.link && (
 													<TextBlock
 														description={group.link && block.description}
+														annotation={group.link && (block.annotation ?? '')}
 													>
 														{block.textBlock}
 													</TextBlock>
