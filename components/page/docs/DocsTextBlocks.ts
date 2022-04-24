@@ -60,7 +60,7 @@ query {
 `;
 export const gql_github_projects_query = `
 query {
-	github_projects(page: <var><page_number : <type>number</type>></var>, items_per_page: <var><item_count_per_page : <type>number</type>></var>) {
+	github_projects(page: <var><page_number (optional): <type>number</type>></var>, items_per_page: <var><item_count_per_page (optional): <type>number</type>></var>) {
 		data {
 			name : <type>string</type>
 			description : <type>string</type>
