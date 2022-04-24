@@ -105,8 +105,7 @@ export const DocsData: DocsSection[] = [
 					{
 						title: `GitHub Projects list`,
 						description: `
-				Returns list of public repositories from my GitHub profile using the GitHub API,
-				Pager parameters are optional
+				Returns list of public repositories from my GitHub profile using the GitHub API
 				`,
 						annotation: 'GraphQL Query',
 						textBlock: gql_github_projects_query,
