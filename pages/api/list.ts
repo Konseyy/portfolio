@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { mockProjectData } from '../../mock_data/projects';
-import { mockTaskData } from '../../mock_data/tasks';
+import { mockProjectData } from '@/data/projects';
+import { mockTaskData } from '@/data/tasks';
 
 export default async function handler(
 	req: NextApiRequest,

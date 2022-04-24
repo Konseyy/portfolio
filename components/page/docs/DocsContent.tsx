@@ -1,6 +1,6 @@
 import React, { FC, useMemo } from 'react';
 import { DocsData } from './DocsData';
-import TextBlock from '../TextBlock';
+import TextBlock from '@/components/text_block/TextBlock';
 import style from './DocsContent.module.scss';
 
 const DocsContent = ({ host }) => {
@@ -49,6 +49,7 @@ const DocsContent = ({ host }) => {
 														group.link ? style.withLink : ''
 													}`}
 													title={block.title ?? ''}
+													annotation={!group.link && (block.annotation ?? '')}
 													description={
 														group.link ? '' : block.description ?? ''
 													}
@@ -64,6 +65,7 @@ const DocsContent = ({ host }) => {
 												{group.link && (
 													<TextBlock
 														description={group.link && block.description}
+														annotation={group.link && (block.annotation ?? '')}
 													>
 														{block.textBlock}
 													</TextBlock>

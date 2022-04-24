@@ -1,4 +1,4 @@
-@use 'library'as lib;
+@use '../library'as lib;
 
 .root {
 	margin-bottom: 1em;
@@ -44,6 +44,11 @@
 	color: lib.$neon
 }
 
+.annotation {
+	font-size: .8em;
+	user-select: none;
+	opacity: .75;
+}
 
 .copyButtonContainer {
 	user-select: none;

@@ -1,4 +1,4 @@
-import { NavItem, NonEmptyArray } from '../../types/NavBar';
+import { NavItem, NonEmptyArray } from './NavBarTypes';
 
 export const NavBarContent: NonEmptyArray<NavItem> = [
 	{

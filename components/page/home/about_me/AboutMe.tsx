@@ -1,21 +1,19 @@
 import React, { FC } from 'react';
-import ImageLink, { ImageLinkProps } from '../ImageLink';
+import ImageLink, { ImageLinkProps } from '@/components/image_link/ImageLink';
 import Image from 'next/image';
-import me from '../../public/static/img/me.jpg';
+import me from '@/img/me.jpg';
 import styles from './AboutMe.module.scss';
-import SectionButton from './SectionButton';
+import SectionButton from '../SectionButton';
+import socials from "./SocialsData"
+import aboutMeContent from "./AboutMeContent"
 interface Props {
 	id: string;
 	title: JSX.Element;
-	description: JSX.Element[];
-	socials: ImageLinkProps[];
 	scrollToId: string;
 }
 const AboutMe: FC<Props> = ({
 	id,
 	title,
-	description,
-	socials,
 	scrollToId,
 }) => {
 	return (
@@ -30,7 +28,7 @@ const AboutMe: FC<Props> = ({
 						className={styles.descriptionContainer}
 						key="descriptionContainer"
 					>
-						{description.map((el, x) => {
+						{aboutMeContent.map((el, x) => {
 							return {
 								...el,
 								props: { ...el.props, className: styles.description },

@@ -25,11 +25,8 @@ const typeDefs = gql`
 		"Information about the retrieved page and retrieved amount of items"
 		pager: GithubProjectsPager!
 	}
-	extend type Query{
-		github_projects(
-			page: Int
-			items_per_page: Int
-		): GithubProjectsResult!
+	extend type Query {
+		github_projects(page: Int, items_per_page: Int): GithubProjectsResult!
 	}
 `;
 const resolvers = {

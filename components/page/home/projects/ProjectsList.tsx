@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import Project, { ProjectProps } from './Project';
 import styles from './ProjectsList.module.scss';
+import projects from './ProjectsData';
 interface Props {
-	projects: ProjectProps[];
 	id: string;
 }
-const ProjectsList: FC<Props> = ({ projects, id }) => {
+const ProjectsList: FC<Props> = ({ id }) => {
 	return (
 		<section id={id} className={styles.root}>
 			<div className={styles.titleContainer}>

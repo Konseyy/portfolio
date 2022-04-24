@@ -1,10 +1,10 @@
 import React, { FC, useState } from 'react';
-import { ImageLinkProps } from '../ImageLink';
+import { ImageLinkProps } from '@/components/image_link/ImageLink';
 import Image from 'next/image';
-import { openInBrowser } from '../../helpers/openInBrowser';
-import ImageLink from '../ImageLink';
-import code from '../../public/static/img/code.png';
-import demo from '../../public/static/img/demo.png';
+import { openInBrowser } from '@/helpers/openInBrowser';
+import ImageLink from '@/components/image_link/ImageLink';
+import code from '@/img/code.png';
+import demo from '@/img/demo.png';
 import styles from './Project.module.scss';
 export interface ProjectProps {
 	technologies: ImageLinkProps[];

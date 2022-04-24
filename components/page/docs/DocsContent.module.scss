@@ -1,3 +1,5 @@
+@use "../../library"as lib;
+
 .root {
 	line-height: normal;
 	width: 100%;
@@ -6,7 +8,13 @@
 	font-size: 1.3rem;
 
 	a {
+		color: lib.$neon;
 		text-decoration: underline;
+		text-decoration-color: rgba(lib.$neon, 0);
+
+		&:hover {
+			text-decoration-color: rgba(lib.$neon, 1);
+		}
 	}
 }
 

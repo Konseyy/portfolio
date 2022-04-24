@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next';
 import React from 'react';
-import DocsContent from '../components/docs_page/DocsContent';
+import DocsContent from '@/components/page/docs/DocsContent';
 
 const docs = ({ host }) => {
 	return <DocsContent host={host} />;

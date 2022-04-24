@@ -1,11 +1,10 @@
 import React, { FC, useEffect } from 'react';
-import NavBar from './navbar/NavBar';
+import NavBar from '@/components/navbar/NavBar';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
 import styles from './Layout.module.scss';
-import scrollIdIntoView from '../helpers/scrollIdIntoView';
-import { NavBarContent } from './navbar/NavBarData';
+import scrollIdIntoView from '@/helpers/scrollIdIntoView';
 const Layout: FC = ({ children }) => {
 	const router = useRouter();
 	useEffect(() => {
@@ -79,7 +78,7 @@ const Layout: FC = ({ children }) => {
 				gtag('config', 'G-MJSJXH851F');`}
 				</Script>
 			</Head>
-			<NavBar navItems={NavBarContent} />
+			<NavBar/>
 			<div className={styles.root}>{children}</div>
 		</>
 	);

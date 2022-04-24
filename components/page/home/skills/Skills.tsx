@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import { FC, useEffect, useState } from 'react';
-import SectionButton from './SectionButton';
+import SectionButton from '../SectionButton';
 import styles from './Skills.module.scss';
-import dropdown from '../../public/static/img/dropdown.png';
+import dropdown from '@/img/dropdown.png';
+import skills from './SkillsData';
 export type skill = {
 	image: StaticImageData;
 	name: string;
@@ -12,10 +13,9 @@ export type skill = {
 interface Props {
 	id: string;
 	scrollToId: string;
-	skills: skill[];
 	displayElements?: number;
 }
-const Skills: FC<Props> = ({ id, scrollToId, skills, displayElements = 5 }) => {
+const Skills: FC<Props> = ({ id, scrollToId, displayElements = 5 }) => {
 	type scrollState = {
 		startIndex: number;
 		endIndex: number;
