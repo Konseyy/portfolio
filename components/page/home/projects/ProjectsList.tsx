@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import Project, { ProjectProps } from './Project';
+import portfolio from '@/img/preview/portfolio.png';
 import styles from './ProjectsList.module.scss';
 import projects from './ProjectsData';
 interface Props {
@@ -12,8 +13,15 @@ const ProjectsList: FC<Props> = ({ id }) => {
 				<h1 className={styles.title}>Featured Projects</h1>
 			</div>
 			<div className={styles.projectsContainer} key="projectContainer">
-				{projects.map((project) => {
-					return <Project {...project} key={project.title} />;
+				{projects.map((project, idx) => {
+					return (
+						<Project
+							{...project}
+							annotateRight={idx % 2 === 0}
+							preview={project.preview ?? portfolio}
+							key={project.title}
+						/>
+					);
 				})}
 			</div>
 		</section>

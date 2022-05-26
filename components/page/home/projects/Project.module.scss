@@ -1,161 +1,184 @@
-@use '../../../library'as lib;
+@use '../../../library' as lib;
 
 .root {
-	display: inline-grid;
-	grid-template-columns: 300px repeat(auto-fit, 200px);
-	padding: 0.625rem;
-	margin: 0.625rem;
-	margin-bottom: 3.125rem;
-	border-radius: 1.875rem;
-	border: 0.5px solid lib.$background_inverted;
-	background-color: rgb(0, 0, 0);
-	box-sizing: border-box;
-	max-width: 34.375rem;
-	position: relative;
-	z-index: 1;
-	transition: 0.5s;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	max-width: 100vw;
+}
 
-	&::before,
-	&::after {
-		transition: opacity 0.35s;
-		border-radius: 1.875rem;
-		content: '';
-		position: absolute;
-		height: 100%;
-		width: 100%;
-		z-index: -1;
+.projectContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.preview {
+	aspect-ratio: 16/9;
+	width: 50%;
+	user-select: none;
+	padding: .35em;
+	border-radius: .5em;
+	border: 1px solid transparent;
+	box-shadow: lib.$neon_glow_neon;
+	transition: 1.5s;
+
+	img {
+		transition: .5s;
+		opacity: .45;
+
 	}
 
-	&::before {
-		box-shadow: 0 0 0 0 rgba(lib.$background_inverted, 0);
-		opacity: 1;
-	}
+	&:hover {
+		border: 1px solid lib.$neon;
 
-	&::after {
-		opacity: 0;
-		box-shadow: lib.$neon_glow_weak;
-	}
-
-	&:hover,
-	&:focus-within {
-		&::before {
-			opacity: 0;
+		img {
+			opacity: .9;
 		}
 
-		&::after {
-			opacity: 1;
-		}
+		;
 	}
 }
 
-.titleContainer {
+.annotation {
 	display: flex;
-	align-items: center;
-	margin: 1.25rem 0.3125rem;
-	margin-left: 0.625rem;
-	cursor: default;
+	flex-direction: column;
+	max-width: 35%;
+	width: max-content;
+	z-index: 1;
+	line-height: normal;
+	font-size: clamp(1.1em, 1vw, 1.75em);
 }
 
 .title {
-	color: lib.$text;
-	font-size: 2.6rem;
-	font-weight: bold;
+	font-size: 2em;
+	margin-bottom: .15em;
 	text-decoration: underline;
-	text-decoration-color: rgba(lib.$neon_values, 0);
-	transition: 0.35s;
+	text-decoration-color: transparent;
 
-	&:hover,
-	&:focus {
-		cursor: pointer;
-		color: rgba(lib.$neon_values, 1);
-		text-shadow: 0 0 0.02em lib.$neon;
-		text-decoration-color: lib.$highlight_pale;
+	&:hover {
+		text-decoration-color: white;
 	}
 }
 
-.contentContainer {
-	margin: 0 1.25rem;
-	grid-column: span 2;
+.meta {
+	display: flex;
+	flex-direction: column;
+
+	@supports(backdrop-filter: blur(7px)) {
+		background-color: rgba(20, 20, 20, 0.65);
+		backdrop-filter: blur(7px);
+	}
+
+	@supports not(backdrop-filter: blur(7px)) {
+		background-color: rgba(30, 30, 30, .95);
+	}
+
+	border-radius: .5em;
+	padding: 1.15em .75em;
 }
 
 .description {
-	font-size: 1.4rem;
-	line-height: 1.5rem;
-	margin-bottom: 1.5625rem;
+	text-align: justify;
 }
 
-.technologiesSection {
-	display: flex;
-	flex-direction: column;
-	gap: 0.3125rem;
-}
 
-.technologiesHeader {
-	font-size: 1.1rem;
-	font-weight: bold;
-	margin-bottom: 0.3125rem;
-}
-
-.technologiesContainer {
-	display: flex;
-	flex-wrap: wrap;
+.annotateRight {
 	flex-direction: row;
-	align-items: center;
+
+	.annotation {
+		margin-left: -15%;
+		align-items: flex-end;
+	}
+
+	.meta {
+		align-items: flex-end;
+	}
+
+	.title {
+		margin-left: auto;
+		padding-left: .5em;
+		text-align: right;
+	}
+}
+
+.annotateLeft {
+	flex-direction: row-reverse;
+
+	.annotation {
+		margin-right: -15%;
+		align-items: flex-start;
+	}
+
+	.meta {
+		align-items: flex-start;
+	}
+
+	.title {
+		margin-right: auto;
+		padding-right: .5em;
+		text-align: left;
+	}
+}
+
+.technologies {
+	font-size: .8em;
+	display: flex;
+
+	>li {
+		margin-right: .2em;
+	}
+}
+
+.technologiesAnnotation {
+	margin-top: .4em;
+	font-size: 1.1em;
+	margin-bottom: .2em;
+	user-select: none;
+}
+
+.metaTop {
+	display: flex;
+	width: 100%;
+}
+
+.links {
+	display: flex;
+	gap: .5em;
 }
 
 .linkContainer {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-.repoLinkContainer,
-.liveLinkContainer {
-	margin: 0 0.625rem;
-	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-bottom: 0.3125rem;
-
-	&:hover,
-	&:focus {
-		cursor: default;
-	}
 }
 
 .repoLink,
 .liveLink {
-	width: 70%;
 	display: inline-flex;
 	box-sizing: border-box;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	padding: 0.625rem 0.75rem;
-	border-radius: 1.25rem;
+	padding: 0.5em 0.7em;
+	border-radius: 1.2em;
 	background-color: transparent;
 	font-size: 1.2rem;
 	color: lib.$text;
-	transition: background-color 450ms, color 600ms, width 450ms, box-shadow 400ms;
+	transition: background-color 450ms, color 600ms, padding 450ms, box-shadow 400ms;
 
 	&:hover,
 	&:focus {
 		background-color: lib.$neon;
 		color: lib.$text;
 		box-shadow: 0 0 10px 4px lib.$neon_transparent, 0 0 0.15em lib.$neon;
-		width: 85%;
 		cursor: pointer;
+		padding: 0.5em 1.1em;
 	}
 }
 
-.repoLink .linkImageContainer {
-	height: 1.4rem;
-	width: 1.4rem;
-}
-
-.liveLink .linkImageContainer {
-	height: 1.3rem;
-	width: 1.3rem;
+.linkImageContainer {
+	aspect-ratio: 1;
+	width: 1.1em;
 }
 
 .linkImageContainer {
@@ -165,114 +188,4 @@
 	margin-right: 0.5rem;
 	filter: brightness(0) invert(1);
 	transition: 600ms;
-}
-
-.readMore {
-	font-weight: bold;
-	text-decoration: underline;
-	text-decoration-color: rgba(lib.$background_inverted, 0);
-	text-decoration-thickness: 1.5px;
-	transition: 0.4s;
-
-	&:hover,
-	&:focus {
-		cursor: pointer;
-		color: lib.$neon;
-		text-decoration-color: lib.$neon;
-	}
-}
-
-@media only screen and (max-width: 1000px) {
-	.root {
-		grid-template-columns: auto;
-		width: 92vw;
-		margin-bottom: 0.9375rem;
-	}
-
-	.title {
-		line-height: 3rem;
-	}
-
-	.contentContainer {
-		grid-column: span 1;
-	}
-
-	.liveLinkContainer,
-	.repoLinkContainer {
-		align-items: flex-start;
-		justify-content: flex-start;
-	}
-
-	.liveLink,
-	.repoLink {
-		width: auto;
-		justify-content: flex-start;
-		font-weight: bold;
-		font-size: 1.4rem;
-		padding: 7px 25px 7px 20px;
-
-		&:hover,
-		&:focus {
-			width: auto;
-		}
-	}
-
-	.linkContainer {
-		margin-bottom: 15px;
-	}
-}
-
-@media only screen and (max-width: 1150px) {
-	.root {
-		margin-bottom: 1.25rem;
-	}
-}
-
-@media only screen and (max-width: 1700px) {
-	.root {
-		margin-bottom: 1.875rem;
-	}
-}
-
-@media only screen and (min-width: 1150px) {
-	.title {
-		line-height: 2.8rem;
-	}
-}
-
-@media only screen and (min-width: 2540px) {
-	.root {
-		max-width: 700px;
-		grid-template-columns: 400px repeat(auto-fit, 300px);
-	}
-
-	.liveLink,
-	.repoLink {
-		font-size: 2rem;
-		width: 75%;
-
-		&:hover,
-		&:focus {
-			width: 85%;
-		}
-	}
-
-	.title {
-		font-size: 3.5rem;
-		line-height: 4rem;
-	}
-
-	.titleContainer {
-		margin-bottom: 2.5rem;
-	}
-
-	.description {
-		font-size: 1.9rem;
-		line-height: 2.3rem;
-	}
-
-	.technologiesHeader {
-		font-size: 1.9rem;
-		margin-bottom: 0.625rem;
-	}
 }

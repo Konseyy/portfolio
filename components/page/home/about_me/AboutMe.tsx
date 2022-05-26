@@ -43,7 +43,6 @@ const AboutMe: FC<Props> = ({
 					</div>
 				</div>
 			</div>
-			<SectionButton title="Skills" scrollToId={scrollToId} />
 		</section>
 	);
 };

@@ -1,4 +1,4 @@
-@use '../../../library'as lib;
+@use '../../../library' as lib;
 
 .root {
 	display: flex;
@@ -22,8 +22,8 @@
 }
 
 .projectsContainer {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	display: flex;
+	flex-direction: column;
 	column-gap: 35px;
 	row-gap: 15px;
 	/* max-width: 2000px; */
@@ -46,7 +46,6 @@
 	}
 
 	.projectsContainer {
-		grid-template-columns: auto;
 		row-gap: 10px;
 	}
 
