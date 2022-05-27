@@ -36,7 +36,7 @@ const Project: FC<ProjectProps> = ({
 				>
 					<div tabIndex={0} className={styles.liveLink}>
 						<div className={styles.linkImageContainer}>
-							<Image src={demo} alt={`demo link for ${title}`} />
+							<Image priority src={demo} alt={`demo link for ${title}`} />
 						</div>
 						<p>Demo</p>
 					</div>
@@ -67,27 +67,31 @@ const Project: FC<ProjectProps> = ({
 				<a target="_blank" href={defaultLink} className={styles.preview}>
 					<Image src={preview} />
 				</a>
-				<div className={styles.annotation}>
-					<div className={styles.meta}>
-						<div className={styles.metaTop}>
-							{annotateRight && links}
-							<a target="_blank" href={defaultLink} className={styles.title}>
-								{title}
-							</a>
-							{!annotateRight && links}
+				<div className={styles.info}>
+					<div className={styles.annotation}>
+						<div className={styles.meta}>
+							<div className={styles.metaTop}>
+								{annotateRight && links}
+								<a target="_blank" href={defaultLink} className={styles.title}>
+									{title}
+								</a>
+								{!annotateRight && links}
+							</div>
+							<p className={styles.description}>{description}</p>
 						</div>
-						<p className={styles.description}>{description}</p>
 					</div>
-					<div className={styles.technologiesAnnotation}>
-						Techonologies used
+					<div className={styles.techonologiesContainer}>
+						<div className={styles.technologiesAnnotation}>
+							Techonologies used
+						</div>
+						<ul className={styles.technologies}>
+							{technologies.map((technology) => (
+								<li>
+									<ImageLink {...technology} />
+								</li>
+							))}
+						</ul>
 					</div>
-					<ul className={styles.technologies}>
-						{technologies.map((technology) => (
-							<li>
-								<ImageLink {...technology} />
-							</li>
-						))}
-					</ul>
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,4 @@
-@use '../../../library'as lib;
+@use '../../../library' as lib;
 
 .root {
 	padding: 0 100px;
@@ -81,6 +81,7 @@
 	margin-top: auto;
 	display: flex;
 	flex-direction: row;
+	font-size: 2em;
 	gap: 15px;
 }
 

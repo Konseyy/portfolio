@@ -104,7 +104,8 @@ const projects: ProjectProps[] = [
 	},
 	{
 		title: 'GraphQL Endpoint',
-		description: 'GraphQL Endpoint serving as a backend for other projects',
+		description:
+			"GraphQL Endpoint serving as a backend for other projects. Documented in the 'API Docs' section of this website",
 		repo_link:
 			'https://github.com/Konseyy/portfolio/blob/main/pages/api/graphql/index.ts',
 		live_link: '/api/graphql',

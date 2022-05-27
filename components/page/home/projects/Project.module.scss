@@ -20,6 +20,7 @@
 	border-radius: .5em;
 	border: 1px solid transparent;
 	box-shadow: lib.$neon_glow_neon;
+	z-index: 0;
 	transition: 1.5s;
 
 	img {
@@ -34,23 +35,26 @@
 		img {
 			opacity: .9;
 		}
-
-		;
 	}
 }
 
-.annotation {
-	display: flex;
-	flex-direction: column;
+.info {
 	max-width: 35%;
-	width: max-content;
-	z-index: 1;
-	line-height: normal;
 	font-size: clamp(1.1em, 1vw, 1.75em);
 }
 
+.annotation {
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+	width: max-content;
+	position: relative;
+	z-index: 1;
+	line-height: normal;
+}
+
 .title {
-	font-size: 2em;
+	font-size: 1.8em;
 	margin-bottom: .15em;
 	text-decoration: underline;
 	text-decoration-color: transparent;
@@ -85,12 +89,19 @@
 .annotateRight {
 	flex-direction: row;
 
-	.annotation {
+	.info {
 		margin-left: -15%;
+	}
+
+	.annotation {
 		align-items: flex-end;
 	}
 
 	.meta {
+		align-items: flex-end;
+	}
+
+	.techonologiesContainer {
 		align-items: flex-end;
 	}
 
@@ -104,12 +115,20 @@
 .annotateLeft {
 	flex-direction: row-reverse;
 
-	.annotation {
+	.info {
+
 		margin-right: -15%;
+	}
+
+	.annotation {
 		align-items: flex-start;
 	}
 
 	.meta {
+		align-items: flex-start;
+	}
+
+	.techonologiesContainer {
 		align-items: flex-start;
 	}
 
@@ -120,13 +139,15 @@
 	}
 }
 
-.technologies {
-	font-size: .8em;
+.techonologiesContainer {
 	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	font-size: 1.1em;
+}
 
-	>li {
-		margin-right: .2em;
-	}
+.technologies {
+	display: flex;
 }
 
 .technologiesAnnotation {
@@ -143,6 +164,7 @@
 
 .links {
 	display: flex;
+	user-select: none;
 	gap: .5em;
 }
 
