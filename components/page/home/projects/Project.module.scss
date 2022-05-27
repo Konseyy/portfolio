@@ -39,7 +39,7 @@
 }
 
 .info {
-	max-width: 35%;
+	max-width: min(35%, 40vw);
 	font-size: clamp(1.1em, 1vw, 1.75em);
 }
 
@@ -212,6 +212,12 @@
 	transition: 600ms;
 }
 
+@media(max-width: 1400px) {
+	.info {
+		max-width: min(45%, 40vw);
+	}
+}
+
 @media (max-width: 1000px) {
 	.techonologiesContainer {
 		display: none;
@@ -272,5 +278,23 @@
 	.info {
 		position: relative;
 	}
+
+	.metaTop {
+		flex-direction: column-reverse !important;
+		align-items: flex-start;
+	}
+
+	.title {
+		text-align: left !important;
+		margin-left: 0 !important;
+	}
+
+	.annotateLeft {
+		.metaTop {
+			flex-direction: column !important;
+			align-items: flex-start;
+		}
+	}
+
 
 }
