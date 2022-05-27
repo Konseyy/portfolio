@@ -211,3 +211,66 @@
 	filter: brightness(0) invert(1);
 	transition: 600ms;
 }
+
+@media (max-width: 1000px) {
+	.techonologiesContainer {
+		display: none;
+	}
+
+	.projectContainer {
+		align-items: center;
+		justify-content: center;
+	}
+
+	.info {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		margin: 0 !important;
+		max-width: 100%;
+	}
+
+	.meta {
+		width: 100%;
+
+	}
+
+	.annotateLeft {
+		.metaTop {
+			flex-direction: row-reverse;
+		}
+
+		.title {
+			margin-left: auto;
+			margin-right: 0;
+			text-align: right;
+		}
+	}
+
+	.preview {
+		width: 80vw;
+	}
+
+	.annotation {
+		width: 70vw;
+	}
+
+	.links {
+		flex-direction: column;
+	}
+
+	.metaTop {
+		margin-bottom: .65em;
+	}
+}
+
+@media (max-width: 600px) {
+	.preview {
+		display: none;
+	}
+
+	.info {
+		position: relative;
+	}
+
+}

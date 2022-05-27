@@ -86,7 +86,7 @@ const Project: FC<ProjectProps> = ({
 						</div>
 						<ul className={styles.technologies}>
 							{technologies.map((technology) => (
-								<li>
+								<li key={technology.title}>
 									<ImageLink {...technology} />
 								</li>
 							))}
