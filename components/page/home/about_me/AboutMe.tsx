@@ -4,18 +4,14 @@ import Image from 'next/image';
 import me from '@/img/me.jpg';
 import styles from './AboutMe.module.scss';
 import SectionButton from '../SectionButton';
-import socials from "./SocialsData"
-import aboutMeContent from "./AboutMeContent"
+import socials from './SocialsData';
+import aboutMeContent from './AboutMeContent';
 interface Props {
 	id: string;
 	title: JSX.Element;
 	scrollToId: string;
 }
-const AboutMe: FC<Props> = ({
-	id,
-	title,
-	scrollToId,
-}) => {
+const AboutMe: FC<Props> = ({ id, title, scrollToId }) => {
 	return (
 		<section id={id} className={styles.root}>
 			<div className={styles.aboutMe}>
