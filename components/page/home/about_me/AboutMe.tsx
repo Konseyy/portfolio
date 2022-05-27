@@ -38,7 +38,7 @@ const AboutMe: FC<Props> = ({
 					</div>
 					<div className={styles.socialsContainer} key="socialsContainer">
 						{socials.map((social) => {
-							return <ImageLink {...social} key={social.title} size={90} />;
+							return <ImageLink {...social} key={social.title} />;
 						})}
 					</div>
 				</div>
