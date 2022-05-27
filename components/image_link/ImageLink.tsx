@@ -7,7 +7,6 @@ export interface ImageLinkProps {
 	title: string;
 	url: string;
 	colored?: boolean;
-	size?: number;
 	labelBackground?: boolean;
 }
 const ImageLink: FC<ImageLinkProps> = ({
@@ -15,7 +14,6 @@ const ImageLink: FC<ImageLinkProps> = ({
 	title,
 	url,
 	colored = false,
-	size = 75,
 	labelBackground = false,
 }) => {
 	const [isHovered, setIsHovered] = useState(false);
@@ -43,11 +41,6 @@ const ImageLink: FC<ImageLinkProps> = ({
 			href={url}
 			onClick={(e) => e.preventDefault()}
 			className={styles.root}
-			style={{
-				height: size,
-				width: size,
-				// paddingBottom: size * 0.7,
-			}}
 		>
 			<div
 				tabIndex={0}
@@ -69,7 +62,6 @@ const ImageLink: FC<ImageLinkProps> = ({
 					className={`${styles.label} ${showLabel ? styles.show : ''} ${
 						labelBackground ? styles.black : ''
 					}`}
-					style={{ fontSize: size * 0.35 }}
 				>
 					{title}
 				</label>

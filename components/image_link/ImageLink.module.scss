@@ -1,4 +1,4 @@
-@use './../library'as lib;
+@use './../library' as lib;
 
 .root {
 	display: flex;
@@ -7,6 +7,8 @@
 	justify-content: center;
 	user-select: none;
 	cursor: default;
+	height: 2.65em;
+	width: 2.65em;
 }
 
 .imageBlackAndWhite {
@@ -22,23 +24,26 @@
 	border-radius: 50%;
 	overflow: hidden;
 	background-color: transparent;
-	height: 85%;
-	width: 85%;
+	aspect-ratio: 1;
+	width: 2.3em;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	transition: height 0.2s, width 0.2s, background-color 0.45s;
 
+	.image {
+		aspect-ratio: 1;
+		width: 2em;
+	}
+
 	&:hover,
 	&:focus {
 		background-color: lib.$background_inverted;
-		height: 100%;
-		width: 100%;
+		width: 2.5em;
 		cursor: pointer;
 
 		.image {
-			height: 65%;
-			width: 65%;
+			width: 1.65em;
 		}
 
 		.imageBlackAndWhite {
@@ -87,6 +92,7 @@
 	white-space: nowrap;
 	position: absolute;
 	color: white;
+	font-size: 1em;
 }
 
 .label.black {

@@ -182,7 +182,6 @@ const Skills: FC<Props> = ({ id, scrollToId, displayElements = 5 }) => {
 					</div>
 				</div>
 			</div>
-			<SectionButton title="Projects" scrollToId={scrollToId} />
 		</section>
 	);
 };
