@@ -3,11 +3,11 @@ import typescript from '@/img/typescript.png';
 import javascript from '@/img/javascript.png';
 import react from '@/img/react.png';
 import reactn from '@/img/reactn.png';
-import drupal from '@/img/drupal.png';
+import rust from '@/img/rust.png';
 import css from '@/img/css.png';
 import nextjs from '@/img/nextjs.svg';
 import sass from '@/img/sass.png';
-import vuejs from '@/img/vuejs.png';
+import webgl from '@/img/webgl.png';
 
 const skills: skill[] = [
 	{
@@ -17,18 +17,32 @@ const skills: skill[] = [
 		description: [
 			<p>
 				My main knowledge in development comes from using React, it's what I use
-				for all of my frontend needs.
+				for most of my frontend needs.
 			</p>,
 			<p>
 				It was the first frontend framework I ever used professionally and I
 				still love using it. Especially since I found out that{' '}
-				<a
-					rel="noreferrer"
-					href="https://reactjs.org/docs/components-and-props.html"
-				>
-					functional components
+				<a rel="noreferrer" href="https://nextjs.org/">
+					NextJS
 				</a>{' '}
 				existed :)
+			</p>,
+		],
+	},
+	{
+		name: 'Electron',
+		image: react,
+		url: 'https://www.electronjs.org/',
+		description: [
+			<p>
+				In my current workplace, a lot of my time is spent working with Electron
+				based projects.
+			</p>,
+			<p>
+				I{"'"}ve gotten very used to it by now, and learned a lot of new things
+				about managing child processes as well as spawning other ones, working
+				with the file system, app update management and other things that come
+				with making desktop applications.
 			</p>,
 		],
 	},
@@ -54,34 +68,28 @@ const skills: skill[] = [
 				.
 			</p>,
 			<p>
-				Beyond that, I've spent about 6 months maintaining a React Native mobile
-				app at work
+				Beyond that, I've spent about 8 months maintaining a React Native mobile
+				app at my previous workplace
 			</p>,
 		],
 	},
 	{
-		name: 'Vue.js',
-		image: vuejs,
-		url: 'https://v3.vuejs.org/',
+		name: 'WebGL',
+		image: webgl,
+		url: 'https://get.webgl.org/',
 		description: [
 			<p>
-				I had known about Vue.js for a while since it was always showing up in
-				videos i watched but I never really had a reason to try it.
+				Working with graphics had always seemed intimidating to me, but since
+				taking a university course on the subject I've found it to be
+				fascinating. An opportunity came up at work to refactor an old
+				library-based image editor to raw WebGL shaders, and I took it.
 			</p>,
 			<p>
-				That is, until an opportunity came up to make a{' '}
-				<a rel="noreferrer" href="https://www.quiz.valdis.me/">
-					small project
-				</a>{' '}
-				using it. While I do still prefer using React, I definitely see the
-				advantage of Vue to get stuff working with less initial boilerplate.
-			</p>,
-			<p>
-				I also ended up making another Vue.js{' '}
-				<a rel="noreferrer" href="https://status-component.valdis.me/">
-					project
-				</a>{' '}
-				using the new script setup and TypeScript
+				Besides the image editor, I{"'"}ve also worked on a project for
+				measuring distances between points in space, based on a 3D LiDAR image.
+				The measurement gets projected on top of the image with WebGL using
+				raymarching and it{"'"}s been by far the most interesting project I{"'"}
+				ve ever worked on.
 			</p>,
 		],
 	},
@@ -160,9 +168,8 @@ const skills: skill[] = [
 		url: 'https://nextjs.org/',
 		description: [
 			<p>
-				Next.js is my most recent discovery in the frontend world. It's what I
-				used for making this website and what I plan to continue using in the
-				future
+				It{"'"}s what I used for making this website and what I plan to continue
+				using in the future
 			</p>,
 			<p>
 				It takes everything I already loved about react and makes using it so
@@ -177,18 +184,37 @@ const skills: skill[] = [
 				>
 					integrated scss support and locally scoped styling
 				</a>{' '}
-				make my coding experience so much easier.
+				make my coding experience so much easier, and the vercel integrations
+				and SSR performance is also a nice bonus :)
 			</p>,
 		],
 	},
 	{
-		name: 'Drupal',
-		image: drupal,
-		url: 'https://www.drupal.org/',
+		name: 'Rust',
+		image: rust,
+		url: 'https://www.rust-lang.org/',
 		description: [
 			<p>
-				Most of my backend framework experience comes from my job, working with
-				Drupal.
+				Rust is my most recent discovery in the programming space, and It{"'"}s
+				the first time in a long time I{"'"}ve been this interested in something
+				not front-end specific.
+			</p>,
+			<p>
+				A lot of my time nowadays is being spent working with frontend
+				technologies, so basically, JavaScript or TypeScript. In recent
+				university semesters however, I{"'"}ve had to do multiple performance
+				reliant projects, and choosing JavaScript is not very optimal in those
+				cases :D
+			</p>,
+			<p>
+				For me, rust has been a welcome fascination as well as a reason to
+				explore technologies outside of frontend web development once again. I
+				{"'"}ve used it for the previously mentioned university projects, and
+				most notibly, my{' '}
+				<a rel="noreferrer" href="https://github.com/Konseyy/depth-map-shading">
+					university course paper project
+				</a>
+				.
 			</p>,
 		],
 	},

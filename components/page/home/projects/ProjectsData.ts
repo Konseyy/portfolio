@@ -5,12 +5,14 @@ import graphql from '@/img/graphql.png';
 import actions from '@/img/actions.png';
 import nodejs from '@/img/nodejs.png';
 import vuejs from '@/img/vuejs.png';
+import rust from '@/img/rust.png';
 import portfolio from '@/img/preview/portfolio.png';
 import quiz_site from '@/img/preview/quiz_site.png';
 import graphql_preview from '@/img/preview/graphql.png';
 import minesweeper from '@/img/preview/minesweeper.png';
 import status_component from '@/img/preview/status-comp.png';
 import shiftlog from '@/img/preview/shiftlog.png';
+import depthmap_shading from '@/img/preview/depthmap_shading.jpg';
 import { ProjectProps } from './Project';
 const projects: ProjectProps[] = [
 	{
@@ -37,24 +39,17 @@ const projects: ProjectProps[] = [
 			},
 		],
 	},
-
 	{
-		title: 'Status Changer',
+		title: 'Depth map shading CLI',
 		description:
-			'Website featuring a Vue.js status selector component. Component uses browser drag-and-drop API for status reordering functionality',
-		repo_link: 'https://github.com/Konseyy/vue-status',
-		live_link: 'https://status-component.valdis.me/',
-		preview: status_component,
+			'A CLI tool for simulating realistic shading, given an equirectangular format depth map. The tool is written in Rust, and uses the Rayon library for parallelization. It can also be configured to output normal maps instead of shaded scenes.',
+		repo_link: 'https://github.com/Konseyy/depth-map-shading',
+		preview: depthmap_shading,
 		technologies: [
 			{
-				image: vuejs,
-				title: 'Vue.js',
-				url: 'https://vuejs.org/',
-			},
-			{
-				image: typescript,
-				title: 'TypeScript',
-				url: 'https://www.typescriptlang.org/',
+				image: rust,
+				title: 'Rust',
+				url: 'https://www.rust-lang.org/',
 			},
 		],
 	},
@@ -120,6 +115,26 @@ const projects: ProjectProps[] = [
 				image: nextjs,
 				title: 'Next.js',
 				url: 'https://nextjs.org/',
+			},
+		],
+	},
+	{
+		title: 'Status Changer',
+		description:
+			'Website featuring a Vue.js status selector component. Component uses browser drag-and-drop API for status reordering functionality',
+		repo_link: 'https://github.com/Konseyy/vue-status',
+		live_link: 'https://status-component.valdis.me/',
+		preview: status_component,
+		technologies: [
+			{
+				image: vuejs,
+				title: 'Vue.js',
+				url: 'https://vuejs.org/',
+			},
+			{
+				image: typescript,
+				title: 'TypeScript',
+				url: 'https://www.typescriptlang.org/',
 			},
 		],
 	},

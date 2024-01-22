@@ -13,16 +13,12 @@ const aboutMeContent = [
 			React.js
 		</a>{' '}
 		and{' '}
-		<a rel="noreferrer" target="_blank" href="https://reactnative.dev/">
-			React Native
+		<a rel="noreferrer" target="_blank" href="https://www.electronjs.org/">
+			Electron
 		</a>{' '}
-		but I also have experience with frameworks like{' '}
-		<a rel="noreferrer" target="_blank" href="https://laravel.com/">
-			Laravel
-		</a>{' '}
-		and{' '}
-		<a rel="noreferrer" target="_blank" href="https://www.drupal.org/">
-			Drupal
+		but I also have prior experience with frameworks like{' '}
+		<a rel="noreferrer" target="_blank" href="https://nextjs.org/">
+			NextJS
 		</a>
 		.
 	</p>,
@@ -31,8 +27,8 @@ const aboutMeContent = [
 		with already familiar technologies.
 	</p>,
 	<p>
-		In my free time I like to workout in the gym as well as listen to and play
-		music.
+		In my free time you can find me in the gym, playing simracing or other video
+		games, playing music or just hanging out with friends.
 	</p>,
 ];
 
